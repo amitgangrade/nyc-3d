@@ -1,0 +1,31 @@
+{
+  "$comment": "Each region is built independently by `npm run data -- <id>`. A feature belongs to a region when its centroid lies inside `boundary` (lon/lat ring) and, if `borough` is set, the nearest NYC borough to it is that borough. Keep region boundaries non-overlapping so features are never duplicated.",
+  "regions": [
+    {
+      "id": "lower-manhattan",
+      "name": "Lower Manhattan",
+      "description": "Manhattan south of Houston Street (SoHo, Tribeca, LES, Chinatown, FiDi, Battery Park City, Governors/Liberty/Ellis Islands)",
+      "provider": "nyc",
+      "borough": "Manhattan",
+      "boundary": [
+        [-74.0600, 40.6750],
+        [-74.0600, 40.7290],
+        [-74.0108, 40.72895],
+        [-74.0075, 40.72865],
+        [-74.0054, 40.72850],
+        [-74.0032, 40.72840],
+        [-73.9995, 40.72700],
+        [-73.9968, 40.72545],
+        [-73.9925, 40.72450],
+        [-73.9897, 40.72370],
+        [-73.9864, 40.72235],
+        [-73.9830, 40.72130],
+        [-73.9795, 40.72050],
+        [-73.9768, 40.71985],
+        [-73.9600, 40.71985],
+        [-73.9600, 40.6750]
+      ],
+      "camera": { "lon": -74.0090, "lat": 40.7075, "distance": 2600, "heading": 25, "pitch": 38 }
+    }
+  ]
+}

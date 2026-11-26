@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NYC 3D · Lower Manhattan</title>
+  <meta name="description" content="High-resolution 3D map of Lower Manhattan built from NYC Open Data, with day, evening and night lighting." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230d1424'/><path d='M7 26V14h4v12M13 26V6h5v20M20 26V11h5v15' fill='%23ffc46b'/></svg>" />
+  <link rel="stylesheet" href="/src/ui/style.css" />
+</head>
+<body data-mode="map">
+  <canvas id="scene"></canvas>
+
+  <div id="loading">
+    <div class="loading-inner">
+      <div class="brand-mark big"></div>
+      <div class="loading-title">Lower Manhattan</div>
+      <div class="loading-track"><div id="loading-bar"></div></div>
+      <div id="loading-text">Starting…</div>
+    </div>
+  </div>
+
+  <header class="panel" id="brand">
+    <div class="brand-mark"></div>
+    <div>
+      <div class="brand-title">NYC 3D</div>
+      <div class="brand-sub">Lower Manhattan · south of Houston St</div>
+    </div>
+  </header>
+
+  <div class="panel" id="timebar">
+    <div class="seg" role="group" aria-label="Time of day">
+      <button data-preset="day" title="Day (1)">
+        <svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></g></svg>
+        Day</button>
+      <button data-preset="evening" title="Evening (2)">
+        <svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 16a7 7 0 0 1 14 0z" fill="currentColor"/><path d="M2 19h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Evening</button>
+      <button data-preset="night" title="Night (3)">
+        <svg viewBox="0 0 24 24" width="16" height="16"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="currentColor"/></svg>
+        Night</button>
+    </div>
+    <div class="time-row">
+      <button id="play" class="icon-btn" aria-label="Play time-lapse"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
+      <input id="time-slider" type="range" min="0" max="23.99" step="0.01" value="13.5" aria-label="Time of day" />
+      <span id="time-label">1:30 PM</span>
+    </div>
+  </div>
+
+  <div id="toolbar">
+    <div class="panel seg" role="group" aria-label="Navigation mode">
+      <button data-mode="map" class="active" title="Map navigation (Tab)">
+        <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2zM9 4v14M15 6v14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        Map</button>
+      <button data-mode="fly" title="Fly mode (Tab)">
+        <svg viewBox="0 0 24 24" width="16" height="16"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z" fill="currentColor"/></svg>
+        Fly</button>
+    </div>
+    <button id="compass" class="panel" title="Face north (N)" aria-label="Face north">
+      <div id="compass-needle"><svg viewBox="0 0 40 40" width="34" height="34"><path d="M20 5l5 15h-10z" fill="#ff5a4f"/><path d="M20 35l-5-15h10z" fill="currentColor" opacity=".55"/><text x="20" y="4.5" text-anchor="middle" font-size="6" fill="currentColor" font-weight="700">N</text></svg></div>
+    </button>
+    <button id="help-toggle" class="panel icon-btn" title="Controls (H)" aria-label="Show controls">?</button>
+  </div>
+
+  <aside class="panel" id="places">
+    <button id="places-toggle"><span>Places</span><svg viewBox="0 0 24 24" width="14" height="14"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+    <div id="places-list"></div>
+  </aside>
+
+  <div class="panel" id="help">
+    <div class="help-cols">
+      <div>
+        <h4>Map mode</h4>
+        <p><kbd>Left drag</kbd> pan · <kbd>Right drag</kbd> orbit / tilt</p>
+        <p><kbd>Wheel</kbd> zoom to cursor · <kbd>Double-click</kbd> fly there</p>
+        <p><kbd>W A S D</kbd> move · <kbd>Q</kbd><kbd>E</kbd> rotate · <kbd>R</kbd><kbd>F</kbd> tilt · <kbd>Z</kbd><kbd>X</kbd> zoom</p>
+        <p><kbd>Click</kbd> a building for details</p>
+      </div>
+      <div>
+        <h4>Fly mode</h4>
+        <p><kbd>Click</kbd> to capture mouse, then look around</p>
+        <p><kbd>W A S D</kbd> fly · <kbd>E</kbd>/<kbd>Space</kbd> up · <kbd>Q</kbd>/<kbd>C</kbd> down</p>
+        <p><kbd>Shift</kbd> boost · <kbd>Wheel</kbd> speed · <kbd>Esc</kbd> release</p>
+        <p><kbd>Tab</kbd> switch mode · <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> day/evening/night · <kbd>N</kbd> north</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" id="info">
+    <button id="info-close" aria-label="Close">×</button>
+    <div id="info-title"></div>
+    <div id="info-rows"></div>
+    <div id="info-note"></div>
+    <a id="info-link" target="_blank" rel="noopener">Open in OpenStreetMap ↗</a>
+  </div>
+
+  <div id="stream"></div>
+  <div id="fly-hint">Click the view to steer with the mouse</div>
+  <div id="status"></div>
+  <div id="attribution">Data: <a href="https://opendata.cityofnewyork.us/" target="_blank" rel="noopener">NYC Open Data</a> · US Census TIGER/Line</div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

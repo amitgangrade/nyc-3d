@@ -1,0 +1,5 @@
+{
+  "$comment": "Global settings shared by the data pipeline and the viewer. Changing origin or tileSize requires rebuilding ALL regions.",
+  "origin": { "lon": -74.006, "lat": 40.7128 },
+  "tileSize": 1000
+}
