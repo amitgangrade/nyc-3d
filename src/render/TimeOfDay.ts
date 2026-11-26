@@ -51,7 +51,7 @@ interface Key {
   amb: number; ambI: number; fog: number; fogD: number; exposure: number; cloud: number; env: number;
 }
 const K: Key[] = [
-  { el: -18, zenith: 0x02040b, horizon: 0x0b0d18, horizonSun: 0x0d0e1a, sun: 0x000000, sunI: 0, amb: 0x1a2340, ambI: 0.55, fog: 0x0c0e17, fogD: 8e-5, exposure: 1.0, cloud: 0x2a1c18, env: 0.35 },
+  { el: -18, zenith: 0x02050f, horizon: 0x0c1122, horizonSun: 0x0e1224, sun: 0x000000, sunI: 0, amb: 0x1a2648, ambI: 0.5, fog: 0x0b0f1c, fogD: 8e-5, exposure: 1.0, cloud: 0x2a1c18, env: 0.35 },
   { el: -9, zenith: 0x060c22, horizon: 0x1b1d33, horizonSun: 0x3a2a3a, sun: 0x000000, sunI: 0, amb: 0x2b3660, ambI: 0.6, fog: 0x161a2c, fogD: 8e-5, exposure: 1.0, cloud: 0x3a2630, env: 0.4 },
   { el: -3, zenith: 0x14204a, horizon: 0x5a4a6a, horizonSun: 0xc8604a, sun: 0xff6a3a, sunI: 0.0, amb: 0x5a5a88, ambI: 0.7, fog: 0x4a4560, fogD: 9e-5, exposure: 0.95, cloud: 0xd06a5a, env: 0.6 },
   { el: 1, zenith: 0x2a4a8a, horizon: 0xb88a7a, horizonSun: 0xff7a35, sun: 0xff8a45, sunI: 1.5, amb: 0x8a8ab0, ambI: 0.75, fog: 0x9a8a92, fogD: 1.0e-4, exposure: 0.85, cloud: 0xff9a6a, env: 0.8 },

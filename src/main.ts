@@ -81,7 +81,7 @@ async function main() {
   tiles.onTileLoaded = ({ layer, features }) => {
     if (layer !== 'buildings' || !features) return;
     for (let i = 0; i < features.height.length; i++) {
-      if (features.height[i] > 130) beaconPts.push(features.centroid[i * 2], features.height[i] + 2.5, features.centroid[i * 2 + 1]);
+      if (features.height[i] > 170) beaconPts.push(features.centroid[i * 2], features.height[i] + 2.5, features.centroid[i * 2 + 1]);
     }
     rebuildBeacons();
   };
@@ -249,7 +249,14 @@ async function main() {
 
   // gentle intro move once things are loading
   setTimeout(() => ctrl.flyTo({ target: new THREE.Vector3(cx, 0, cz), distance: cam0.distance, heading: cam0.heading, pitch: cam0.pitch }, 4.5), 600);
-  (window as any).nyc = { scene, camera, ctrl, tiles, env, renderer, setHour: (h: number) => { hour = h; env.setHour(h, true); ui.setHour(h); } };
+  (window as any).nyc = {
+    scene, camera, ctrl, tiles, env, renderer,
+    /** debug helper: jump to a view instantly */
+    view: (lon: number, lat: number, distance: number, heading: number, pitch: number, y = 0) => {
+      const [x, z] = proj.forward(lon, lat);
+      ctrl.flyTo({ target: new THREE.Vector3(x, y, z), distance, heading, pitch }, 0.05);
+    },
+    setHour: (h: number) => { hour = h; env.setHour(h, true); ui.setHour(h); } };
 }
 
 /** Rasterise region boundaries into a soft mask texture (r = 1 inside detailed regions). */

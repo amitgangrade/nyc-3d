@@ -50,7 +50,7 @@ vec4 clouds(vec3 d){
   float sunSide = pow(max(dot(normalize(d), uSunDir), 0.0), 6.0);
   vec3 lit = uCloudLight * (0.55 + 0.45 * n2) * (0.6 + 0.4 * (1.0 - uNight));
   lit += uCloudLight * sunSide * 0.8 * (1.0 - uNight);
-  vec3 cityGlow = vec3(0.16, 0.085, 0.05) * uLights * (0.8 + 0.6 * smoothstep(0.4, 0.0, d.y));
+  vec3 cityGlow = vec3(0.11, 0.07, 0.06) * uLights * (0.7 + 0.6 * smoothstep(0.4, 0.0, d.y));
   vec3 moonLit = vec3(0.05, 0.06, 0.09) * pow(max(dot(normalize(d), uMoonDir), 0.0), 4.0);
   vec3 col = mix(lit, cityGlow + moonLit + lit * 0.05, uNight);
   return vec4(col, a * 0.85);
@@ -80,7 +80,7 @@ vec3 skyColor(vec3 d, bool withDiscs){
     }
     col += vec3(0.25, 0.3, 0.42) * (pow(md, 900.0) * 0.6 + pow(md, 40.0) * 0.06) * uNight;
     // light dome over the city
-    col += vec3(0.22, 0.12, 0.07) * uLights * pow(1.0 - hv, 7.0) * 0.55;
+    col += vec3(0.20, 0.12, 0.10) * uLights * pow(1.0 - hv, 8.0) * 0.38;
   }
 
   vec4 c = clouds(d);

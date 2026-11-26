@@ -108,7 +108,7 @@ export function createBeacons(points: number[]): THREE.Points {
     vertexShader: LOGDEPTH_V + `
       attribute float seed; varying float vSeed;
       void main(){ vSeed = seed; vec4 mv = modelViewMatrix * vec4(position, 1.0); gl_Position = projectionMatrix * mv;
-        gl_PointSize = clamp(6000.0 / -mv.z, 2.0, 10.0);
+        gl_PointSize = clamp(4000.0 / -mv.z, 1.5, 5.0);
         #include <logdepthbuf_vertex>
       }`,
     fragmentShader: LOGDEPTH_F + `

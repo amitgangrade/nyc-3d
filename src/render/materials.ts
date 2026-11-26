@@ -49,12 +49,9 @@ vec3 pick4(float r, vec3 a, vec3 b, vec3 c, vec3 d){ return r < 0.25 ? a : r < 0
 Surface roofSurface(float seed){
   float r = h11(seed * 91.7);
   vec3 c = r < 0.40 ? vec3(0.40, 0.40, 0.39) : r < 0.78 ? vec3(0.17, 0.17, 0.18) : r < 0.93 ? vec3(0.30, 0.27, 0.24) : vec3(0.24, 0.32, 0.22);
-  float n = fbm(vWP.xz * 0.35) * 0.35 + vnoise(vWP.xz * 2.1) * 0.12;
-  c *= 0.8 + n;
-  // mechanical boxes / bulkheads as darker patches
-  vec2 cell = floor(vWP.xz / 4.0 + vec2(vnoise(vWP.xz * 0.1)) * 2.0);
-  float box = step(0.9, h21(cell + seed * 13.0));
-  c = mix(c, vec3(0.55, 0.56, 0.57), box * 0.5);
+  // weathering: large soft stains + fine gravel grain
+  float n = (fbm(vWP.xz * 0.08 + seed * 31.0) - 0.5) * 0.35 + (vnoise(vWP.xz * 1.7) - 0.5) * 0.08;
+  c *= 0.92 + n;
   Surface S; S.albedo = c; S.rough = 0.9; S.metal = 0.0; S.emit = vec3(0.0);
   return S;
 }
@@ -124,7 +121,10 @@ Surface surface(){
   if (uLights > 0.001 && style != 4) {
     float floorLit = h21(vec2(id.y, seed * 71.0));
     float office = style == 3 || style == 2 ? 1.0 : 0.0;
-    float p = uLights * mix(0.04, 0.62, floorLit * floorLit) * mix(1.0, 0.8, office);
+    float occ = h11(seed * 3.7);                      // how busy this building is tonight
+    float p = office > 0.5
+      ? uLights * (0.04 + 0.62 * occ * pow(floorLit, 2.2))   // offices: whole floors on/off
+      : uLights * (0.06 + 0.32 * occ * floorLit);            // homes: scattered windows
     if (ground) p = uLights * 0.6;
     float r = h21(id * vec2(1.0, 3.1) + seed * 17.0);
     float on = step(r, p);
@@ -137,14 +137,14 @@ Surface surface(){
     inten *= 0.75 + 0.5 * smoothstep(0.2, 0.9, fy);
     if (ground) { wc = vec3(1.0, 0.78, 0.5); inten = 1.1; }
     vec3 sharp = on * wc * inten * mask;
-    vec3 avg = p * mix(neutral, office > 0.5 ? cool : warm, 0.5) * 0.8 * avgMask * parapet;
+    vec3 avg = p * mix(neutral, office > 0.5 ? cool : warm, 0.5) * 0.75 * avgMask * parapet;
     emit = mix(sharp, avg, lod);
 
     // crown lighting on towers
-    if (h > 110.0 && v > h - 9.0) {
+    if (h > 150.0 && v > h - 6.0 && h11(seed * 4.4) > 0.55) {
       float cr = h11(seed * 9.9);
       vec3 cc = cr < 0.65 ? vec3(1.0, 0.92, 0.8) : cr < 0.82 ? vec3(0.45, 0.65, 1.0) : vec3(1.0, 0.7, 0.35);
-      emit += cc * 1.1 * uLights * smoothstep(h - 9.0, h - 3.0, v) * step(0.35, h11(seed * 4.4));
+      emit += cc * 0.7 * uLights * smoothstep(h - 6.0, h - 2.0, v);
     }
   }
   S.emit = emit;
@@ -237,7 +237,7 @@ export function createContextLandMaterial() {
             float lod = smoothstep(0.2, 0.8, max(fwv.x, fwv.y));
             vec3 sodium = vec3(1.0, 0.62, 0.30);
             float flick = 0.55 + 0.9 * vnoise(p * 0.004) * vnoise(p * 0.013 + 3.0);
-            vec3 st = sodium * mix(street, 0.16, lod) * 0.16 * flick;
+            vec3 st = sodium * mix(street, 0.14, lod) * 0.10 * flick * flick;
             vec2 wc = floor(q / 9.0);
             float win = step(0.93, h21(wc)) * (1.0 - street) * (1.0 - green);
             vec3 wn = vec3(1.0, 0.8, 0.55) * mix(win * 0.7, 0.05 * (1.0 - green), smoothstep(0.1, 0.6, length(fwidth(q / 9.0)))) * flick;
