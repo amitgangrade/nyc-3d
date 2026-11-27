@@ -223,7 +223,7 @@ function buildLines(t: DecodedTile, req: BuildRequest): BuildResult {
     b.pos.push(ax, y, az, bx, y, bz, cx, y, cz, dx, y, dz);
     b.nor.push(0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0);
     b.uv.push(ax, az, bx, bz, cx, cz, dx, dz);
-    b.idx.push(o, o + 2, o + 1, o, o + 3, o + 2);
+    b.idx.push(o, o + 1, o + 2, o, o + 2, o + 3); // faces +y
   };
   for (let f = 0; f < t.header.featureCount; f++) {
     const line = ringsOf(t, f)[0];

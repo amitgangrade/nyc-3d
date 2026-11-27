@@ -102,7 +102,7 @@ async function overpass(query: string, cacheDir: string): Promise<string> {
     try {
       return execFileSync('curl', ['-s', '-f', '-m', '400', '--data-urlencode', `data@${qf}`, OVERPASS], { maxBuffer: 1 << 30 }).toString('utf8');
     } catch (e) {
-      if (i >= 7) throw e;
+      if (i >= 15) throw e;
       const wait = 3000 * 2 ** Math.min(i, 4);
       process.stdout.write(`(retry in ${wait / 1000}s) `);
       await new Promise((r) => setTimeout(r, wait));

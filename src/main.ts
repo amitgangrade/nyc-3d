@@ -86,7 +86,7 @@ async function main() {
     }
     rebuildBeacons();
   };
-  tiles.onProgress = (n, total) => ui.setLoading(n >= total * 0.6 ? 1 : 0.15 + 0.85 * (n / (total * 0.6)), `Building city… ${n}/${total} tiles`, n / total);
+  tiles.onProgress = (n, total) => ui.setLoading(tiles.nearProgress >= 0.98 ? 1 : 0.15 + 0.85 * tiles.nearProgress, `Building city… ${n}/${total} tiles`, n / total);
 
   // context land (other boroughs, New Jersey)
   const pool = new WorkerPool(1);

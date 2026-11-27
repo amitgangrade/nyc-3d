@@ -142,7 +142,7 @@ Surface surface(){
     float occ = h11(seed * 3.7);                      // how busy this building is tonight
     float p = office > 0.5
       ? uLights * (0.04 + 0.62 * occ * pow(floorLit, 2.2))   // offices: whole floors on/off
-      : uLights * (0.06 + 0.32 * occ * floorLit);            // homes: scattered windows
+      : uLights * (0.12 + 0.34 * occ * floorLit);            // homes: scattered windows
     if (ground) p = uLights * 0.6;
     float r = h21(id * vec2(1.0, 3.1) + seed * 17.0);
     float on = step(r, p);
@@ -266,7 +266,8 @@ export function createContextLandMaterial() {
             blockC = mix(blockC, vec3(0.20, 0.28, 0.15), green);
             vec3 c = mix(blockC, vec3(0.21, 0.21, 0.22), street * (1.0 - lod0) * 0.55);
             c *= 0.9 + 0.2 * vnoise(p * 0.05);
-            diffuseColor.rgb = mix(c, vec3(0.30, 0.29, 0.27), detailed);
+            vec3 lot = mix(vec3(0.21, 0.21, 0.20), vec3(0.20, 0.25, 0.16), smoothstep(0.45, 0.7, vnoise(p * 0.03))) * (0.85 + 0.3 * vnoise(p * 0.2));
+            diffuseColor.rgb = mix(c, lot, detailed);
             // night: lit street grid + scattered windows
             float lod = smoothstep(0.2, 0.8, max(fwv.x, fwv.y));
             vec3 sodium = vec3(1.0, 0.62, 0.30);

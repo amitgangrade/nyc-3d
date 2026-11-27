@@ -4,7 +4,7 @@ import type { Manifest, ManifestTile } from '../core/manifest';
 import type { BuildResult, GeometryArrays } from '../workers/meshWorker';
 import { LAYERS, type LayerDef } from '../render/layers';
 import { createStreetLights } from '../render/Lights';
-import { createTrees } from '../render/Trees';
+import { createTrees, DETAIL_LAYER } from '../render/Trees';
 import { WorkerPool } from './WorkerPool';
 
 THREE.BufferGeometry.prototype.computeBoundsTree = computeBoundsTree;
@@ -37,7 +37,9 @@ export class TileManager {
   private tiles: TileState[] = [];
   private pool = new WorkerPool();
   private inflight = 0;
-  private maxInflight = 6;
+  private maxInflight = 10;
+  /** loaded / total among tiles within ~2.5 km of the focus (drives the splash screen) */
+  nearProgress = 0;
   onProgress?: (loaded: number, total: number) => void;
   onTileLoaded?: (t: { layer: string; features?: BuildResult['features']; origin: [number, number] }) => void;
   exclude: [number, number][] = [];
@@ -66,13 +68,22 @@ export class TileManager {
     const loadR = 7000 + alt * 2.5;
     const dropR = loadR * 1.4;
     const p = new THREE.Vector2(focus.x, focus.z);
+    const camPos = new THREE.Vector2(camera.position.x, camera.position.z);
     const candidates = this.tiles
       .map((t) => ({ t, d: Math.max(0, p.distanceTo(t.center) - t.radius) }))
       .sort((a, b) => a.d - b.d);
+    let near = 0, nearLoaded = 0;
     for (const { t, d } of candidates) {
       if (t.status === 'idle' && d < loadR && this.inflight < this.maxInflight) this.load(t);
       else if (t.status === 'loaded' && d > dropR) this.unload(t);
+      if (d < 2500) { near++; if (t.status === 'loaded') nearLoaded++; }
+      // fine detail (trees) only near the camera
+      if (t.object) {
+        const dc = Math.max(0, camPos.distanceTo(t.center) - t.radius);
+        for (const c of t.object.children) if (c.userData.kind === 'trees') c.visible = dc < 3500;
+      }
     }
+    this.nearProgress = near ? nearLoaded / near : 1;
   }
 
   private async load(t: TileState) {
@@ -94,10 +105,15 @@ export class TileManager {
       mesh.userData.tileKey = t.key;
       mesh.userData.pickable = t.layer.pickable;
       if (t.layer.renderOrder) mesh.renderOrder = t.layer.renderOrder;
+      if (t.layer.detail) mesh.layers.set(DETAIL_LAYER);
       group.add(mesh);
       t.mesh = mesh;
     }
-    if (res.lights) group.add(createStreetLights(res.lights, res.origin));
+    if (res.lights) {
+      const sl = createStreetLights(res.lights, res.origin);
+      sl.traverse((o) => o.layers.set(DETAIL_LAYER));
+      group.add(sl);
+    }
     if (res.trees?.length) group.add(createTrees(res.trees, res.origin, t.layer.name === 'parks'));
     t.features = res.features;
     t.object = group;
