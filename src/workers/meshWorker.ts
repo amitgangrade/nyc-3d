@@ -401,8 +401,14 @@ function buildLand(t: DecodedTile, req: BuildRequest): BuildResult {
 self.onmessage = async (e: MessageEvent<BuildRequest>) => {
   const req = e.data;
   try {
-    const res = await fetch(req.url);
-    if (!res.ok) throw new Error(`HTTP ${res.status} for ${req.url}`);
+    // static hosts (GitHub Pages) occasionally answer 5xx under bursts: retry with backoff
+    let res: Response | null = null;
+    for (let i = 0; i < 5; i++) {
+      try { res = await fetch(req.url); } catch { res = null; }
+      if (res && (res.ok || res.status < 500)) break;
+      await new Promise((r) => setTimeout(r, 400 * 2 ** i));
+    }
+    if (!res || !res.ok) throw new Error(`HTTP ${res?.status ?? 'network error'} for ${req.url}`);
     const tile = decodeTile(await res.arrayBuffer());
     const out = req.kind === 'buildings' ? buildBuildings(tile, req)
       : req.kind === 'land' ? buildLand(tile, req)
