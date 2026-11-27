@@ -11,7 +11,7 @@
    "name": "Jersey City",
    "description": "Jersey City, NJ (municipal boundary from US Census TIGER/Line places), buildings and streets from OpenStreetMap",
    "provider": "osm",
-   "builtAt": "2026-11-27T08:00:33.872Z",
+   "builtAt": "2026-11-27T09:11:37.198Z",
    "bounds": [
     -8626.965397302174,
     -6228.469418953344,
@@ -2403,6 +2403,2266 @@
      -9371.5,
      263.5
     ]
+   ],
+   "mask": [
+    [
+     [
+      -9012,
+      1074
+     ],
+     [
+      -9162,
+      1300
+     ],
+     [
+      -8174,
+      1930
+     ],
+     [
+      -8023,
+      2284
+     ],
+     [
+      -8103,
+      2437
+     ],
+     [
+      -8101,
+      2514
+     ],
+     [
+      -7920,
+      2990
+     ],
+     [
+      -7778,
+      3572
+     ],
+     [
+      -5042,
+      5093
+     ],
+     [
+      -5052,
+      5110
+     ],
+     [
+      -3684,
+      5695
+     ],
+     [
+      -1721,
+      1414
+     ],
+     [
+      -1488,
+      -587
+     ],
+     [
+      -1235,
+      -1958
+     ],
+     [
+      -1983,
+      -2253
+     ],
+     [
+      -2068,
+      -2325
+     ],
+     [
+      -1963,
+      -2325
+     ],
+     [
+      -2747,
+      -2619
+     ],
+     [
+      -2835,
+      -2628
+     ],
+     [
+      -3106,
+      -2578
+     ],
+     [
+      -3099,
+      -2650
+     ],
+     [
+      -3194,
+      -2761
+     ],
+     [
+      -3152,
+      -2859
+     ],
+     [
+      -3184,
+      -2902
+     ],
+     [
+      -3187,
+      -3012
+     ],
+     [
+      -3138,
+      -3100
+     ],
+     [
+      -3061,
+      -3170
+     ],
+     [
+      -3074,
+      -3347
+     ],
+     [
+      -3046,
+      -3438
+     ],
+     [
+      -2829,
+      -3804
+     ],
+     [
+      -2680,
+      -4177
+     ],
+     [
+      -2766,
+      -4252
+     ],
+     [
+      -3067,
+      -4411
+     ],
+     [
+      -3175,
+      -4875
+     ],
+     [
+      -3619,
+      -5082
+     ],
+     [
+      -3701,
+      -5210
+     ],
+     [
+      -3867,
+      -5314
+     ],
+     [
+      -4297,
+      -6256
+     ],
+     [
+      -4427,
+      -6003
+     ],
+     [
+      -4551,
+      -5892
+     ],
+     [
+      -4522,
+      -5700
+     ],
+     [
+      -4553,
+      -5634
+     ],
+     [
+      -4555,
+      -5538
+     ],
+     [
+      -4704,
+      -5524
+     ],
+     [
+      -4765,
+      -5553
+     ],
+     [
+      -4873,
+      -5663
+     ],
+     [
+      -4969,
+      -5675
+     ],
+     [
+      -5083,
+      -5569
+     ],
+     [
+      -5277,
+      -5475
+     ],
+     [
+      -5584,
+      -5269
+     ],
+     [
+      -5617,
+      -5137
+     ],
+     [
+      -5799,
+      -5055
+     ],
+     [
+      -5830,
+      -4939
+     ],
+     [
+      -5807,
+      -4773
+     ],
+     [
+      -5836,
+      -4737
+     ],
+     [
+      -5928,
+      -4715
+     ],
+     [
+      -5947,
+      -4679
+     ],
+     [
+      -5839,
+      -4491
+     ],
+     [
+      -5838,
+      -4450
+     ],
+     [
+      -5868,
+      -4416
+     ],
+     [
+      -6011,
+      -4384
+     ],
+     [
+      -6130,
+      -4210
+     ],
+     [
+      -5836,
+      -3853
+     ],
+     [
+      -5992,
+      -3392
+     ],
+     [
+      -6408,
+      -3090
+     ],
+     [
+      -7025,
+      -2853
+     ],
+     [
+      -7419,
+      -2497
+     ],
+     [
+      -7482,
+      -2416
+     ],
+     [
+      -7853,
+      -1485
+     ],
+     [
+      -8249,
+      -660
+     ],
+     [
+      -9371,
+      263
+     ]
+    ]
+   ]
+  },
+  {
+   "id": "lower-manhattan",
+   "name": "Lower Manhattan",
+   "description": "Manhattan south of Houston Street (SoHo, Tribeca, LES, Chinatown, FiDi, Battery Park City, Governors/Liberty/Ellis Islands)",
+   "provider": "nyc",
+   "builtAt": "2026-11-27T09:12:13.643Z",
+   "bounds": [
+    -3830.871683213193,
+    -2950.209921875119,
+    3788.2122788187785,
+    3971.2430488634245
+   ],
+   "camera": {
+    "lon": -74.009,
+    "lat": 40.7075,
+    "distance": 2600,
+    "heading": 25,
+    "pitch": 38
+   },
+   "layers": {
+    "buildings": [
+     {
+      "ix": -1,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/buildings/-1_-2.bin",
+      "featureCount": 329,
+      "bytes": 24312
+     },
+     {
+      "ix": 0,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/buildings/0_-2.bin",
+      "featureCount": 991,
+      "bytes": 78436
+     },
+     {
+      "ix": 1,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/buildings/1_-2.bin",
+      "featureCount": 190,
+      "bytes": 15756
+     },
+     {
+      "ix": -1,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/buildings/-1_-1.bin",
+      "featureCount": 732,
+      "bytes": 56388
+     },
+     {
+      "ix": 0,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/buildings/0_-1.bin",
+      "featureCount": 1603,
+      "bytes": 126508
+     },
+     {
+      "ix": 1,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/buildings/1_-1.bin",
+      "featureCount": 1629,
+      "bytes": 142200
+     },
+     {
+      "ix": 2,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/buildings/2_-1.bin",
+      "featureCount": 194,
+      "bytes": 20036
+     },
+     {
+      "ix": -2,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/buildings/-2_0.bin",
+      "featureCount": 26,
+      "bytes": 3260
+     },
+     {
+      "ix": -1,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/buildings/-1_0.bin",
+      "featureCount": 1415,
+      "bytes": 114208
+     },
+     {
+      "ix": 0,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/buildings/0_0.bin",
+      "featureCount": 503,
+      "bytes": 47724
+     },
+     {
+      "ix": 1,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/buildings/1_0.bin",
+      "featureCount": 133,
+      "bytes": 12488
+     },
+     {
+      "ix": 2,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/buildings/2_0.bin",
+      "featureCount": 35,
+      "bytes": 3320
+     },
+     {
+      "ix": -4,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/buildings/-4_1.bin",
+      "featureCount": 8,
+      "bytes": 3276
+     },
+     {
+      "ix": -3,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/buildings/-3_1.bin",
+      "featureCount": 5,
+      "bytes": 2608
+     },
+     {
+      "ix": -1,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/buildings/-1_1.bin",
+      "featureCount": 115,
+      "bytes": 11504
+     },
+     {
+      "ix": 0,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/buildings/0_1.bin",
+      "featureCount": 3,
+      "bytes": 1032
+     },
+     {
+      "ix": -4,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/buildings/-4_2.bin",
+      "featureCount": 36,
+      "bytes": 3168
+     },
+     {
+      "ix": -2,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/buildings/-2_2.bin",
+      "featureCount": 25,
+      "bytes": 3972
+     },
+     {
+      "ix": -1,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/buildings/-1_2.bin",
+      "featureCount": 97,
+      "bytes": 10204
+     },
+     {
+      "ix": 0,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/buildings/0_2.bin",
+      "featureCount": 5,
+      "bytes": 928
+     },
+     {
+      "ix": -2,
+      "iz": 3,
+      "url": "tiles/lower-manhattan/buildings/-2_3.bin",
+      "featureCount": 15,
+      "bytes": 1712
+     }
+    ],
+    "roads": [
+     {
+      "ix": -1,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/roads/-1_-2.bin",
+      "featureCount": 86,
+      "bytes": 11860
+     },
+     {
+      "ix": 0,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/roads/0_-2.bin",
+      "featureCount": 175,
+      "bytes": 17448
+     },
+     {
+      "ix": 1,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/roads/1_-2.bin",
+      "featureCount": 27,
+      "bytes": 5996
+     },
+     {
+      "ix": -1,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/roads/-1_-1.bin",
+      "featureCount": 171,
+      "bytes": 21696
+     },
+     {
+      "ix": 0,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/roads/0_-1.bin",
+      "featureCount": 294,
+      "bytes": 31004
+     },
+     {
+      "ix": 1,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/roads/1_-1.bin",
+      "featureCount": 270,
+      "bytes": 29412
+     },
+     {
+      "ix": 2,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/roads/2_-1.bin",
+      "featureCount": 75,
+      "bytes": 10956
+     },
+     {
+      "ix": -2,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/roads/-2_0.bin",
+      "featureCount": 1,
+      "bytes": 728
+     },
+     {
+      "ix": -1,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/roads/-1_0.bin",
+      "featureCount": 278,
+      "bytes": 35252
+     },
+     {
+      "ix": 0,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/roads/0_0.bin",
+      "featureCount": 223,
+      "bytes": 28480
+     },
+     {
+      "ix": 1,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/roads/1_0.bin",
+      "featureCount": 69,
+      "bytes": 8144
+     },
+     {
+      "ix": 2,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/roads/2_0.bin",
+      "featureCount": 6,
+      "bytes": 1480
+     },
+     {
+      "ix": -4,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/roads/-4_1.bin",
+      "featureCount": 6,
+      "bytes": 1792
+     },
+     {
+      "ix": -1,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/roads/-1_1.bin",
+      "featureCount": 41,
+      "bytes": 8176
+     },
+     {
+      "ix": -2,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/roads/-2_2.bin",
+      "featureCount": 38,
+      "bytes": 15428
+     },
+     {
+      "ix": -1,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/roads/-1_2.bin",
+      "featureCount": 28,
+      "bytes": 8344
+     },
+     {
+      "ix": -2,
+      "iz": 3,
+      "url": "tiles/lower-manhattan/roads/-2_3.bin",
+      "featureCount": 2,
+      "bytes": 1152
+     }
+    ],
+    "sidewalks": [
+     {
+      "ix": -1,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/sidewalks/-1_-2.bin",
+      "featureCount": 72,
+      "bytes": 16788
+     },
+     {
+      "ix": 0,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/sidewalks/0_-2.bin",
+      "featureCount": 82,
+      "bytes": 17644
+     },
+     {
+      "ix": 1,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/sidewalks/1_-2.bin",
+      "featureCount": 34,
+      "bytes": 5056
+     },
+     {
+      "ix": -1,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/sidewalks/-1_-1.bin",
+      "featureCount": 102,
+      "bytes": 31480
+     },
+     {
+      "ix": 0,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/sidewalks/0_-1.bin",
+      "featureCount": 130,
+      "bytes": 35472
+     },
+     {
+      "ix": 1,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/sidewalks/1_-1.bin",
+      "featureCount": 171,
+      "bytes": 40504
+     },
+     {
+      "ix": 2,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/sidewalks/2_-1.bin",
+      "featureCount": 64,
+      "bytes": 26636
+     },
+     {
+      "ix": -2,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/sidewalks/-2_0.bin",
+      "featureCount": 5,
+      "bytes": 4544
+     },
+     {
+      "ix": -1,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/sidewalks/-1_0.bin",
+      "featureCount": 131,
+      "bytes": 37164
+     },
+     {
+      "ix": 0,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/sidewalks/0_0.bin",
+      "featureCount": 69,
+      "bytes": 19940
+     },
+     {
+      "ix": 1,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/sidewalks/1_0.bin",
+      "featureCount": 44,
+      "bytes": 12996
+     },
+     {
+      "ix": 2,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/sidewalks/2_0.bin",
+      "featureCount": 9,
+      "bytes": 3444
+     },
+     {
+      "ix": -4,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/sidewalks/-4_1.bin",
+      "featureCount": 3,
+      "bytes": 5180
+     },
+     {
+      "ix": -3,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/sidewalks/-3_1.bin",
+      "featureCount": 1,
+      "bytes": 1824
+     },
+     {
+      "ix": -1,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/sidewalks/-1_1.bin",
+      "featureCount": 19,
+      "bytes": 12904
+     },
+     {
+      "ix": -4,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/sidewalks/-4_2.bin",
+      "featureCount": 2,
+      "bytes": 1208
+     },
+     {
+      "ix": -2,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/sidewalks/-2_2.bin",
+      "featureCount": 24,
+      "bytes": 9856
+     },
+     {
+      "ix": -1,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/sidewalks/-1_2.bin",
+      "featureCount": 26,
+      "bytes": 5352
+     },
+     {
+      "ix": -2,
+      "iz": 3,
+      "url": "tiles/lower-manhattan/sidewalks/-2_3.bin",
+      "featureCount": 1,
+      "bytes": 492
+     }
+    ],
+    "parks": [
+     {
+      "ix": -1,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/parks/-1_-2.bin",
+      "featureCount": 7,
+      "bytes": 1216
+     },
+     {
+      "ix": 0,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/parks/0_-2.bin",
+      "featureCount": 26,
+      "bytes": 2120
+     },
+     {
+      "ix": 1,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/parks/1_-2.bin",
+      "featureCount": 22,
+      "bytes": 2208
+     },
+     {
+      "ix": -1,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/parks/-1_-1.bin",
+      "featureCount": 24,
+      "bytes": 2964
+     },
+     {
+      "ix": 0,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/parks/0_-1.bin",
+      "featureCount": 28,
+      "bytes": 3332
+     },
+     {
+      "ix": 1,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/parks/1_-1.bin",
+      "featureCount": 65,
+      "bytes": 5988
+     },
+     {
+      "ix": 2,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/parks/2_-1.bin",
+      "featureCount": 57,
+      "bytes": 5596
+     },
+     {
+      "ix": -1,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/parks/-1_0.bin",
+      "featureCount": 18,
+      "bytes": 4644
+     },
+     {
+      "ix": 0,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/parks/0_0.bin",
+      "featureCount": 29,
+      "bytes": 3244
+     },
+     {
+      "ix": 1,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/parks/1_0.bin",
+      "featureCount": 28,
+      "bytes": 2480
+     },
+     {
+      "ix": 2,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/parks/2_0.bin",
+      "featureCount": 5,
+      "bytes": 800
+     },
+     {
+      "ix": -1,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/parks/-1_1.bin",
+      "featureCount": 6,
+      "bytes": 2140
+     },
+     {
+      "ix": 0,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/parks/0_1.bin",
+      "featureCount": 6,
+      "bytes": 2448
+     },
+     {
+      "ix": -2,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/parks/-2_2.bin",
+      "featureCount": 6,
+      "bytes": 940
+     },
+     {
+      "ix": -1,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/parks/-1_2.bin",
+      "featureCount": 3,
+      "bytes": 612
+     },
+     {
+      "ix": 0,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/parks/0_2.bin",
+      "featureCount": 3,
+      "bytes": 416
+     }
+    ],
+    "plazas": [
+     {
+      "ix": -1,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/plazas/-1_-2.bin",
+      "featureCount": 2,
+      "bytes": 856
+     },
+     {
+      "ix": 0,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/plazas/0_-2.bin",
+      "featureCount": 9,
+      "bytes": 972
+     },
+     {
+      "ix": 1,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/plazas/1_-2.bin",
+      "featureCount": 1,
+      "bytes": 436
+     },
+     {
+      "ix": -1,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/plazas/-1_-1.bin",
+      "featureCount": 11,
+      "bytes": 2148
+     },
+     {
+      "ix": 0,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/plazas/0_-1.bin",
+      "featureCount": 8,
+      "bytes": 948
+     },
+     {
+      "ix": 1,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/plazas/1_-1.bin",
+      "featureCount": 35,
+      "bytes": 3156
+     },
+     {
+      "ix": 2,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/plazas/2_-1.bin",
+      "featureCount": 26,
+      "bytes": 2860
+     },
+     {
+      "ix": -1,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/plazas/-1_0.bin",
+      "featureCount": 8,
+      "bytes": 1036
+     },
+     {
+      "ix": 0,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/plazas/0_0.bin",
+      "featureCount": 32,
+      "bytes": 3300
+     },
+     {
+      "ix": 1,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/plazas/1_0.bin",
+      "featureCount": 24,
+      "bytes": 2180
+     },
+     {
+      "ix": 2,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/plazas/2_0.bin",
+      "featureCount": 4,
+      "bytes": 560
+     },
+     {
+      "ix": -1,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/plazas/-1_1.bin",
+      "featureCount": 1,
+      "bytes": 372
+     },
+     {
+      "ix": -2,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/plazas/-2_2.bin",
+      "featureCount": 9,
+      "bytes": 1416
+     },
+     {
+      "ix": -1,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/plazas/-1_2.bin",
+      "featureCount": 4,
+      "bytes": 844
+     },
+     {
+      "ix": -2,
+      "iz": 3,
+      "url": "tiles/lower-manhattan/plazas/-2_3.bin",
+      "featureCount": 1,
+      "bytes": 380
+     }
+    ],
+    "piers": [
+     {
+      "ix": -1,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/piers/-1_-2.bin",
+      "featureCount": 3,
+      "bytes": 864
+     },
+     {
+      "ix": -1,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/piers/-1_-1.bin",
+      "featureCount": 9,
+      "bytes": 4888
+     },
+     {
+      "ix": 3,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/piers/3_-1.bin",
+      "featureCount": 2,
+      "bytes": 748
+     },
+     {
+      "ix": -2,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/piers/-2_0.bin",
+      "featureCount": 4,
+      "bytes": 1156
+     },
+     {
+      "ix": -1,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/piers/-1_0.bin",
+      "featureCount": 7,
+      "bytes": 1336
+     },
+     {
+      "ix": 0,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/piers/0_0.bin",
+      "featureCount": 14,
+      "bytes": 2400
+     },
+     {
+      "ix": 1,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/piers/1_0.bin",
+      "featureCount": 1,
+      "bytes": 812
+     },
+     {
+      "ix": 2,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/piers/2_0.bin",
+      "featureCount": 4,
+      "bytes": 1288
+     },
+     {
+      "ix": -3,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/piers/-3_1.bin",
+      "featureCount": 5,
+      "bytes": 1196
+     },
+     {
+      "ix": -1,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/piers/-1_1.bin",
+      "featureCount": 21,
+      "bytes": 3696
+     },
+     {
+      "ix": 0,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/piers/0_1.bin",
+      "featureCount": 8,
+      "bytes": 4784
+     },
+     {
+      "ix": -4,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/piers/-4_2.bin",
+      "featureCount": 4,
+      "bytes": 1312
+     },
+     {
+      "ix": -2,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/piers/-2_2.bin",
+      "featureCount": 2,
+      "bytes": 1952
+     },
+     {
+      "ix": -1,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/piers/-1_2.bin",
+      "featureCount": 14,
+      "bytes": 2916
+     },
+     {
+      "ix": 0,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/piers/0_2.bin",
+      "featureCount": 5,
+      "bytes": 836
+     },
+     {
+      "ix": -2,
+      "iz": 3,
+      "url": "tiles/lower-manhattan/piers/-2_3.bin",
+      "featureCount": 3,
+      "bytes": 776
+     }
+    ],
+    "water": [
+     {
+      "ix": -3,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/water/-3_1.bin",
+      "featureCount": 1,
+      "bytes": 1132
+     },
+     {
+      "ix": 0,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/water/0_1.bin",
+      "featureCount": 6,
+      "bytes": 1424
+     },
+     {
+      "ix": -4,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/water/-4_2.bin",
+      "featureCount": 1,
+      "bytes": 364
+     },
+     {
+      "ix": -1,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/water/-1_2.bin",
+      "featureCount": 1,
+      "bytes": 2476
+     }
+    ],
+    "trees": [
+     {
+      "ix": -1,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/trees/-1_-2.bin",
+      "featureCount": 716,
+      "bytes": 7480
+     },
+     {
+      "ix": 0,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/trees/0_-2.bin",
+      "featureCount": 874,
+      "bytes": 9060
+     },
+     {
+      "ix": 1,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/trees/1_-2.bin",
+      "featureCount": 461,
+      "bytes": 4932
+     },
+     {
+      "ix": -1,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/trees/-1_-1.bin",
+      "featureCount": 1112,
+      "bytes": 11444
+     },
+     {
+      "ix": 0,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/trees/0_-1.bin",
+      "featureCount": 957,
+      "bytes": 9892
+     },
+     {
+      "ix": 1,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/trees/1_-1.bin",
+      "featureCount": 2190,
+      "bytes": 22228
+     },
+     {
+      "ix": 2,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/trees/2_-1.bin",
+      "featureCount": 575,
+      "bytes": 6068
+     },
+     {
+      "ix": -2,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/trees/-2_0.bin",
+      "featureCount": 47,
+      "bytes": 780
+     },
+     {
+      "ix": -1,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/trees/-1_0.bin",
+      "featureCount": 1186,
+      "bytes": 12184
+     },
+     {
+      "ix": 0,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/trees/0_0.bin",
+      "featureCount": 1048,
+      "bytes": 10792
+     },
+     {
+      "ix": 1,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/trees/1_0.bin",
+      "featureCount": 435,
+      "bytes": 4664
+     },
+     {
+      "ix": 2,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/trees/2_0.bin",
+      "featureCount": 329,
+      "bytes": 3608
+     },
+     {
+      "ix": -1,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/trees/-1_1.bin",
+      "featureCount": 518,
+      "bytes": 5500
+     },
+     {
+      "ix": 0,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/trees/0_1.bin",
+      "featureCount": 1,
+      "bytes": 316
+     }
+    ]
+   },
+   "boundary": [
+    [
+     -4559,
+     4206.5
+    ],
+    [
+     -4555.4,
+     -1804.8
+    ],
+    [
+     -404.9,
+     -1797.8
+    ],
+    [
+     -126.5,
+     -1764.4
+    ],
+    [
+     50.6,
+     -1747.7
+    ],
+    [
+     236.2,
+     -1736.6
+    ],
+    [
+     548.3,
+     -1580.8
+    ],
+    [
+     776.1,
+     -1408.2
+    ],
+    [
+     1138.9,
+     -1302.5
+    ],
+    [
+     1375.2,
+     -1213.5
+    ],
+    [
+     1653.6,
+     -1063.3
+    ],
+    [
+     1940.5,
+     -946.5
+    ],
+    [
+     2235.8,
+     -857.5
+    ],
+    [
+     2463.6,
+     -785.2
+    ],
+    [
+     3881,
+     -785.8
+    ],
+    [
+     3883.6,
+     4206.9
+    ]
+   ],
+   "mask": [
+    [
+     [
+      -3501,
+      2581
+     ],
+     [
+      -3444,
+      2542
+     ],
+     [
+      -3400,
+      2612
+     ],
+     [
+      -3240,
+      2703
+     ],
+     [
+      -3177,
+      2675
+     ],
+     [
+      -3163,
+      2578
+     ],
+     [
+      -3085,
+      2542
+     ],
+     [
+      -3098,
+      2520
+     ],
+     [
+      -3166,
+      2572
+     ],
+     [
+      -3197,
+      2517
+     ],
+     [
+      -3389,
+      2412
+     ],
+     [
+      -3475,
+      2427
+     ],
+     [
+      -3478,
+      2490
+     ],
+     [
+      -3452,
+      2531
+     ],
+     [
+      -3497,
+      2559
+     ],
+     [
+      -3522,
+      2547
+     ]
+    ],
+    [
+     [
+      -3010,
+      1819
+     ],
+     [
+      -2862,
+      1680
+     ],
+     [
+      -3017,
+      1519
+     ],
+     [
+      -2974,
+      1476
+     ],
+     [
+      -2814,
+      1634
+     ],
+     [
+      -2785,
+      1606
+     ],
+     [
+      -2720,
+      1606
+     ],
+     [
+      -2709,
+      1531
+     ],
+     [
+      -2676,
+      1497
+     ],
+     [
+      -2865,
+      1325
+     ],
+     [
+      -2937,
+      1394
+     ],
+     [
+      -2962,
+      1369
+     ],
+     [
+      -3120,
+      1536
+     ],
+     [
+      -3098,
+      1558
+     ],
+     [
+      -3180,
+      1645
+     ]
+    ],
+    [
+     [
+      -1716,
+      3117
+     ],
+     [
+      -1643,
+      3189
+     ],
+     [
+      -1515,
+      3211
+     ],
+     [
+      -1415,
+      3174
+     ],
+     [
+      -1382,
+      3230
+     ],
+     [
+      -1440,
+      3326
+     ],
+     [
+      -1362,
+      3232
+     ],
+     [
+      -1401,
+      3166
+     ],
+     [
+      -1361,
+      3167
+     ],
+     [
+      -1371,
+      3148
+     ],
+     [
+      -1234,
+      3068
+     ],
+     [
+      -1205,
+      3116
+     ],
+     [
+      -1262,
+      3163
+     ],
+     [
+      -1131,
+      3085
+     ],
+     [
+      -1199,
+      3113
+     ],
+     [
+      -1228,
+      3064
+     ],
+     [
+      -939,
+      2889
+     ],
+     [
+      -901,
+      2949
+     ],
+     [
+      -772,
+      2935
+     ],
+     [
+      -899,
+      2937
+     ],
+     [
+      -933,
+      2886
+     ],
+     [
+      -848,
+      2834
+     ],
+     [
+      -750,
+      2844
+     ],
+     [
+      -605,
+      2743
+     ],
+     [
+      -532,
+      2618
+     ],
+     [
+      -526,
+      2487
+     ],
+     [
+      -505,
+      2471
+     ],
+     [
+      -523,
+      2424
+     ],
+     [
+      -492,
+      2420
+     ],
+     [
+      -551,
+      2410
+     ],
+     [
+      -557,
+      2390
+     ],
+     [
+      -509,
+      2371
+     ],
+     [
+      -558,
+      2386
+     ],
+     [
+      -619,
+      2314
+     ],
+     [
+      -545,
+      2292
+     ],
+     [
+      -498,
+      2305
+     ],
+     [
+      -491,
+      2262
+     ],
+     [
+      -532,
+      2252
+     ],
+     [
+      -549,
+      2282
+     ],
+     [
+      -628,
+      2303
+     ],
+     [
+      -694,
+      2224
+     ],
+     [
+      -773,
+      2202
+     ],
+     [
+      -755,
+      2188
+     ],
+     [
+      -771,
+      2177
+     ],
+     [
+      -786,
+      2199
+     ],
+     [
+      -774,
+      2176
+     ],
+     [
+      -792,
+      2171
+     ],
+     [
+      -794,
+      2197
+     ],
+     [
+      -907,
+      2166
+     ],
+     [
+      -1148,
+      2183
+     ],
+     [
+      -1199,
+      2312
+     ],
+     [
+      -1724,
+      2964
+     ],
+     [
+      -1741,
+      3036
+     ]
+    ],
+    [
+     [
+      -1088,
+      898
+     ],
+     [
+      -1022,
+      918
+     ],
+     [
+      -969,
+      905
+     ],
+     [
+      -1068,
+      932
+     ],
+     [
+      -1050,
+      961
+     ],
+     [
+      -1000,
+      953
+     ],
+     [
+      -997,
+      986
+     ],
+     [
+      -995,
+      953
+     ],
+     [
+      -976,
+      959
+     ],
+     [
+      -1002,
+      1031
+     ],
+     [
+      -985,
+      1025
+     ],
+     [
+      -941,
+      1124
+     ],
+     [
+      -827,
+      1275
+     ],
+     [
+      -772,
+      1331
+     ],
+     [
+      -761,
+      1314
+     ],
+     [
+      -732,
+      1332
+     ],
+     [
+      -765,
+      1389
+     ],
+     [
+      -729,
+      1334
+     ],
+     [
+      -702,
+      1351
+     ],
+     [
+      -732,
+      1401
+     ],
+     [
+      -700,
+      1353
+     ],
+     [
+      -694,
+      1412
+     ],
+     [
+      -671,
+      1315
+     ],
+     [
+      -638,
+      1320
+     ],
+     [
+      -648,
+      1411
+     ],
+     [
+      -614,
+      1370
+     ],
+     [
+      -600,
+      1450
+     ],
+     [
+      -600,
+      1368
+     ],
+     [
+      -558,
+      1413
+     ],
+     [
+      -539,
+      1356
+     ],
+     [
+      -503,
+      1421
+     ],
+     [
+      -514,
+      1349
+     ],
+     [
+      -494,
+      1343
+     ],
+     [
+      -475,
+      1374
+     ],
+     [
+      -484,
+      1339
+     ],
+     [
+      -450,
+      1362
+     ],
+     [
+      -435,
+      1325
+     ],
+     [
+      -406,
+      1403
+     ],
+     [
+      -437,
+      1263
+     ],
+     [
+      -303,
+      1220
+     ],
+     [
+      -221,
+      1363
+     ],
+     [
+      -198,
+      1350
+     ],
+     [
+      -214,
+      1323
+     ],
+     [
+      -134,
+      1277
+     ],
+     [
+      -148,
+      1253
+     ],
+     [
+      -228,
+      1298
+     ],
+     [
+      -278,
+      1210
+     ],
+     [
+      -66,
+      1028
+     ],
+     [
+      43,
+      1154
+     ],
+     [
+      59,
+      1140
+     ],
+     [
+      -50,
+      1015
+     ],
+     [
+      164,
+      852
+     ],
+     [
+      264,
+      971
+     ],
+     [
+      284,
+      955
+     ],
+     [
+      183,
+      835
+     ],
+     [
+      226,
+      798
+     ],
+     [
+      301,
+      904
+     ],
+     [
+      340,
+      897
+     ],
+     [
+      289,
+      810
+     ],
+     [
+      332,
+      822
+     ],
+     [
+      384,
+      882
+     ],
+     [
+      456,
+      823
+     ],
+     [
+      388,
+      737
+     ],
+     [
+      423,
+      711
+     ],
+     [
+      406,
+      661
+     ],
+     [
+      668,
+      478
+     ],
+     [
+      1452,
+      315
+     ],
+     [
+      1486,
+      409
+     ],
+     [
+      2089,
+      331
+     ],
+     [
+      2085,
+      287
+     ],
+     [
+      2371,
+      245
+     ],
+     [
+      2462,
+      153
+     ],
+     [
+      2527,
+      21
+     ],
+     [
+      2685,
+      -447
+     ],
+     [
+      2768,
+      -785
+     ],
+     [
+      2464,
+      -785
+     ],
+     [
+      1940,
+      -946
+     ],
+     [
+      1654,
+      -1063
+     ],
+     [
+      1375,
+      -1214
+     ],
+     [
+      776,
+      -1408
+     ],
+     [
+      548,
+      -1581
+     ],
+     [
+      236,
+      -1737
+     ],
+     [
+      -405,
+      -1798
+     ],
+     [
+      -700,
+      -1798
+     ],
+     [
+      -708,
+      -1744
+     ],
+     [
+      -454,
+      -1718
+     ],
+     [
+      -468,
+      -1519
+     ],
+     [
+      -770,
+      -1558
+     ],
+     [
+      -774,
+      -1534
+     ],
+     [
+      -773,
+      -1505
+     ],
+     [
+      -477,
+      -1455
+     ],
+     [
+      -552,
+      -969
+     ],
+     [
+      -643,
+      -978
+     ],
+     [
+      -600,
+      -966
+     ],
+     [
+      -604,
+      -941
+     ],
+     [
+      -812,
+      -973
+     ],
+     [
+      -818,
+      -936
+     ],
+     [
+      -582,
+      -898
+     ],
+     [
+      -591,
+      -839
+     ],
+     [
+      -869,
+      -882
+     ],
+     [
+      -876,
+      -843
+     ],
+     [
+      -625,
+      -804
+     ],
+     [
+      -629,
+      -779
+     ],
+     [
+      -583,
+      -772
+     ],
+     [
+      -596,
+      -682
+     ],
+     [
+      -609,
+      -614
+     ],
+     [
+      -904,
+      -648
+     ],
+     [
+      -989,
+      -30
+     ],
+     [
+      -977,
+      -89
+     ],
+     [
+      -871,
+      -68
+     ],
+     [
+      -896,
+      71
+     ],
+     [
+      -996,
+      51
+     ],
+     [
+      -993,
+      -4
+     ],
+     [
+      -1085,
+      529
+     ],
+     [
+      -1029,
+      554
+     ],
+     [
+      -1058,
+      655
+     ],
+     [
+      -1084,
+      649
+     ],
+     [
+      -1066,
+      630
+     ],
+     [
+      -1107,
+      648
+     ],
+     [
+      -1126,
+      746
+     ]
+    ],
+    [
+     [
+      -501,
+      3218
+     ],
+     [
+      -416,
+      3151
+     ],
+     [
+      -183,
+      2964
+     ],
+     [
+      -199,
+      2939
+     ],
+     [
+      -521,
+      3195
+     ]
+    ],
+    [
+     [
+      31,
+      2896
+     ],
+     [
+      84,
+      2805
+     ],
+     [
+      -120,
+      2738
+     ],
+     [
+      -155,
+      2829
+     ]
+    ],
+    [
+     [
+      119,
+      2737
+     ],
+     [
+      184,
+      2657
+     ],
+     [
+      -31,
+      2575
+     ],
+     [
+      -66,
+      2669
+     ]
+    ],
+    [
+     [
+      219,
+      2581
+     ],
+     [
+      255,
+      2491
+     ],
+     [
+      56,
+      2417
+     ],
+     [
+      20,
+      2512
+     ]
+    ],
+    [
+     [
+      447,
+      2470
+     ],
+     [
+      395,
+      2375
+     ],
+     [
+      340,
+      2333
+     ],
+     [
+      134,
+      2257
+     ],
+     [
+      102,
+      2342
+     ]
+    ],
+    [
+     [
+      359,
+      2270
+     ],
+     [
+      399,
+      2171
+     ],
+     [
+      215,
+      2087
+     ],
+     [
+      168,
+      2181
+     ]
+    ],
+    [
+     [
+      426,
+      2085
+     ],
+     [
+      484,
+      1985
+     ],
+     [
+      304,
+      1902
+     ],
+     [
+      252,
+      2006
+     ]
+    ],
+    [
+     [
+      602,
+      1741
+     ],
+     [
+      643,
+      1640
+     ],
+     [
+      465,
+      1563
+     ],
+     [
+      418,
+      1658
+     ]
+    ],
+    [
+     [
+      673,
+      1563
+     ],
+     [
+      717,
+      1465
+     ],
+     [
+      551,
+      1389
+     ],
+     [
+      505,
+      1484
+     ]
+    ],
+    [
+     [
+      785,
+      1327
+     ],
+     [
+      917,
+      1094
+     ],
+     [
+      828,
+      1049
+     ],
+     [
+      663,
+      1256
+     ]
+    ]
    ]
   },
   {
@@ -2410,7 +4670,7 @@
    "name": "Manhattan: Houston St to Central Park",
    "description": "Greenwich Village, East Village, SoHo north edge, Chelsea, Flatiron, Gramercy, Murray Hill, Midtown, Hell's Kitchen, Hudson Yards, Billionaires' Row and Central Park",
    "provider": "nyc",
-   "builtAt": "2026-11-27T08:26:43.474Z",
+   "builtAt": "2026-11-27T09:12:29.649Z",
    "bounds": [
     -771.6031257356237,
     -9762.013849271745,
@@ -4083,963 +6343,803 @@
      -404.9,
      -1797.8
     ]
-   ]
-  },
-  {
-   "id": "lower-manhattan",
-   "name": "Lower Manhattan",
-   "description": "Manhattan south of Houston Street (SoHo, Tribeca, LES, Chinatown, FiDi, Battery Park City, Governors/Liberty/Ellis Islands)",
-   "provider": "nyc",
-   "builtAt": "2026-11-27T08:32:49.217Z",
-   "bounds": [
-    -3830.871683213193,
-    -2950.209921875119,
-    3788.2122788187785,
-    3971.2430488634245
    ],
-   "camera": {
-    "lon": -74.009,
-    "lat": 40.7075,
-    "distance": 2600,
-    "heading": 25,
-    "pitch": 38
-   },
-   "layers": {
-    "buildings": [
-     {
-      "ix": -1,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/buildings/-1_-2.bin",
-      "featureCount": 329,
-      "bytes": 24312
-     },
-     {
-      "ix": 0,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/buildings/0_-2.bin",
-      "featureCount": 991,
-      "bytes": 78436
-     },
-     {
-      "ix": 1,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/buildings/1_-2.bin",
-      "featureCount": 190,
-      "bytes": 15756
-     },
-     {
-      "ix": -1,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/buildings/-1_-1.bin",
-      "featureCount": 732,
-      "bytes": 56388
-     },
-     {
-      "ix": 0,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/buildings/0_-1.bin",
-      "featureCount": 1603,
-      "bytes": 126508
-     },
-     {
-      "ix": 1,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/buildings/1_-1.bin",
-      "featureCount": 1629,
-      "bytes": 142200
-     },
-     {
-      "ix": 2,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/buildings/2_-1.bin",
-      "featureCount": 194,
-      "bytes": 20036
-     },
-     {
-      "ix": -2,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/buildings/-2_0.bin",
-      "featureCount": 26,
-      "bytes": 3260
-     },
-     {
-      "ix": -1,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/buildings/-1_0.bin",
-      "featureCount": 1415,
-      "bytes": 114208
-     },
-     {
-      "ix": 0,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/buildings/0_0.bin",
-      "featureCount": 503,
-      "bytes": 47724
-     },
-     {
-      "ix": 1,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/buildings/1_0.bin",
-      "featureCount": 133,
-      "bytes": 12488
-     },
-     {
-      "ix": 2,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/buildings/2_0.bin",
-      "featureCount": 35,
-      "bytes": 3320
-     },
-     {
-      "ix": -4,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/buildings/-4_1.bin",
-      "featureCount": 8,
-      "bytes": 3276
-     },
-     {
-      "ix": -3,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/buildings/-3_1.bin",
-      "featureCount": 5,
-      "bytes": 2608
-     },
-     {
-      "ix": -1,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/buildings/-1_1.bin",
-      "featureCount": 115,
-      "bytes": 11504
-     },
-     {
-      "ix": 0,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/buildings/0_1.bin",
-      "featureCount": 3,
-      "bytes": 1032
-     },
-     {
-      "ix": -4,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/buildings/-4_2.bin",
-      "featureCount": 36,
-      "bytes": 3168
-     },
-     {
-      "ix": -2,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/buildings/-2_2.bin",
-      "featureCount": 25,
-      "bytes": 3972
-     },
-     {
-      "ix": -1,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/buildings/-1_2.bin",
-      "featureCount": 97,
-      "bytes": 10204
-     },
-     {
-      "ix": 0,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/buildings/0_2.bin",
-      "featureCount": 5,
-      "bytes": 928
-     },
-     {
-      "ix": -2,
-      "iz": 3,
-      "url": "tiles/lower-manhattan/buildings/-2_3.bin",
-      "featureCount": 15,
-      "bytes": 1712
-     }
-    ],
-    "roads": [
-     {
-      "ix": -1,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/roads/-1_-2.bin",
-      "featureCount": 86,
-      "bytes": 11860
-     },
-     {
-      "ix": 0,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/roads/0_-2.bin",
-      "featureCount": 175,
-      "bytes": 17448
-     },
-     {
-      "ix": 1,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/roads/1_-2.bin",
-      "featureCount": 27,
-      "bytes": 5996
-     },
-     {
-      "ix": -1,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/roads/-1_-1.bin",
-      "featureCount": 171,
-      "bytes": 21696
-     },
-     {
-      "ix": 0,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/roads/0_-1.bin",
-      "featureCount": 294,
-      "bytes": 31004
-     },
-     {
-      "ix": 1,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/roads/1_-1.bin",
-      "featureCount": 270,
-      "bytes": 29412
-     },
-     {
-      "ix": 2,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/roads/2_-1.bin",
-      "featureCount": 75,
-      "bytes": 10956
-     },
-     {
-      "ix": -2,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/roads/-2_0.bin",
-      "featureCount": 1,
-      "bytes": 728
-     },
-     {
-      "ix": -1,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/roads/-1_0.bin",
-      "featureCount": 278,
-      "bytes": 35252
-     },
-     {
-      "ix": 0,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/roads/0_0.bin",
-      "featureCount": 223,
-      "bytes": 28480
-     },
-     {
-      "ix": 1,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/roads/1_0.bin",
-      "featureCount": 69,
-      "bytes": 8144
-     },
-     {
-      "ix": 2,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/roads/2_0.bin",
-      "featureCount": 6,
-      "bytes": 1480
-     },
-     {
-      "ix": -4,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/roads/-4_1.bin",
-      "featureCount": 6,
-      "bytes": 1792
-     },
-     {
-      "ix": -1,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/roads/-1_1.bin",
-      "featureCount": 41,
-      "bytes": 8176
-     },
-     {
-      "ix": -2,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/roads/-2_2.bin",
-      "featureCount": 38,
-      "bytes": 15428
-     },
-     {
-      "ix": -1,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/roads/-1_2.bin",
-      "featureCount": 28,
-      "bytes": 8344
-     },
-     {
-      "ix": -2,
-      "iz": 3,
-      "url": "tiles/lower-manhattan/roads/-2_3.bin",
-      "featureCount": 2,
-      "bytes": 1152
-     }
-    ],
-    "sidewalks": [
-     {
-      "ix": -1,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/sidewalks/-1_-2.bin",
-      "featureCount": 72,
-      "bytes": 16788
-     },
-     {
-      "ix": 0,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/sidewalks/0_-2.bin",
-      "featureCount": 82,
-      "bytes": 17644
-     },
-     {
-      "ix": 1,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/sidewalks/1_-2.bin",
-      "featureCount": 34,
-      "bytes": 5056
-     },
-     {
-      "ix": -1,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/sidewalks/-1_-1.bin",
-      "featureCount": 102,
-      "bytes": 31480
-     },
-     {
-      "ix": 0,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/sidewalks/0_-1.bin",
-      "featureCount": 130,
-      "bytes": 35472
-     },
-     {
-      "ix": 1,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/sidewalks/1_-1.bin",
-      "featureCount": 171,
-      "bytes": 40504
-     },
-     {
-      "ix": 2,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/sidewalks/2_-1.bin",
-      "featureCount": 64,
-      "bytes": 26636
-     },
-     {
-      "ix": -2,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/sidewalks/-2_0.bin",
-      "featureCount": 5,
-      "bytes": 4544
-     },
-     {
-      "ix": -1,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/sidewalks/-1_0.bin",
-      "featureCount": 131,
-      "bytes": 37164
-     },
-     {
-      "ix": 0,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/sidewalks/0_0.bin",
-      "featureCount": 69,
-      "bytes": 19940
-     },
-     {
-      "ix": 1,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/sidewalks/1_0.bin",
-      "featureCount": 44,
-      "bytes": 12996
-     },
-     {
-      "ix": 2,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/sidewalks/2_0.bin",
-      "featureCount": 9,
-      "bytes": 3444
-     },
-     {
-      "ix": -4,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/sidewalks/-4_1.bin",
-      "featureCount": 3,
-      "bytes": 5180
-     },
-     {
-      "ix": -3,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/sidewalks/-3_1.bin",
-      "featureCount": 1,
-      "bytes": 1824
-     },
-     {
-      "ix": -1,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/sidewalks/-1_1.bin",
-      "featureCount": 19,
-      "bytes": 12904
-     },
-     {
-      "ix": -4,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/sidewalks/-4_2.bin",
-      "featureCount": 2,
-      "bytes": 1208
-     },
-     {
-      "ix": -2,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/sidewalks/-2_2.bin",
-      "featureCount": 24,
-      "bytes": 9856
-     },
-     {
-      "ix": -1,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/sidewalks/-1_2.bin",
-      "featureCount": 26,
-      "bytes": 5352
-     },
-     {
-      "ix": -2,
-      "iz": 3,
-      "url": "tiles/lower-manhattan/sidewalks/-2_3.bin",
-      "featureCount": 1,
-      "bytes": 492
-     }
-    ],
-    "parks": [
-     {
-      "ix": -1,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/parks/-1_-2.bin",
-      "featureCount": 7,
-      "bytes": 1216
-     },
-     {
-      "ix": 0,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/parks/0_-2.bin",
-      "featureCount": 26,
-      "bytes": 2120
-     },
-     {
-      "ix": 1,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/parks/1_-2.bin",
-      "featureCount": 22,
-      "bytes": 2208
-     },
-     {
-      "ix": -1,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/parks/-1_-1.bin",
-      "featureCount": 24,
-      "bytes": 2964
-     },
-     {
-      "ix": 0,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/parks/0_-1.bin",
-      "featureCount": 28,
-      "bytes": 3332
-     },
-     {
-      "ix": 1,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/parks/1_-1.bin",
-      "featureCount": 65,
-      "bytes": 5988
-     },
-     {
-      "ix": 2,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/parks/2_-1.bin",
-      "featureCount": 57,
-      "bytes": 5596
-     },
-     {
-      "ix": -1,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/parks/-1_0.bin",
-      "featureCount": 18,
-      "bytes": 4644
-     },
-     {
-      "ix": 0,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/parks/0_0.bin",
-      "featureCount": 29,
-      "bytes": 3244
-     },
-     {
-      "ix": 1,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/parks/1_0.bin",
-      "featureCount": 28,
-      "bytes": 2480
-     },
-     {
-      "ix": 2,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/parks/2_0.bin",
-      "featureCount": 5,
-      "bytes": 800
-     },
-     {
-      "ix": -1,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/parks/-1_1.bin",
-      "featureCount": 6,
-      "bytes": 2140
-     },
-     {
-      "ix": 0,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/parks/0_1.bin",
-      "featureCount": 6,
-      "bytes": 2448
-     },
-     {
-      "ix": -2,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/parks/-2_2.bin",
-      "featureCount": 6,
-      "bytes": 940
-     },
-     {
-      "ix": -1,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/parks/-1_2.bin",
-      "featureCount": 3,
-      "bytes": 612
-     },
-     {
-      "ix": 0,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/parks/0_2.bin",
-      "featureCount": 3,
-      "bytes": 416
-     }
-    ],
-    "plazas": [
-     {
-      "ix": -1,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/plazas/-1_-2.bin",
-      "featureCount": 2,
-      "bytes": 856
-     },
-     {
-      "ix": 0,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/plazas/0_-2.bin",
-      "featureCount": 9,
-      "bytes": 972
-     },
-     {
-      "ix": 1,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/plazas/1_-2.bin",
-      "featureCount": 1,
-      "bytes": 436
-     },
-     {
-      "ix": -1,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/plazas/-1_-1.bin",
-      "featureCount": 11,
-      "bytes": 2148
-     },
-     {
-      "ix": 0,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/plazas/0_-1.bin",
-      "featureCount": 8,
-      "bytes": 948
-     },
-     {
-      "ix": 1,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/plazas/1_-1.bin",
-      "featureCount": 35,
-      "bytes": 3156
-     },
-     {
-      "ix": 2,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/plazas/2_-1.bin",
-      "featureCount": 26,
-      "bytes": 2860
-     },
-     {
-      "ix": -1,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/plazas/-1_0.bin",
-      "featureCount": 8,
-      "bytes": 1036
-     },
-     {
-      "ix": 0,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/plazas/0_0.bin",
-      "featureCount": 32,
-      "bytes": 3300
-     },
-     {
-      "ix": 1,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/plazas/1_0.bin",
-      "featureCount": 24,
-      "bytes": 2180
-     },
-     {
-      "ix": 2,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/plazas/2_0.bin",
-      "featureCount": 4,
-      "bytes": 560
-     },
-     {
-      "ix": -1,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/plazas/-1_1.bin",
-      "featureCount": 1,
-      "bytes": 372
-     },
-     {
-      "ix": -2,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/plazas/-2_2.bin",
-      "featureCount": 9,
-      "bytes": 1416
-     },
-     {
-      "ix": -1,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/plazas/-1_2.bin",
-      "featureCount": 4,
-      "bytes": 844
-     },
-     {
-      "ix": -2,
-      "iz": 3,
-      "url": "tiles/lower-manhattan/plazas/-2_3.bin",
-      "featureCount": 1,
-      "bytes": 380
-     }
-    ],
-    "piers": [
-     {
-      "ix": -1,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/piers/-1_-2.bin",
-      "featureCount": 3,
-      "bytes": 864
-     },
-     {
-      "ix": -1,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/piers/-1_-1.bin",
-      "featureCount": 9,
-      "bytes": 4888
-     },
-     {
-      "ix": 3,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/piers/3_-1.bin",
-      "featureCount": 2,
-      "bytes": 748
-     },
-     {
-      "ix": -2,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/piers/-2_0.bin",
-      "featureCount": 4,
-      "bytes": 1156
-     },
-     {
-      "ix": -1,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/piers/-1_0.bin",
-      "featureCount": 7,
-      "bytes": 1336
-     },
-     {
-      "ix": 0,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/piers/0_0.bin",
-      "featureCount": 14,
-      "bytes": 2400
-     },
-     {
-      "ix": 1,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/piers/1_0.bin",
-      "featureCount": 1,
-      "bytes": 812
-     },
-     {
-      "ix": 2,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/piers/2_0.bin",
-      "featureCount": 4,
-      "bytes": 1288
-     },
-     {
-      "ix": -3,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/piers/-3_1.bin",
-      "featureCount": 5,
-      "bytes": 1196
-     },
-     {
-      "ix": -1,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/piers/-1_1.bin",
-      "featureCount": 21,
-      "bytes": 3696
-     },
-     {
-      "ix": 0,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/piers/0_1.bin",
-      "featureCount": 8,
-      "bytes": 4784
-     },
-     {
-      "ix": -4,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/piers/-4_2.bin",
-      "featureCount": 4,
-      "bytes": 1312
-     },
-     {
-      "ix": -2,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/piers/-2_2.bin",
-      "featureCount": 2,
-      "bytes": 1952
-     },
-     {
-      "ix": -1,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/piers/-1_2.bin",
-      "featureCount": 14,
-      "bytes": 2916
-     },
-     {
-      "ix": 0,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/piers/0_2.bin",
-      "featureCount": 5,
-      "bytes": 836
-     },
-     {
-      "ix": -2,
-      "iz": 3,
-      "url": "tiles/lower-manhattan/piers/-2_3.bin",
-      "featureCount": 3,
-      "bytes": 776
-     }
-    ],
-    "water": [
-     {
-      "ix": -3,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/water/-3_1.bin",
-      "featureCount": 1,
-      "bytes": 1132
-     },
-     {
-      "ix": 0,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/water/0_1.bin",
-      "featureCount": 6,
-      "bytes": 1424
-     },
-     {
-      "ix": -4,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/water/-4_2.bin",
-      "featureCount": 1,
-      "bytes": 364
-     },
-     {
-      "ix": -1,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/water/-1_2.bin",
-      "featureCount": 1,
-      "bytes": 2476
-     }
-    ],
-    "trees": [
-     {
-      "ix": -1,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/trees/-1_-2.bin",
-      "featureCount": 716,
-      "bytes": 7480
-     },
-     {
-      "ix": 0,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/trees/0_-2.bin",
-      "featureCount": 874,
-      "bytes": 9060
-     },
-     {
-      "ix": 1,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/trees/1_-2.bin",
-      "featureCount": 461,
-      "bytes": 4932
-     },
-     {
-      "ix": -1,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/trees/-1_-1.bin",
-      "featureCount": 1112,
-      "bytes": 11444
-     },
-     {
-      "ix": 0,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/trees/0_-1.bin",
-      "featureCount": 957,
-      "bytes": 9892
-     },
-     {
-      "ix": 1,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/trees/1_-1.bin",
-      "featureCount": 2190,
-      "bytes": 22228
-     },
-     {
-      "ix": 2,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/trees/2_-1.bin",
-      "featureCount": 575,
-      "bytes": 6068
-     },
-     {
-      "ix": -2,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/trees/-2_0.bin",
-      "featureCount": 47,
-      "bytes": 780
-     },
-     {
-      "ix": -1,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/trees/-1_0.bin",
-      "featureCount": 1186,
-      "bytes": 12184
-     },
-     {
-      "ix": 0,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/trees/0_0.bin",
-      "featureCount": 1048,
-      "bytes": 10792
-     },
-     {
-      "ix": 1,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/trees/1_0.bin",
-      "featureCount": 435,
-      "bytes": 4664
-     },
-     {
-      "ix": 2,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/trees/2_0.bin",
-      "featureCount": 329,
-      "bytes": 3608
-     },
-     {
-      "ix": -1,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/trees/-1_1.bin",
-      "featureCount": 518,
-      "bytes": 5500
-     },
-     {
-      "ix": 0,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/trees/0_1.bin",
-      "featureCount": 1,
-      "bytes": 316
-     }
-    ]
-   },
-   "boundary": [
+   "mask": [
     [
-     -4559,
-     4206.5
+     [
+      -405,
+      -1798
+     ],
+     [
+      236,
+      -1737
+     ],
+     [
+      548,
+      -1581
+     ],
+     [
+      776,
+      -1408
+     ],
+     [
+      1375,
+      -1214
+     ],
+     [
+      1654,
+      -1063
+     ],
+     [
+      1940,
+      -946
+     ],
+     [
+      2464,
+      -785
+     ],
+     [
+      2768,
+      -785
+     ],
+     [
+      2888,
+      -1451
+     ],
+     [
+      2918,
+      -1791
+     ],
+     [
+      2889,
+      -1887
+     ],
+     [
+      2749,
+      -2058
+     ],
+     [
+      2710,
+      -2256
+     ],
+     [
+      2727,
+      -2272
+     ],
+     [
+      2703,
+      -2296
+     ],
+     [
+      2662,
+      -2507
+     ],
+     [
+      2738,
+      -2466
+     ],
+     [
+      2758,
+      -2499
+     ],
+     [
+      2788,
+      -2479
+     ],
+     [
+      2804,
+      -2528
+     ],
+     [
+      2789,
+      -2539
+     ],
+     [
+      2779,
+      -2492
+     ],
+     [
+      2660,
+      -2546
+     ],
+     [
+      2678,
+      -2559
+     ],
+     [
+      2656,
+      -2560
+     ],
+     [
+      2657,
+      -2588
+     ],
+     [
+      2687,
+      -2578
+     ],
+     [
+      2657,
+      -2590
+     ],
+     [
+      2660,
+      -2614
+     ],
+     [
+      2697,
+      -2597
+     ],
+     [
+      2664,
+      -2629
+     ],
+     [
+      2795,
+      -2558
+     ],
+     [
+      2827,
+      -2561
+     ],
+     [
+      2812,
+      -2942
+     ],
+     [
+      2849,
+      -3063
+     ],
+     [
+      2877,
+      -3332
+     ],
+     [
+      2937,
+      -3485
+     ],
+     [
+      2977,
+      -3473
+     ],
+     [
+      2942,
+      -3497
+     ],
+     [
+      2957,
+      -3526
+     ],
+     [
+      3988,
+      -5071
+     ],
+     [
+      2782,
+      -5745
+     ],
+     [
+      4753,
+      -9352
+     ],
+     [
+      4020,
+      -9764
+     ],
+     [
+      2028,
+      -6152
+     ],
+     [
+      986,
+      -6717
+     ],
+     [
+      986,
+      -6698
+     ],
+     [
+      1026,
+      -6694
+     ],
+     [
+      998,
+      -6644
+     ],
+     [
+      833,
+      -6732
+     ],
+     [
+      824,
+      -6716
+     ],
+     [
+      974,
+      -6632
+     ],
+     [
+      946,
+      -6582
+     ],
+     [
+      769,
+      -6681
+     ],
+     [
+      753,
+      -6651
+     ],
+     [
+      934,
+      -6536
+     ],
+     [
+      902,
+      -6501
+     ],
+     [
+      851,
+      -6529
+     ],
+     [
+      843,
+      -6513
+     ],
+     [
+      892,
+      -6482
+     ],
+     [
+      817,
+      -6345
+     ],
+     [
+      610,
+      -6459
+     ],
+     [
+      588,
+      -6419
+     ],
+     [
+      795,
+      -6303
+     ],
+     [
+      753,
+      -6226
+     ],
+     [
+      550,
+      -6341
+     ],
+     [
+      528,
+      -6313
+     ],
+     [
+      805,
+      -6156
+     ],
+     [
+      746,
+      -6048
+     ],
+     [
+      467,
+      -6201
+     ],
+     [
+      453,
+      -6167
+     ],
+     [
+      727,
+      -6014
+     ],
+     [
+      669,
+      -5908
+     ],
+     [
+      388,
+      -6059
+     ],
+     [
+      376,
+      -6027
+     ],
+     [
+      651,
+      -5874
+     ],
+     [
+      616,
+      -5834
+     ],
+     [
+      626,
+      -5811
+     ],
+     [
+      600,
+      -5763
+     ],
+     [
+      332,
+      -5909
+     ],
+     [
+      314,
+      -5869
+     ],
+     [
+      577,
+      -5722
+     ],
+     [
+      512,
+      -5634
+     ],
+     [
+      241,
+      -5782
+     ],
+     [
+      257,
+      -5768
+     ],
+     [
+      240,
+      -5737
+     ],
+     [
+      424,
+      -5635
+     ],
+     [
+      389,
+      -5572
+     ],
+     [
+      201,
+      -5675
+     ],
+     [
+      189,
+      -5653
+     ],
+     [
+      377,
+      -5549
+     ],
+     [
+      320,
+      -5447
+     ],
+     [
+      131,
+      -5551
+     ],
+     [
+      123,
+      -5532
+     ],
+     [
+      309,
+      -5426
+     ],
+     [
+      271,
+      -5358
+     ],
+     [
+      242,
+      -5374
+     ],
+     [
+      175,
+      -5255
+     ],
+     [
+      205,
+      -5237
+     ],
+     [
+      197,
+      -5222
+     ],
+     [
+      142,
+      -5244
+     ],
+     [
+      185,
+      -5200
+     ],
+     [
+      151,
+      -5199
+     ],
+     [
+      126,
+      -5152
+     ],
+     [
+      -45,
+      -5240
+     ],
+     [
+      -84,
+      -5163
+     ],
+     [
+      82,
+      -5071
+     ],
+     [
+      61,
+      -5035
+     ],
+     [
+      101,
+      -5010
+     ],
+     [
+      -147,
+      -4624
+     ],
+     [
+      -198,
+      -4403
+     ],
+     [
+      -227,
+      -4419
+     ],
+     [
+      -235,
+      -4403
+     ],
+     [
+      -335,
+      -4468
+     ],
+     [
+      -205,
+      -4381
+     ],
+     [
+      -209,
+      -4366
+     ],
+     [
+      -282,
+      -4403
+     ],
+     [
+      -214,
+      -4351
+     ],
+     [
+      -253,
+      -4213
+     ],
+     [
+      -385,
+      -4288
+     ],
+     [
+      -394,
+      -4255
+     ],
+     [
+      -262,
+      -4182
+     ],
+     [
+      -274,
+      -4139
+     ],
+     [
+      -300,
+      -4138
+     ],
+     [
+      -333,
+      -4022
+     ],
+     [
+      -431,
+      -4035
+     ],
+     [
+      -440,
+      -3994
+     ],
+     [
+      -248,
+      -3964
+     ],
+     [
+      -258,
+      -3895
+     ],
+     [
+      -447,
+      -3920
+     ],
+     [
+      -456,
+      -3877
+     ],
+     [
+      -265,
+      -3847
+     ],
+     [
+      -274,
+      -3781
+     ],
+     [
+      -462,
+      -3806
+     ],
+     [
+      -472,
+      -3763
+     ],
+     [
+      -284,
+      -3733
+     ],
+     [
+      -292,
+      -3668
+     ],
+     [
+      -479,
+      -3694
+     ],
+     [
+      -492,
+      -3599
+     ],
+     [
+      -484,
+      -3642
+     ],
+     [
+      -435,
+      -3634
+     ],
+     [
+      -454,
+      -3593
+     ],
+     [
+      -425,
+      -3590
+     ],
+     [
+      -430,
+      -3634
+     ],
+     [
+      -383,
+      -3628
+     ],
+     [
+      -402,
+      -3585
+     ],
+     [
+      -373,
+      -3582
+     ],
+     [
+      -377,
+      -3628
+     ],
+     [
+      -335,
+      -3620
+     ],
+     [
+      -352,
+      -3578
+     ],
+     [
+      -327,
+      -3575
+     ],
+     [
+      -330,
+      -3621
+     ],
+     [
+      -300,
+      -3617
+     ],
+     [
+      -305,
+      -3584
+     ],
+     [
+      -230,
+      -3571
+     ],
+     [
+      -245,
+      -3464
+     ],
+     [
+      -290,
+      -3470
+     ],
+     [
+      -296,
+      -3437
+     ],
+     [
+      -508,
+      -3466
+     ],
+     [
+      -519,
+      -3424
+     ],
+     [
+      -302,
+      -3391
+     ],
+     [
+      -305,
+      -3356
+     ],
+     [
+      -261,
+      -3349
+     ],
+     [
+      -269,
+      -3283
+     ],
+     [
+      -408,
+      -3317
+     ],
+     [
+      -455,
+      -3231
+     ],
+     [
+      -370,
+      -3184
+     ],
+     [
+      -355,
+      -3207
+     ],
+     [
+      -305,
+      -3180
+     ],
+     [
+      -294,
+      -3111
+     ],
+     [
+      -562,
+      -3111
+     ],
+     [
+      -461,
+      -3093
+     ],
+     [
+      -471,
+      -2946
+     ],
+     [
+      -371,
+      -2936
+     ],
+     [
+      -376,
+      -2846
+     ],
+     [
+      -433,
+      -2849
+     ],
+     [
+      -429,
+      -2816
+     ],
+     [
+      -378,
+      -2812
+     ],
+     [
+      -406,
+      -2392
+     ],
+     [
+      -506,
+      -2398
+     ],
+     [
+      -508,
+      -2367
+     ],
+     [
+      -408,
+      -2361
+     ],
+     [
+      -399,
+      -2298
+     ],
+     [
+      -414,
+      -2282
+     ],
+     [
+      -675,
+      -2286
+     ],
+     [
+      -675,
+      -2256
+     ],
+     [
+      -417,
+      -2250
+     ],
+     [
+      -435,
+      -1965
+     ],
+     [
+      -678,
+      -1992
+     ],
+     [
+      -700,
+      -1798
+     ]
     ],
     [
-     -4555.4,
-     -1804.8
-    ],
-    [
-     -404.9,
-     -1797.8
-    ],
-    [
-     -126.5,
-     -1764.4
-    ],
-    [
-     50.6,
-     -1747.7
-    ],
-    [
-     236.2,
-     -1736.6
-    ],
-    [
-     548.3,
-     -1580.8
-    ],
-    [
-     776.1,
-     -1408.2
-    ],
-    [
-     1138.9,
-     -1302.5
-    ],
-    [
-     1375.2,
-     -1213.5
-    ],
-    [
-     1653.6,
-     -1063.3
-    ],
-    [
-     1940.5,
-     -946.5
-    ],
-    [
-     2235.8,
-     -857.5
-    ],
-    [
-     2463.6,
-     -785.2
-    ],
-    [
-     3881,
-     -785.8
-    ],
-    [
-     3883.6,
-     4206.9
+     [
+      3767,
+      -4098
+     ],
+     [
+      3803,
+      -4120
+     ],
+     [
+      4055,
+      -4377
+     ],
+     [
+      4424,
+      -4827
+     ],
+     [
+      4243,
+      -4928
+     ],
+     [
+      3962,
+      -4542
+     ],
+     [
+      3750,
+      -4111
+     ]
     ]
    ]
   }

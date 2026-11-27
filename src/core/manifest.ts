@@ -19,6 +19,8 @@ export interface ManifestRegion {
   bounds: [number, number, number, number];
   /** region boundary polygon in scene x,z (used to mask procedural context land) */
   boundary: [number, number][];
+  /** land actually covered by the region (boundary ∩ borough land), outer rings in scene x,z; masks procedural context land */
+  mask?: [number, number][][];
   camera?: { lon: number; lat: number; distance: number; heading: number; pitch: number };
   layers: Record<string, ManifestTile[]>;
 }

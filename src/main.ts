@@ -286,13 +286,14 @@ function regionMask(m: Manifest, rect: THREE.Vector4): THREE.Texture {
   g.filter = 'blur(3px)';
   g.fillStyle = '#fff';
   for (const r of m.regions) {
-    if (!r.boundary?.length) continue;
-    g.beginPath();
-    r.boundary.forEach(([x, z], i) => {
-      const px = ((x - rect.x) / rect.z) * N, py = ((z - rect.y) / rect.w) * N;
-      i ? g.lineTo(px, py) : g.moveTo(px, py);
-    });
-    g.closePath(); g.fill();
+    for (const ring of r.mask ?? (r.boundary?.length ? [r.boundary] : [])) {
+      g.beginPath();
+      ring.forEach(([x, z], i) => {
+        const px = ((x - rect.x) / rect.z) * N, py = ((z - rect.y) / rect.w) * N;
+        i ? g.lineTo(px, py) : g.moveTo(px, py);
+      });
+      g.closePath(); g.fill();
+    }
   }
   const t = new THREE.CanvasTexture(cv);
   t.flipY = false;

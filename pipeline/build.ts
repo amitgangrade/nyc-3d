@@ -160,6 +160,17 @@ async function buildRegion(def: RegionDef) {
     const kb = list.reduce((s, t) => s + t.bytes, 0) / 1024;
     console.log(`    kept ${kept}/${feats.length} in ${list.length} tiles (${kb.toFixed(0)} KB)`);
   }
+  // land mask: the part of the boundary that is the region's own land
+  try {
+    const bnd = [[...boundary, boundary[0]]] as any;
+    let mask: any = null;
+    if (boros && def.borough) mask = polygonClipping.intersection(bnd, boros[def.borough] as any); // one multipolygon arg
+    else if (boros && def.excludeNYC) mask = polygonClipping.difference(bnd, ...(allBoroPolys as any));
+    if (mask) {
+      entry.mask = (mask as Poly[]).map((p) => cleanPoly([p[0]], 15, 2000)?.[0]).filter(Boolean)
+        .map((r) => r!.map(([x, z]) => [Math.round(x), Math.round(z)] as [number, number]));
+    }
+  } catch (e) { console.warn('  mask failed', e); }
   const m = readManifest();
   m.regions = m.regions.filter((r) => r.id !== def.id).concat(entry);
   writeManifest(m);

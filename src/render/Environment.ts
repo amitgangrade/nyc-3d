@@ -89,6 +89,7 @@ export class Environment {
     f.x = Math.round(f.x / texel) * texel; f.z = Math.round(f.z / texel) * texel; f.y = 0;
     this.key.target.position.copy(f);
     this.key.position.copy(f).addScaledVector(this.keyDir, 6000);
-    this.key.castShadow = this.key.intensity > 0.02;
+    // shadows only from the sun: a low full moon makes km-long shadows that read as artefacts
+    this.key.castShadow = this.key.intensity > 0.02 && (this.atm?.sunElevation ?? 90) > -4;
   }
 }
