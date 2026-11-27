@@ -32,6 +32,12 @@ export class UI {
 
     const list = $('places-list');
     for (const p of PLACES) {
+      if (p.group) {
+        const h = document.createElement('div');
+        h.className = 'place-group';
+        h.textContent = p.group;
+        list.appendChild(h);
+      }
       const b = document.createElement('button');
       b.className = 'place';
       b.innerHTML = `<span class="place-name">${p.name}</span>${p.sub ? `<span class="place-sub">${p.sub}</span>` : ''}`;

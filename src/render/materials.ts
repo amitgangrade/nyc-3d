@@ -67,7 +67,8 @@ Surface roofSurface(float seed){
 }
 
 Surface surface(){
-  float h = vInfo.x, seed = vInfo.y; int style = int(vInfo.z + 0.5);
+  float h = vInfo.x, seed = vInfo.y; int rawStyle = int(vInfo.z + 0.5);
+  int special = rawStyle / 10; int style = rawStyle - special * 10;
   vec3 N = normalize(vWN);
   if (N.y > 0.5) return roofSurface(seed);
 
@@ -175,6 +176,32 @@ Surface surface(){
       float pulse = 0.85 + 0.15 * sin(uTime * 0.6 + seed * 40.0);
       emit += acc * uLights * (wash * 0.55 + band * 1.1 * pulse) * (1.0 - mask * 0.6);
     }
+  }
+  // ---- signature lighting
+  if (special == 5) {          // Empire State: crown floods in slowly cycling colours
+    float k = mod(uTime * 0.12, 3.0);
+    vec3 c0 = vec3(1.0, 0.15, 0.2), c1 = vec3(1.0, 0.95, 0.9), c2 = vec3(0.2, 0.45, 1.0);
+    vec3 cc = k < 1.0 ? mix(c0, c1, smoothstep(0.7, 1.0, k)) : k < 2.0 ? mix(c1, c2, smoothstep(1.7, 2.0, k)) : mix(c2, c0, smoothstep(2.7, 3.0, k));
+    float zone = smoothstep(250.0, 262.0, v);
+    emit += cc * zone * (1.6 + 0.4 * smoothstep(320.0, 380.0, v)) * max(uLights, 0.0) * (1.0 - mask * 0.4);
+  } else if (special == 6) {   // Chrysler: terraced crown with sunburst windows
+    float zone = smoothstep(232.0, 245.0, v);
+    float tri = step(0.5, fract(u / 3.0 + v / 6.0));
+    emit += vec3(1.0, 0.93, 0.78) * zone * (0.9 + 0.9 * tri) * uLights;
+  } else if (special == 7 && v > 3.0 && v < min(60.0, h - 2.0) && h > 10.0) { // Times Square billboards
+    vec2 bc = vec2(u / 11.0, v / 7.5);
+    vec2 bid = floor(bc);
+    float on = step(0.25, h21(bid + seed * 7.0));
+    vec2 bf = fract(bc);
+    float frame = step(0.04, bf.x) * step(bf.x, 0.96) * step(0.06, bf.y) * step(bf.y, 0.94);
+    float hueV = fract(h21(bid) + uTime * 0.03 * (0.5 + h21(bid + 3.0)) + bf.y * 0.15 * h21(bid + 9.0));
+    vec3 hc = clamp(abs(mod(hueV * 6.0 + vec3(0.0, 4.0, 2.0), 6.0) - 3.0) - 1.0, 0.0, 1.0);
+    float anim = 0.75 + 0.25 * sin(uTime * (1.0 + 3.0 * h21(bid + 5.0)) + bf.x * 6.0);
+    vec3 screen = (hc * 0.8 + 0.25) * anim * on * frame;
+    float lod2 = smoothstep(0.4, 1.0, length(fwidth(bc)));
+    screen = mix(screen, vec3(0.55, 0.45, 0.6) * 0.6, lod2);
+    S.albedo = mix(S.albedo, vec3(0.03), 0.85);
+    emit += screen * (1.1 + 2.6 * uLights);
   }
   S.emit = emit;
   return S;

@@ -65,7 +65,7 @@ export async function loadLandmarks(manifest: Manifest, dataRoot: string, proj: 
       const b = ((def.bearing ?? 0) * Math.PI) / 180;
       fp = { center: new THREE.Vector2(x, z), angle: Math.atan2(-Math.cos(b), Math.sin(b)), w: 0, d: 0, ring: [] };
     } else {
-      fp = await findFootprint(manifest, dataRoot, x, z);
+      fp = await findFootprint(manifest, dataRoot, x, z).catch((e) => { console.warn(`landmark ${def.id}:`, e); return null; });
       if (!fp) { console.warn(`landmark ${def.id}: footprint not found`); continue; }
       exclude.push([x, z]);
     }
@@ -84,7 +84,9 @@ async function findFootprint(manifest: Manifest, root: string, x: number, z: num
   for (const r of manifest.regions) {
     for (const t of r.layers.buildings ?? []) {
       if (Math.abs(t.ix - ix) > 1 || Math.abs(t.iz - iz) > 1) continue;
-      const tile = decodeTile(await (await fetch(`${root}/${t.url}`)).arrayBuffer());
+      const res = await fetch(`${root}/${t.url}`);
+      if (!res.ok) continue;
+      const tile = decodeTile(await res.arrayBuffer());
       const [ox, oz] = tile.header.origin;
       const fr = tile.sections.featRings, rv = tile.sections.ringVerts, c = tile.sections.coords;
       for (let f = 0; f < tile.header.featureCount; f++) {

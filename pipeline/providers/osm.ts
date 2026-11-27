@@ -397,3 +397,44 @@ export const osmProvider: Provider = {
   },
 };
 
+
+// ------------------------------------------------------------------ 3D parts overlay
+export interface OsmPart { poly: Poly; height: number; minHeight: number; c: Pt; area: number }
+
+/**
+ * OSM `building:part` volumes (with heights) inside a bbox. Used by other
+ * providers to refine flat footprint extrusions into stepped towers.
+ */
+export async function fetchOsmBuildingParts(bbox: [number, number, number, number], proj: Projection, cacheDir: string, refresh: boolean): Promise<OsmPart[]> {
+  const [w, s, e, n] = bbox;
+  const NX = Math.max(1, Math.ceil((e - w) / 0.02)), NY = Math.max(1, Math.ceil((n - s) / 0.015));
+  const seen = new Map<string, OsmEl>();
+  for (let i = 0; i < NX; i++) for (let j = 0; j < NY; j++) {
+    const b = `${s + ((n - s) * j) / NY},${w + ((e - w) * i) / NX},${s + ((n - s) * (j + 1)) / NY},${w + ((e - w) * (i + 1)) / NX}`;
+    const els = await cachedJSON<OsmEl[]>(join(cacheDir, `parts-${NX}x${NY}-${i}-${j}.json`), refresh, async () => {
+      process.stdout.write(`    OSM building parts ${i * NY + j + 1}/${NX * NY}… `);
+      const q = `[out:json][timeout:180];(way["building:part"](${b});relation["building:part"]["type"="multipolygon"](${b}););out geom qt;`;
+      const jj = JSON.parse(await overpass(q, cacheDir)) as { elements: OsmEl[] };
+      console.log(`${jj.elements.length} parts`);
+      return jj.elements;
+    });
+    for (const el of els) seen.set(`${el.type}/${el.id}`, el);
+  }
+  const out: OsmPart[] = [];
+  for (const el of seen.values()) {
+    const t = el.tags ?? {};
+    if (t['building:part'] === 'no' || t.location === 'underground') continue;
+    let h = parseLength(t.height);
+    const lv = parseFloat(t['building:levels'] ?? '');
+    if (h === undefined && isFinite(lv)) h = lv * LEVEL_H + 1;
+    if (h === undefined || h <= 0) continue;
+    let minH = parseLength(t.min_height);
+    if (minH === undefined && t['building:min_level']) minH = (parseFloat(t['building:min_level']) || 0) * LEVEL_H;
+    for (const p of elPolys(el, proj)) {
+      const poly = cleanPoly(p, 0.08);
+      if (!poly) continue;
+      out.push({ poly, height: h, minHeight: Math.max(0, Math.min(minH ?? 0, h - 0.5)), c: centroid(poly[0]), area: Math.abs(signedArea(poly[0])) });
+    }
+  }
+  return out;
+}

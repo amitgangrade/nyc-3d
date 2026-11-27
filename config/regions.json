@@ -34,6 +34,47 @@
       }
     },
     {
+      "id": "midtown-manhattan",
+      "name": "Manhattan: Houston St to Central Park",
+      "description": "Greenwich Village, East Village, SoHo north edge, Chelsea, Flatiron, Gramercy, Murray Hill, Midtown, Hell's Kitchen, Hudson Yards, Billionaires' Row and Central Park",
+      "provider": "nyc",
+      "borough": "Manhattan",
+      "boundary": [
+        [-74.02, 40.72896],
+        [-74.016, 40.745],
+        [-74.0105, 40.76],
+        [-74.003, 40.7767],
+        [-73.98194, 40.76806],
+        [-73.9583, 40.8005],
+        [-73.9496, 40.7968],
+        [-73.973, 40.7644],
+        [-73.952, 40.7555],
+        [-73.96, 40.745],
+        [-73.966, 40.735],
+        [-73.969, 40.726],
+        [-73.969, 40.71985],
+        [-73.9768, 40.71985],
+        [-73.9795, 40.7205],
+        [-73.983, 40.7213],
+        [-73.9864, 40.72235],
+        [-73.9897, 40.7237],
+        [-73.9925, 40.7245],
+        [-73.9968, 40.72545],
+        [-73.9995, 40.727],
+        [-74.0032, 40.7284],
+        [-74.0054, 40.7285],
+        [-74.0075, 40.72865],
+        [-74.0108, 40.72895]
+      ],
+      "camera": {
+        "lon": -73.9855,
+        "lat": 40.7484,
+        "distance": 3200,
+        "heading": 30,
+        "pitch": 35
+      }
+    },
+    {
       "id": "jersey-city",
       "name": "Jersey City",
       "description": "Jersey City, NJ (municipal boundary from US Census TIGER/Line places), buildings and streets from OpenStreetMap",

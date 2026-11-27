@@ -75,6 +75,7 @@ input[type=range]::-moz-range-thumb { width: 12px; height: 12px; border-radius: 
 #places.collapsed #places-toggle svg { transform: rotate(-90deg); }
 #places.collapsed #places-list { display: none; }
 #places-list { overflow-y: auto; padding: 0 6px 6px; scrollbar-width: thin; }
+.place-group { font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); padding: 10px 10px 2px; opacity: .85; }
 .place { display: block; width: 100%; text-align: left; padding: 8px 10px; border-radius: 10px; }
 .place:hover { background: rgba(255,255,255,.07); }
 .place-name { display: block; font-size: 13.5px; font-weight: 600; }

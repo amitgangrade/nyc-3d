@@ -4,6 +4,7 @@ A high-resolution, real-time 3D map of New York City that you can fly around in 
 
 **Current coverage:**
 - **Lower Manhattan:** everything south of Houston Street, including Battery Park City, the Financial District, Tribeca, SoHo, Chinatown and the Lower East Side, plus Governors, Liberty and Ellis Islands. Built from NYC Open Data.
+- **Manhattan from Houston St to Central Park:** the Villages, Chelsea, Flatiron, Gramercy, Midtown, Hell's Kitchen, Hudson Yards, Billionaires' Row and all of Central Park (to 110th St). Built from NYC Open Data, with towers refined by OpenStreetMap 3D parts.
 - **Jersey City:** the whole municipality, from Exchange Place and Newport to Journal Square, Liberty State Park and the Heights. Built from OpenStreetMap.
 
 The other boroughs and the rest of New Jersey are drawn as context land, with a procedural street grid by day and glowing streets by night.
@@ -19,6 +20,8 @@ The other boroughs and the rest of New Jersey are drawn as context land, with a 
 - Night city: street-lamp pools, lamp heads, blinking aviation beacons, an orange light dome over the skyline, and stars and a moon.
 - Harbour water with real-time planar reflections, waves and sun glint.
 - Cascaded-style shadow map that follows the camera, ACES tone mapping and bloom.
+- **Setback towers:** NYC footprints carry a single roof height, so where OpenStreetMap has `building:part` volumes covering a footprint (Empire State, Chrysler, Woolworth and thousands more), the footprint is replaced by those stepped parts. Set `NO_OSM_PARTS=1` to disable this.
+- **Signature lighting:** the Empire State crown cycles through colours, the Chrysler crown glows white, and Times Square is wrapped in animated billboards.
 - A hand-modelled **One World Trade Center** (tapered octagonal shaft and spire), aligned to its real footprint.
 - **Building info** on click: height, year built and source, with links to the OSM object for Jersey City buildings.
 
@@ -109,7 +112,7 @@ Other jurisdictions can get their own provider implementing the `Provider` inter
 
 - NYC Open Data: Building Footprints (`5zhs-2jue`), Planimetric Roadbed (`i36f-5ih7`), Sidewalk (`52n9-sdep`), Open Space Parks (`y6ja-fw4f`) and Other (`b7j8-z8a7`), Hydrography (`pjs3-c3z5`), Hydrography Structures (`6hbv-tek4`), Forestry Tree Points (`hn5i-inap`) and Borough Boundaries (`gthc-hcne`). These are published under the [NYC Open Data terms of use](https://opendata.cityofnewyork.us/overview/#termsofuse).
 - US Census Bureau TIGER/Line 2023: counties, area water and the Jersey City place boundary (public domain).
-- © OpenStreetMap contributors (Jersey City buildings, streets, parks, piers and trees), licensed under the [ODbL](https://www.openstreetmap.org/copyright).
+- © OpenStreetMap contributors (Jersey City buildings, streets, parks, piers and trees, and Manhattan 3D building parts), licensed under the [ODbL](https://www.openstreetmap.org/copyright).
 - Microsoft Global ML Building Footprints (height estimates for untagged Jersey City buildings), licensed under the [ODbL](https://github.com/microsoft/GlobalMLBuildingFootprints).
 
 ## Known limitations / ideas

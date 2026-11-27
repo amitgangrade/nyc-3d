@@ -16,6 +16,8 @@ export interface BuildRequest {
   skirt?: number;
   /** scene-space points; buildings whose footprint contains one are skipped (replaced by a custom landmark model) */
   exclude?: [number, number][];
+  /** buildings whose centroid lies within r of (x,z) get a special lighting code (see materials.ts) */
+  specials?: { x: number; z: number; r: number; code: number }[];
   /** emit streetlight positions along polygon outlines (roads) */
   lights?: boolean;
   /** scatter procedural trees inside polygons with this mean spacing (metres) */
@@ -191,10 +193,17 @@ function buildBuildings(t: DecodedTile, req: BuildRequest): BuildResult {
     for (let k = 0; k < outer.length; k += 2) { cx += outer[k]; cz += outer[k + 1]; }
     cx /= outer.length / 2; cz /= outer.length / 2;
     centroid[f * 2] = cx + ox; centroid[f * 2 + 1] = cz + oz;
-    if (ex.some(([x, z]) => pointInRing(x, z, outer))) continue;
+    if (ex.some(([x, z]) => pointInRing(x, z, outer) || Math.hypot(cx - x, cz - z) < 40)) continue;
     const h = Math.max(1.5, H[f]);
     const seed = hash((BIN[f] || f * 7919 + ox) | 0);
-    const style = pickStyle(h, YR[f], KIND[f], seed);
+    let style = pickStyle(h, YR[f], KIND[f], seed);
+    for (const sp of req.specials ?? []) {
+      if (Math.hypot(cx + ox - sp.x, cz + oz - sp.z) < sp.r) {
+        if (sp.code !== 7) style = STYLE.STONE; // landmark towers: masonry facades
+        style += sp.code * 10;
+        break;
+      }
+    }
     // info: (height, seed, style, featureIndex)
     const info = [h, seed, style, f];
     const minH = MINH ? Math.min(MINH[f], h - 0.5) : 0;

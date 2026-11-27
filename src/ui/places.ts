@@ -1,8 +1,8 @@
 /** Curated viewpoints. heading: compass direction the camera faces; pitch: degrees down from horizontal. */
-export interface Place { name: string; sub?: string; lon: number; lat: number; distance: number; heading: number; pitch: number; y?: number }
+export interface Place { group?: string; name: string; sub?: string; lon: number; lat: number; distance: number; heading: number; pitch: number; y?: number }
 
 export const PLACES: Place[] = [
-  { name: 'Overview', sub: 'Lower Manhattan from the harbour', lon: -74.0105, lat: 40.7095, distance: 3600, heading: 20, pitch: 30 },
+  { group: 'Downtown', name: 'Overview', sub: 'Lower Manhattan from the harbour', lon: -74.0105, lat: 40.7095, distance: 3600, heading: 20, pitch: 30 },
   { name: 'One World Trade Center', sub: 'Financial District', lon: -74.0134, lat: 40.7130, distance: 900, heading: 35, pitch: 18, y: 250 },
   { name: 'Wall Street & NYSE', sub: 'Financial District', lon: -74.0105, lat: 40.7066, distance: 420, heading: 300, pitch: 42 },
   { name: 'The Battery', sub: 'Southern tip', lon: -74.0160, lat: 40.7030, distance: 1300, heading: 15, pitch: 24 },
@@ -17,7 +17,18 @@ export const PLACES: Place[] = [
   { name: 'Battery Park City', sub: 'Hudson River esplanade', lon: -74.0165, lat: 40.7110, distance: 900, heading: 95, pitch: 28 },
   { name: 'Governors Island', sub: 'Looking back at the skyline', lon: -74.0150, lat: 40.6900, distance: 1600, heading: 10, pitch: 15 },
   { name: 'Statue of Liberty', sub: 'Liberty Island', lon: -74.0445, lat: 40.6892, distance: 700, heading: 60, pitch: 25 },
-  { name: 'Skyline from Jersey City', sub: 'Exchange Place waterfront', lon: -74.0255, lat: 40.7130, distance: 1500, heading: 85, pitch: 9, y: 80 },
+  { group: 'Midtown & Central Park', name: 'Manhattan overview', sub: 'Battery to Central Park', lon: -73.9900, lat: 40.7350, distance: 9500, heading: 25, pitch: 30 },
+  { name: 'Empire State Building', sub: '34th St & Fifth Ave', lon: -73.9857, lat: 40.7484, distance: 900, heading: 30, pitch: 16, y: 250 },
+  { name: 'Chrysler & Grand Central', sub: '42nd St', lon: -73.9760, lat: 40.7520, distance: 750, heading: 215, pitch: 20, y: 160 },
+  { name: 'Times Square', sub: 'Broadway & 7th Ave', lon: -73.9857, lat: 40.7570, distance: 560, heading: 200, pitch: 34, y: 40 },
+  { name: 'Rockefeller Center', sub: '30 Rock', lon: -73.9790, lat: 40.7590, distance: 650, heading: 250, pitch: 30 },
+  { name: "Billionaires' Row", sub: '57th St supertalls', lon: -73.9790, lat: 40.7655, distance: 1300, heading: 175, pitch: 14, y: 250 },
+  { name: 'Central Park', sub: '59th to 110th St', lon: -73.9680, lat: 40.7760, distance: 3200, heading: 30, pitch: 38 },
+  { name: 'Hudson Yards', sub: 'West Side', lon: -74.0015, lat: 40.7535, distance: 1000, heading: 110, pitch: 22, y: 100 },
+  { name: 'Flatiron Building', sub: 'Madison Square', lon: -73.9897, lat: 40.7411, distance: 450, heading: 25, pitch: 30 },
+  { name: 'Union Square', sub: '14th St', lon: -73.9903, lat: 40.7359, distance: 600, heading: 20, pitch: 38 },
+  { name: 'Washington Square', sub: 'Greenwich Village', lon: -73.9973, lat: 40.7308, distance: 600, heading: 20, pitch: 38 },
+  { group: 'Jersey City', name: 'Skyline from Jersey City', sub: 'Exchange Place waterfront', lon: -74.0255, lat: 40.7130, distance: 1500, heading: 85, pitch: 9, y: 80 },
   { name: 'Exchange Place', sub: 'Jersey City towers', lon: -74.0335, lat: 40.7160, distance: 900, heading: 250, pitch: 28 },
   { name: 'Newport', sub: 'Jersey City', lon: -74.0340, lat: 40.7275, distance: 1000, heading: 240, pitch: 30 },
   { name: 'Liberty State Park', sub: 'Jersey City', lon: -74.0540, lat: 40.7040, distance: 1600, heading: 60, pitch: 26 },

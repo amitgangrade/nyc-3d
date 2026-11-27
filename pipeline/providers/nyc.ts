@@ -11,7 +11,8 @@
  */
 import type { Projection } from '../../src/core/projection';
 import { cachedJSON, socrataGeoJSON } from '../fetch';
-import { cleanPoly, type Poly } from '../geo';
+import { cleanPoly, pointInRing, ringBBox, signedArea, type Poly } from '../geo';
+import { fetchOsmBuildingParts, type OsmPart } from './osm';
 import type { Feature, LayerSpec, Provider } from './types';
 
 const DOMAIN = 'data.cityofnewyork.us';
@@ -60,7 +61,7 @@ const SOURCES: Record<string, Src> = {
 };
 
 const LAYERS: Record<string, LayerSpec> = {
-  buildings: { props: { height: 'f32', year: 'u16', bin: 'u32', kind: 'u8' }, tolerance: 0.08 },
+  buildings: { props: { height: 'f32', minHeight: 'f32', year: 'u16', bin: 'u32', kind: 'u8' }, tolerance: 0.08 },
   roads: { props: { overWater: 'u8' }, tolerance: 0.15, flagOverWater: true },
   sidewalks: { props: { overWater: 'u8' }, tolerance: 0.15, flagOverWater: true },
   parks: { props: {}, tolerance: 0.2 },
@@ -100,6 +101,40 @@ export const nycProvider: Provider = {
         if (clean) out.push({ poly: clean, props });
       }
     }
+    if (layer === 'buildings' && process.env.NO_OSM_PARTS !== '1') return refineWithOsmParts(out, bbox, proj, cacheDir, refresh);
     return out;
   },
 };
+
+/**
+ * NYC footprints carry a single roof height, so setback towers (Empire State,
+ * Chrysler…) would extrude as solid blocks. Where OpenStreetMap has 3D
+ * `building:part` volumes covering most of a footprint, replace the footprint
+ * with those parts (keeping the NYC BIN / year for picking).
+ */
+async function refineWithOsmParts(feats: Feature[], bbox: [number, number, number, number], proj: Projection, cacheDir: string, refresh: boolean): Promise<Feature[]> {
+  const parts = await fetchOsmBuildingParts(bbox, proj, cacheDir, refresh);
+  const cell = 50, grid = new Map<string, OsmPart[]>();
+  for (const p of parts) {
+    const k = `${Math.floor(p.c[0] / cell)},${Math.floor(p.c[1] / cell)}`;
+    (grid.get(k) ?? grid.set(k, []).get(k)!).push(p);
+  }
+  const out: Feature[] = [];
+  let refined = 0, added = 0;
+  for (const f of feats) {
+    const ring = f.poly![0];
+    const [x0, z0, x1, z1] = ringBBox(ring);
+    const inside: OsmPart[] = [];
+    for (let gx = Math.floor(x0 / cell); gx <= Math.floor(x1 / cell); gx++)
+      for (let gz = Math.floor(z0 / cell); gz <= Math.floor(z1 / cell); gz++)
+        for (const p of grid.get(`${gx},${gz}`) ?? []) if (pointInRing(p.c, ring)) inside.push(p);
+    const area = Math.abs(signedArea(ring));
+    const base = inside.filter((p) => p.minHeight < 3).reduce((a, p) => a + p.area, 0);
+    if (inside.length && base >= area * 0.55) {
+      refined++; added += inside.length;
+      for (const p of inside) out.push({ poly: p.poly, props: { ...f.props, height: p.height, minHeight: p.minHeight } });
+    } else out.push(f);
+  }
+  console.log(`    OSM 3D parts: ${refined} footprints refined into ${added} parts (${parts.length} parts available)`);
+  return out;
+}

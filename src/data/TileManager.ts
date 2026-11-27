@@ -43,6 +43,7 @@ export class TileManager {
   onProgress?: (loaded: number, total: number) => void;
   onTileLoaded?: (t: { layer: string; features?: BuildResult['features']; origin: [number, number] }) => void;
   exclude: [number, number][] = [];
+  specials: { x: number; z: number; r: number; code: number }[] = [];
 
   constructor(manifest: Manifest, private dataRoot: string) {
     const T = manifest.tileSize;
@@ -92,6 +93,7 @@ export class TileManager {
     const res = await this.pool.build({
       ...t.layer.build, url: `${this.dataRoot}/${t.tile.url}`,
       exclude: t.layer.build.kind === 'buildings' ? this.exclude : undefined,
+      specials: t.layer.build.kind === 'buildings' ? this.specials : undefined,
     });
     this.inflight--;
     if (res.error) console.warn(t.key, res.error);

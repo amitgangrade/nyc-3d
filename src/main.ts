@@ -69,6 +69,13 @@ async function main() {
 
   const tiles = new TileManager(manifest, DATA);
   tiles.exclude = landmarks.exclude;
+  // signature night lighting (codes interpreted in the facade shader)
+  const special = (lon: number, lat: number, r: number, code: number) => { const [x, z] = proj.forward(lon, lat); return { x, z, r, code }; };
+  tiles.specials = [
+    special(-73.98566, 40.74844, 48, 5),  // Empire State Building: colour-cycling tiered crown
+    special(-73.97545, 40.75162, 30, 6),  // Chrysler Building: bright terraced crown
+    special(-73.98550, 40.75800, 140, 7), // Times Square: animated billboards
+  ];
   scene.add(tiles.group);
 
   // aviation beacons on tall roofs

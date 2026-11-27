@@ -7,963 +7,6 @@
  "tileSize": 1000,
  "regions": [
   {
-   "id": "lower-manhattan",
-   "name": "Lower Manhattan",
-   "description": "Manhattan south of Houston Street (SoHo, Tribeca, LES, Chinatown, FiDi, Battery Park City, Governors/Liberty/Ellis Islands)",
-   "builtAt": "2026-11-26T18:13:51.816Z",
-   "bounds": [
-    -3830.871683213193,
-    -2950.209921875119,
-    3788.2122788187785,
-    3971.2430488634245
-   ],
-   "camera": {
-    "lon": -74.009,
-    "lat": 40.7075,
-    "distance": 2600,
-    "heading": 25,
-    "pitch": 38
-   },
-   "layers": {
-    "buildings": [
-     {
-      "ix": -1,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/buildings/-1_-2.bin",
-      "featureCount": 196,
-      "bytes": 13964
-     },
-     {
-      "ix": 0,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/buildings/0_-2.bin",
-      "featureCount": 879,
-      "bytes": 65772
-     },
-     {
-      "ix": 1,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/buildings/1_-2.bin",
-      "featureCount": 166,
-      "bytes": 13176
-     },
-     {
-      "ix": -1,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/buildings/-1_-1.bin",
-      "featureCount": 516,
-      "bytes": 37400
-     },
-     {
-      "ix": 0,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/buildings/0_-1.bin",
-      "featureCount": 1326,
-      "bytes": 97876
-     },
-     {
-      "ix": 1,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/buildings/1_-1.bin",
-      "featureCount": 1313,
-      "bytes": 114528
-     },
-     {
-      "ix": 2,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/buildings/2_-1.bin",
-      "featureCount": 74,
-      "bytes": 12504
-     },
-     {
-      "ix": -2,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/buildings/-2_0.bin",
-      "featureCount": 7,
-      "bytes": 1648
-     },
-     {
-      "ix": -1,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/buildings/-1_0.bin",
-      "featureCount": 375,
-      "bytes": 31972
-     },
-     {
-      "ix": 0,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/buildings/0_0.bin",
-      "featureCount": 347,
-      "bytes": 35344
-     },
-     {
-      "ix": 1,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/buildings/1_0.bin",
-      "featureCount": 83,
-      "bytes": 9304
-     },
-     {
-      "ix": 2,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/buildings/2_0.bin",
-      "featureCount": 14,
-      "bytes": 2152
-     },
-     {
-      "ix": -4,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/buildings/-4_1.bin",
-      "featureCount": 8,
-      "bytes": 3184
-     },
-     {
-      "ix": -3,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/buildings/-3_1.bin",
-      "featureCount": 5,
-      "bytes": 2528
-     },
-     {
-      "ix": -1,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/buildings/-1_1.bin",
-      "featureCount": 56,
-      "bytes": 7468
-     },
-     {
-      "ix": 0,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/buildings/0_1.bin",
-      "featureCount": 3,
-      "bytes": 964
-     },
-     {
-      "ix": -4,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/buildings/-4_2.bin",
-      "featureCount": 10,
-      "bytes": 1484
-     },
-     {
-      "ix": -2,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/buildings/-2_2.bin",
-      "featureCount": 25,
-      "bytes": 3812
-     },
-     {
-      "ix": -1,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/buildings/-1_2.bin",
-      "featureCount": 97,
-      "bytes": 9756
-     },
-     {
-      "ix": 0,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/buildings/0_2.bin",
-      "featureCount": 5,
-      "bytes": 852
-     },
-     {
-      "ix": -2,
-      "iz": 3,
-      "url": "tiles/lower-manhattan/buildings/-2_3.bin",
-      "featureCount": 15,
-      "bytes": 1588
-     }
-    ],
-    "roads": [
-     {
-      "ix": -1,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/roads/-1_-2.bin",
-      "featureCount": 86,
-      "bytes": 11860
-     },
-     {
-      "ix": 0,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/roads/0_-2.bin",
-      "featureCount": 175,
-      "bytes": 17448
-     },
-     {
-      "ix": 1,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/roads/1_-2.bin",
-      "featureCount": 27,
-      "bytes": 5996
-     },
-     {
-      "ix": -1,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/roads/-1_-1.bin",
-      "featureCount": 171,
-      "bytes": 21696
-     },
-     {
-      "ix": 0,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/roads/0_-1.bin",
-      "featureCount": 294,
-      "bytes": 31004
-     },
-     {
-      "ix": 1,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/roads/1_-1.bin",
-      "featureCount": 270,
-      "bytes": 29412
-     },
-     {
-      "ix": 2,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/roads/2_-1.bin",
-      "featureCount": 75,
-      "bytes": 10956
-     },
-     {
-      "ix": -2,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/roads/-2_0.bin",
-      "featureCount": 1,
-      "bytes": 728
-     },
-     {
-      "ix": -1,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/roads/-1_0.bin",
-      "featureCount": 278,
-      "bytes": 35252
-     },
-     {
-      "ix": 0,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/roads/0_0.bin",
-      "featureCount": 223,
-      "bytes": 28480
-     },
-     {
-      "ix": 1,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/roads/1_0.bin",
-      "featureCount": 69,
-      "bytes": 8144
-     },
-     {
-      "ix": 2,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/roads/2_0.bin",
-      "featureCount": 6,
-      "bytes": 1480
-     },
-     {
-      "ix": -4,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/roads/-4_1.bin",
-      "featureCount": 6,
-      "bytes": 1792
-     },
-     {
-      "ix": -1,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/roads/-1_1.bin",
-      "featureCount": 41,
-      "bytes": 8176
-     },
-     {
-      "ix": -2,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/roads/-2_2.bin",
-      "featureCount": 38,
-      "bytes": 15428
-     },
-     {
-      "ix": -1,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/roads/-1_2.bin",
-      "featureCount": 28,
-      "bytes": 8344
-     },
-     {
-      "ix": -2,
-      "iz": 3,
-      "url": "tiles/lower-manhattan/roads/-2_3.bin",
-      "featureCount": 2,
-      "bytes": 1152
-     }
-    ],
-    "sidewalks": [
-     {
-      "ix": -1,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/sidewalks/-1_-2.bin",
-      "featureCount": 72,
-      "bytes": 16788
-     },
-     {
-      "ix": 0,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/sidewalks/0_-2.bin",
-      "featureCount": 82,
-      "bytes": 17644
-     },
-     {
-      "ix": 1,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/sidewalks/1_-2.bin",
-      "featureCount": 34,
-      "bytes": 5056
-     },
-     {
-      "ix": -1,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/sidewalks/-1_-1.bin",
-      "featureCount": 102,
-      "bytes": 31480
-     },
-     {
-      "ix": 0,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/sidewalks/0_-1.bin",
-      "featureCount": 130,
-      "bytes": 35472
-     },
-     {
-      "ix": 1,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/sidewalks/1_-1.bin",
-      "featureCount": 171,
-      "bytes": 40504
-     },
-     {
-      "ix": 2,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/sidewalks/2_-1.bin",
-      "featureCount": 64,
-      "bytes": 26636
-     },
-     {
-      "ix": -2,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/sidewalks/-2_0.bin",
-      "featureCount": 5,
-      "bytes": 4544
-     },
-     {
-      "ix": -1,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/sidewalks/-1_0.bin",
-      "featureCount": 131,
-      "bytes": 37164
-     },
-     {
-      "ix": 0,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/sidewalks/0_0.bin",
-      "featureCount": 69,
-      "bytes": 19940
-     },
-     {
-      "ix": 1,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/sidewalks/1_0.bin",
-      "featureCount": 44,
-      "bytes": 12996
-     },
-     {
-      "ix": 2,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/sidewalks/2_0.bin",
-      "featureCount": 9,
-      "bytes": 3444
-     },
-     {
-      "ix": -4,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/sidewalks/-4_1.bin",
-      "featureCount": 3,
-      "bytes": 5180
-     },
-     {
-      "ix": -3,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/sidewalks/-3_1.bin",
-      "featureCount": 1,
-      "bytes": 1824
-     },
-     {
-      "ix": -1,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/sidewalks/-1_1.bin",
-      "featureCount": 19,
-      "bytes": 12904
-     },
-     {
-      "ix": -4,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/sidewalks/-4_2.bin",
-      "featureCount": 2,
-      "bytes": 1208
-     },
-     {
-      "ix": -2,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/sidewalks/-2_2.bin",
-      "featureCount": 24,
-      "bytes": 9856
-     },
-     {
-      "ix": -1,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/sidewalks/-1_2.bin",
-      "featureCount": 26,
-      "bytes": 5352
-     },
-     {
-      "ix": -2,
-      "iz": 3,
-      "url": "tiles/lower-manhattan/sidewalks/-2_3.bin",
-      "featureCount": 1,
-      "bytes": 492
-     }
-    ],
-    "parks": [
-     {
-      "ix": -1,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/parks/-1_-2.bin",
-      "featureCount": 7,
-      "bytes": 1216
-     },
-     {
-      "ix": 0,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/parks/0_-2.bin",
-      "featureCount": 26,
-      "bytes": 2120
-     },
-     {
-      "ix": 1,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/parks/1_-2.bin",
-      "featureCount": 22,
-      "bytes": 2208
-     },
-     {
-      "ix": -1,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/parks/-1_-1.bin",
-      "featureCount": 24,
-      "bytes": 2964
-     },
-     {
-      "ix": 0,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/parks/0_-1.bin",
-      "featureCount": 28,
-      "bytes": 3332
-     },
-     {
-      "ix": 1,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/parks/1_-1.bin",
-      "featureCount": 65,
-      "bytes": 5988
-     },
-     {
-      "ix": 2,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/parks/2_-1.bin",
-      "featureCount": 57,
-      "bytes": 5596
-     },
-     {
-      "ix": -1,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/parks/-1_0.bin",
-      "featureCount": 18,
-      "bytes": 4644
-     },
-     {
-      "ix": 0,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/parks/0_0.bin",
-      "featureCount": 29,
-      "bytes": 3244
-     },
-     {
-      "ix": 1,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/parks/1_0.bin",
-      "featureCount": 28,
-      "bytes": 2480
-     },
-     {
-      "ix": 2,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/parks/2_0.bin",
-      "featureCount": 5,
-      "bytes": 800
-     },
-     {
-      "ix": -1,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/parks/-1_1.bin",
-      "featureCount": 6,
-      "bytes": 2140
-     },
-     {
-      "ix": 0,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/parks/0_1.bin",
-      "featureCount": 6,
-      "bytes": 2448
-     },
-     {
-      "ix": -2,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/parks/-2_2.bin",
-      "featureCount": 6,
-      "bytes": 940
-     },
-     {
-      "ix": -1,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/parks/-1_2.bin",
-      "featureCount": 3,
-      "bytes": 612
-     },
-     {
-      "ix": 0,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/parks/0_2.bin",
-      "featureCount": 3,
-      "bytes": 416
-     }
-    ],
-    "plazas": [
-     {
-      "ix": -1,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/plazas/-1_-2.bin",
-      "featureCount": 2,
-      "bytes": 856
-     },
-     {
-      "ix": 0,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/plazas/0_-2.bin",
-      "featureCount": 9,
-      "bytes": 972
-     },
-     {
-      "ix": 1,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/plazas/1_-2.bin",
-      "featureCount": 1,
-      "bytes": 436
-     },
-     {
-      "ix": -1,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/plazas/-1_-1.bin",
-      "featureCount": 11,
-      "bytes": 2148
-     },
-     {
-      "ix": 0,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/plazas/0_-1.bin",
-      "featureCount": 8,
-      "bytes": 948
-     },
-     {
-      "ix": 1,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/plazas/1_-1.bin",
-      "featureCount": 35,
-      "bytes": 3156
-     },
-     {
-      "ix": 2,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/plazas/2_-1.bin",
-      "featureCount": 26,
-      "bytes": 2860
-     },
-     {
-      "ix": -1,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/plazas/-1_0.bin",
-      "featureCount": 8,
-      "bytes": 1036
-     },
-     {
-      "ix": 0,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/plazas/0_0.bin",
-      "featureCount": 32,
-      "bytes": 3300
-     },
-     {
-      "ix": 1,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/plazas/1_0.bin",
-      "featureCount": 24,
-      "bytes": 2180
-     },
-     {
-      "ix": 2,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/plazas/2_0.bin",
-      "featureCount": 4,
-      "bytes": 560
-     },
-     {
-      "ix": -1,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/plazas/-1_1.bin",
-      "featureCount": 1,
-      "bytes": 372
-     },
-     {
-      "ix": -2,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/plazas/-2_2.bin",
-      "featureCount": 9,
-      "bytes": 1416
-     },
-     {
-      "ix": -1,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/plazas/-1_2.bin",
-      "featureCount": 4,
-      "bytes": 844
-     },
-     {
-      "ix": -2,
-      "iz": 3,
-      "url": "tiles/lower-manhattan/plazas/-2_3.bin",
-      "featureCount": 1,
-      "bytes": 380
-     }
-    ],
-    "piers": [
-     {
-      "ix": -1,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/piers/-1_-2.bin",
-      "featureCount": 3,
-      "bytes": 864
-     },
-     {
-      "ix": -1,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/piers/-1_-1.bin",
-      "featureCount": 9,
-      "bytes": 4888
-     },
-     {
-      "ix": 3,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/piers/3_-1.bin",
-      "featureCount": 2,
-      "bytes": 748
-     },
-     {
-      "ix": -2,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/piers/-2_0.bin",
-      "featureCount": 4,
-      "bytes": 1156
-     },
-     {
-      "ix": -1,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/piers/-1_0.bin",
-      "featureCount": 7,
-      "bytes": 1336
-     },
-     {
-      "ix": 0,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/piers/0_0.bin",
-      "featureCount": 14,
-      "bytes": 2400
-     },
-     {
-      "ix": 1,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/piers/1_0.bin",
-      "featureCount": 1,
-      "bytes": 812
-     },
-     {
-      "ix": 2,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/piers/2_0.bin",
-      "featureCount": 4,
-      "bytes": 1288
-     },
-     {
-      "ix": -3,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/piers/-3_1.bin",
-      "featureCount": 5,
-      "bytes": 1196
-     },
-     {
-      "ix": -1,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/piers/-1_1.bin",
-      "featureCount": 21,
-      "bytes": 3696
-     },
-     {
-      "ix": 0,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/piers/0_1.bin",
-      "featureCount": 8,
-      "bytes": 4784
-     },
-     {
-      "ix": -4,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/piers/-4_2.bin",
-      "featureCount": 4,
-      "bytes": 1312
-     },
-     {
-      "ix": -2,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/piers/-2_2.bin",
-      "featureCount": 2,
-      "bytes": 1952
-     },
-     {
-      "ix": -1,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/piers/-1_2.bin",
-      "featureCount": 14,
-      "bytes": 2916
-     },
-     {
-      "ix": 0,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/piers/0_2.bin",
-      "featureCount": 5,
-      "bytes": 836
-     },
-     {
-      "ix": -2,
-      "iz": 3,
-      "url": "tiles/lower-manhattan/piers/-2_3.bin",
-      "featureCount": 3,
-      "bytes": 776
-     }
-    ],
-    "water": [
-     {
-      "ix": -3,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/water/-3_1.bin",
-      "featureCount": 1,
-      "bytes": 1132
-     },
-     {
-      "ix": 0,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/water/0_1.bin",
-      "featureCount": 6,
-      "bytes": 1424
-     },
-     {
-      "ix": -4,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/water/-4_2.bin",
-      "featureCount": 1,
-      "bytes": 364
-     },
-     {
-      "ix": -1,
-      "iz": 2,
-      "url": "tiles/lower-manhattan/water/-1_2.bin",
-      "featureCount": 1,
-      "bytes": 2476
-     }
-    ],
-    "trees": [
-     {
-      "ix": -1,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/trees/-1_-2.bin",
-      "featureCount": 716,
-      "bytes": 7480
-     },
-     {
-      "ix": 0,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/trees/0_-2.bin",
-      "featureCount": 874,
-      "bytes": 9060
-     },
-     {
-      "ix": 1,
-      "iz": -2,
-      "url": "tiles/lower-manhattan/trees/1_-2.bin",
-      "featureCount": 461,
-      "bytes": 4932
-     },
-     {
-      "ix": -1,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/trees/-1_-1.bin",
-      "featureCount": 1112,
-      "bytes": 11444
-     },
-     {
-      "ix": 0,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/trees/0_-1.bin",
-      "featureCount": 957,
-      "bytes": 9892
-     },
-     {
-      "ix": 1,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/trees/1_-1.bin",
-      "featureCount": 2190,
-      "bytes": 22228
-     },
-     {
-      "ix": 2,
-      "iz": -1,
-      "url": "tiles/lower-manhattan/trees/2_-1.bin",
-      "featureCount": 575,
-      "bytes": 6068
-     },
-     {
-      "ix": -2,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/trees/-2_0.bin",
-      "featureCount": 47,
-      "bytes": 780
-     },
-     {
-      "ix": -1,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/trees/-1_0.bin",
-      "featureCount": 1186,
-      "bytes": 12184
-     },
-     {
-      "ix": 0,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/trees/0_0.bin",
-      "featureCount": 1048,
-      "bytes": 10792
-     },
-     {
-      "ix": 1,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/trees/1_0.bin",
-      "featureCount": 435,
-      "bytes": 4664
-     },
-     {
-      "ix": 2,
-      "iz": 0,
-      "url": "tiles/lower-manhattan/trees/2_0.bin",
-      "featureCount": 329,
-      "bytes": 3608
-     },
-     {
-      "ix": -1,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/trees/-1_1.bin",
-      "featureCount": 518,
-      "bytes": 5500
-     },
-     {
-      "ix": 0,
-      "iz": 1,
-      "url": "tiles/lower-manhattan/trees/0_1.bin",
-      "featureCount": 1,
-      "bytes": 316
-     }
-    ]
-   },
-   "boundary": [
-    [
-     -4559,
-     4206.5
-    ],
-    [
-     -4555.4,
-     -1804.8
-    ],
-    [
-     -404.9,
-     -1797.8
-    ],
-    [
-     -126.5,
-     -1764.4
-    ],
-    [
-     50.6,
-     -1747.7
-    ],
-    [
-     236.2,
-     -1736.6
-    ],
-    [
-     548.3,
-     -1580.8
-    ],
-    [
-     776.1,
-     -1408.2
-    ],
-    [
-     1138.9,
-     -1302.5
-    ],
-    [
-     1375.2,
-     -1213.5
-    ],
-    [
-     1653.6,
-     -1063.3
-    ],
-    [
-     1940.5,
-     -946.5
-    ],
-    [
-     2235.8,
-     -857.5
-    ],
-    [
-     2463.6,
-     -785.2
-    ],
-    [
-     3881,
-     -785.8
-    ],
-    [
-     3883.6,
-     4206.9
-    ]
-   ]
-  },
-  {
    "id": "jersey-city",
    "name": "Jersey City",
    "description": "Jersey City, NJ (municipal boundary from US Census TIGER/Line places), buildings and streets from OpenStreetMap",
@@ -3359,6 +2402,2644 @@
     [
      -9371.5,
      263.5
+    ]
+   ]
+  },
+  {
+   "id": "midtown-manhattan",
+   "name": "Manhattan: Houston St to Central Park",
+   "description": "Greenwich Village, East Village, SoHo north edge, Chelsea, Flatiron, Gramercy, Murray Hill, Midtown, Hell's Kitchen, Hudson Yards, Billionaires' Row and Central Park",
+   "provider": "nyc",
+   "builtAt": "2026-11-27T08:26:43.474Z",
+   "bounds": [
+    -771.6031257356237,
+    -9762.013849271745,
+    5539.6373551349,
+    2302.1012920609633
+   ],
+   "camera": {
+    "lon": -73.9855,
+    "lat": 40.7484,
+    "distance": 3200,
+    "heading": 30,
+    "pitch": 35
+   },
+   "layers": {
+    "buildings": [
+     {
+      "ix": 3,
+      "iz": -10,
+      "url": "tiles/midtown-manhattan/buildings/3_-10.bin",
+      "featureCount": 1,
+      "bytes": 632
+     },
+     {
+      "ix": 4,
+      "iz": -10,
+      "url": "tiles/midtown-manhattan/buildings/4_-10.bin",
+      "featureCount": 5,
+      "bytes": 1332
+     },
+     {
+      "ix": 3,
+      "iz": -9,
+      "url": "tiles/midtown-manhattan/buildings/3_-9.bin",
+      "featureCount": 4,
+      "bytes": 964
+     },
+     {
+      "ix": 4,
+      "iz": -9,
+      "url": "tiles/midtown-manhattan/buildings/4_-9.bin",
+      "featureCount": 1,
+      "bytes": 628
+     },
+     {
+      "ix": 2,
+      "iz": -8,
+      "url": "tiles/midtown-manhattan/buildings/2_-8.bin",
+      "featureCount": 1,
+      "bytes": 948
+     },
+     {
+      "ix": 3,
+      "iz": -8,
+      "url": "tiles/midtown-manhattan/buildings/3_-8.bin",
+      "featureCount": 15,
+      "bytes": 2760
+     },
+     {
+      "ix": 0,
+      "iz": -7,
+      "url": "tiles/midtown-manhattan/buildings/0_-7.bin",
+      "featureCount": 31,
+      "bytes": 2880
+     },
+     {
+      "ix": 1,
+      "iz": -7,
+      "url": "tiles/midtown-manhattan/buildings/1_-7.bin",
+      "featureCount": 382,
+      "bytes": 32896
+     },
+     {
+      "ix": 2,
+      "iz": -7,
+      "url": "tiles/midtown-manhattan/buildings/2_-7.bin",
+      "featureCount": 104,
+      "bytes": 10368
+     },
+     {
+      "ix": 3,
+      "iz": -7,
+      "url": "tiles/midtown-manhattan/buildings/3_-7.bin",
+      "featureCount": 4,
+      "bytes": 1112
+     },
+     {
+      "ix": 0,
+      "iz": -6,
+      "url": "tiles/midtown-manhattan/buildings/0_-6.bin",
+      "featureCount": 342,
+      "bytes": 30676
+     },
+     {
+      "ix": 1,
+      "iz": -6,
+      "url": "tiles/midtown-manhattan/buildings/1_-6.bin",
+      "featureCount": 1783,
+      "bytes": 152804
+     },
+     {
+      "ix": 2,
+      "iz": -6,
+      "url": "tiles/midtown-manhattan/buildings/2_-6.bin",
+      "featureCount": 1642,
+      "bytes": 122872
+     },
+     {
+      "ix": 3,
+      "iz": -6,
+      "url": "tiles/midtown-manhattan/buildings/3_-6.bin",
+      "featureCount": 598,
+      "bytes": 46408
+     },
+     {
+      "ix": -1,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/buildings/-1_-5.bin",
+      "featureCount": 56,
+      "bytes": 6264
+     },
+     {
+      "ix": 0,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/buildings/0_-5.bin",
+      "featureCount": 750,
+      "bytes": 59208
+     },
+     {
+      "ix": 1,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/buildings/1_-5.bin",
+      "featureCount": 1247,
+      "bytes": 90192
+     },
+     {
+      "ix": 2,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/buildings/2_-5.bin",
+      "featureCount": 2310,
+      "bytes": 164072
+     },
+     {
+      "ix": 3,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/buildings/3_-5.bin",
+      "featureCount": 764,
+      "bytes": 63364
+     },
+     {
+      "ix": 4,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/buildings/4_-5.bin",
+      "featureCount": 8,
+      "bytes": 1560
+     },
+     {
+      "ix": -1,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/buildings/-1_-4.bin",
+      "featureCount": 265,
+      "bytes": 18940
+     },
+     {
+      "ix": 0,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/buildings/0_-4.bin",
+      "featureCount": 1744,
+      "bytes": 144344
+     },
+     {
+      "ix": 1,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/buildings/1_-4.bin",
+      "featureCount": 1445,
+      "bytes": 107536
+     },
+     {
+      "ix": 2,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/buildings/2_-4.bin",
+      "featureCount": 1423,
+      "bytes": 118784
+     },
+     {
+      "ix": 3,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/buildings/3_-4.bin",
+      "featureCount": 5,
+      "bytes": 952
+     },
+     {
+      "ix": -1,
+      "iz": -3,
+      "url": "tiles/midtown-manhattan/buildings/-1_-3.bin",
+      "featureCount": 603,
+      "bytes": 44752
+     },
+     {
+      "ix": 0,
+      "iz": -3,
+      "url": "tiles/midtown-manhattan/buildings/0_-3.bin",
+      "featureCount": 2203,
+      "bytes": 172072
+     },
+     {
+      "ix": 1,
+      "iz": -3,
+      "url": "tiles/midtown-manhattan/buildings/1_-3.bin",
+      "featureCount": 1575,
+      "bytes": 129840
+     },
+     {
+      "ix": 2,
+      "iz": -3,
+      "url": "tiles/midtown-manhattan/buildings/2_-3.bin",
+      "featureCount": 421,
+      "bytes": 46896
+     },
+     {
+      "ix": -1,
+      "iz": -2,
+      "url": "tiles/midtown-manhattan/buildings/-1_-2.bin",
+      "featureCount": 65,
+      "bytes": 5948
+     },
+     {
+      "ix": 0,
+      "iz": -2,
+      "url": "tiles/midtown-manhattan/buildings/0_-2.bin",
+      "featureCount": 588,
+      "bytes": 52432
+     },
+     {
+      "ix": 1,
+      "iz": -2,
+      "url": "tiles/midtown-manhattan/buildings/1_-2.bin",
+      "featureCount": 1696,
+      "bytes": 141592
+     },
+     {
+      "ix": 2,
+      "iz": -2,
+      "url": "tiles/midtown-manhattan/buildings/2_-2.bin",
+      "featureCount": 901,
+      "bytes": 85540
+     },
+     {
+      "ix": 1,
+      "iz": -1,
+      "url": "tiles/midtown-manhattan/buildings/1_-1.bin",
+      "featureCount": 19,
+      "bytes": 1796
+     },
+     {
+      "ix": 2,
+      "iz": -1,
+      "url": "tiles/midtown-manhattan/buildings/2_-1.bin",
+      "featureCount": 135,
+      "bytes": 13072
+     }
+    ],
+    "roads": [
+     {
+      "ix": 3,
+      "iz": -10,
+      "url": "tiles/midtown-manhattan/roads/3_-10.bin",
+      "featureCount": 3,
+      "bytes": 1388
+     },
+     {
+      "ix": 4,
+      "iz": -10,
+      "url": "tiles/midtown-manhattan/roads/4_-10.bin",
+      "featureCount": 4,
+      "bytes": 1752
+     },
+     {
+      "ix": 3,
+      "iz": -9,
+      "url": "tiles/midtown-manhattan/roads/3_-9.bin",
+      "featureCount": 19,
+      "bytes": 14180
+     },
+     {
+      "ix": 4,
+      "iz": -9,
+      "url": "tiles/midtown-manhattan/roads/4_-9.bin",
+      "featureCount": 4,
+      "bytes": 1412
+     },
+     {
+      "ix": 2,
+      "iz": -8,
+      "url": "tiles/midtown-manhattan/roads/2_-8.bin",
+      "featureCount": 12,
+      "bytes": 3392
+     },
+     {
+      "ix": 3,
+      "iz": -8,
+      "url": "tiles/midtown-manhattan/roads/3_-8.bin",
+      "featureCount": 18,
+      "bytes": 4088
+     },
+     {
+      "ix": 0,
+      "iz": -7,
+      "url": "tiles/midtown-manhattan/roads/0_-7.bin",
+      "featureCount": 12,
+      "bytes": 3680
+     },
+     {
+      "ix": 1,
+      "iz": -7,
+      "url": "tiles/midtown-manhattan/roads/1_-7.bin",
+      "featureCount": 58,
+      "bytes": 6868
+     },
+     {
+      "ix": 2,
+      "iz": -7,
+      "url": "tiles/midtown-manhattan/roads/2_-7.bin",
+      "featureCount": 33,
+      "bytes": 12600
+     },
+     {
+      "ix": 3,
+      "iz": -7,
+      "url": "tiles/midtown-manhattan/roads/3_-7.bin",
+      "featureCount": 2,
+      "bytes": 964
+     },
+     {
+      "ix": 0,
+      "iz": -6,
+      "url": "tiles/midtown-manhattan/roads/0_-6.bin",
+      "featureCount": 119,
+      "bytes": 18036
+     },
+     {
+      "ix": 1,
+      "iz": -6,
+      "url": "tiles/midtown-manhattan/roads/1_-6.bin",
+      "featureCount": 165,
+      "bytes": 21308
+     },
+     {
+      "ix": 2,
+      "iz": -6,
+      "url": "tiles/midtown-manhattan/roads/2_-6.bin",
+      "featureCount": 162,
+      "bytes": 16776
+     },
+     {
+      "ix": 3,
+      "iz": -6,
+      "url": "tiles/midtown-manhattan/roads/3_-6.bin",
+      "featureCount": 81,
+      "bytes": 8948
+     },
+     {
+      "ix": -1,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/roads/-1_-5.bin",
+      "featureCount": 13,
+      "bytes": 4800
+     },
+     {
+      "ix": 0,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/roads/0_-5.bin",
+      "featureCount": 263,
+      "bytes": 31016
+     },
+     {
+      "ix": 1,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/roads/1_-5.bin",
+      "featureCount": 163,
+      "bytes": 17816
+     },
+     {
+      "ix": 2,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/roads/2_-5.bin",
+      "featureCount": 247,
+      "bytes": 23148
+     },
+     {
+      "ix": 3,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/roads/3_-5.bin",
+      "featureCount": 117,
+      "bytes": 18760
+     },
+     {
+      "ix": 4,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/roads/4_-5.bin",
+      "featureCount": 3,
+      "bytes": 2884
+     },
+     {
+      "ix": -1,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/roads/-1_-4.bin",
+      "featureCount": 64,
+      "bytes": 7448
+     },
+     {
+      "ix": 0,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/roads/0_-4.bin",
+      "featureCount": 154,
+      "bytes": 19980
+     },
+     {
+      "ix": 1,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/roads/1_-4.bin",
+      "featureCount": 205,
+      "bytes": 21316
+     },
+     {
+      "ix": 2,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/roads/2_-4.bin",
+      "featureCount": 210,
+      "bytes": 25692
+     },
+     {
+      "ix": 3,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/roads/3_-4.bin",
+      "featureCount": 11,
+      "bytes": 3988
+     },
+     {
+      "ix": -1,
+      "iz": -3,
+      "url": "tiles/midtown-manhattan/roads/-1_-3.bin",
+      "featureCount": 103,
+      "bytes": 11248
+     },
+     {
+      "ix": 0,
+      "iz": -3,
+      "url": "tiles/midtown-manhattan/roads/0_-3.bin",
+      "featureCount": 244,
+      "bytes": 27028
+     },
+     {
+      "ix": 1,
+      "iz": -3,
+      "url": "tiles/midtown-manhattan/roads/1_-3.bin",
+      "featureCount": 196,
+      "bytes": 20376
+     },
+     {
+      "ix": 2,
+      "iz": -3,
+      "url": "tiles/midtown-manhattan/roads/2_-3.bin",
+      "featureCount": 94,
+      "bytes": 22512
+     },
+     {
+      "ix": -1,
+      "iz": -2,
+      "url": "tiles/midtown-manhattan/roads/-1_-2.bin",
+      "featureCount": 29,
+      "bytes": 7236
+     },
+     {
+      "ix": 0,
+      "iz": -2,
+      "url": "tiles/midtown-manhattan/roads/0_-2.bin",
+      "featureCount": 127,
+      "bytes": 12124
+     },
+     {
+      "ix": 1,
+      "iz": -2,
+      "url": "tiles/midtown-manhattan/roads/1_-2.bin",
+      "featureCount": 153,
+      "bytes": 17864
+     },
+     {
+      "ix": 2,
+      "iz": -2,
+      "url": "tiles/midtown-manhattan/roads/2_-2.bin",
+      "featureCount": 110,
+      "bytes": 15664
+     },
+     {
+      "ix": 2,
+      "iz": -1,
+      "url": "tiles/midtown-manhattan/roads/2_-1.bin",
+      "featureCount": 16,
+      "bytes": 2348
+     }
+    ],
+    "sidewalks": [
+     {
+      "ix": 3,
+      "iz": -10,
+      "url": "tiles/midtown-manhattan/sidewalks/3_-10.bin",
+      "featureCount": 2,
+      "bytes": 12976
+     },
+     {
+      "ix": 4,
+      "iz": -10,
+      "url": "tiles/midtown-manhattan/sidewalks/4_-10.bin",
+      "featureCount": 8,
+      "bytes": 20472
+     },
+     {
+      "ix": 3,
+      "iz": -9,
+      "url": "tiles/midtown-manhattan/sidewalks/3_-9.bin",
+      "featureCount": 8,
+      "bytes": 7840
+     },
+     {
+      "ix": 4,
+      "iz": -9,
+      "url": "tiles/midtown-manhattan/sidewalks/4_-9.bin",
+      "featureCount": 2,
+      "bytes": 5356
+     },
+     {
+      "ix": 2,
+      "iz": -8,
+      "url": "tiles/midtown-manhattan/sidewalks/2_-8.bin",
+      "featureCount": 5,
+      "bytes": 4744
+     },
+     {
+      "ix": 3,
+      "iz": -8,
+      "url": "tiles/midtown-manhattan/sidewalks/3_-8.bin",
+      "featureCount": 11,
+      "bytes": 75280
+     },
+     {
+      "ix": 0,
+      "iz": -7,
+      "url": "tiles/midtown-manhattan/sidewalks/0_-7.bin",
+      "featureCount": 21,
+      "bytes": 4604
+     },
+     {
+      "ix": 1,
+      "iz": -7,
+      "url": "tiles/midtown-manhattan/sidewalks/1_-7.bin",
+      "featureCount": 31,
+      "bytes": 9176
+     },
+     {
+      "ix": 2,
+      "iz": -7,
+      "url": "tiles/midtown-manhattan/sidewalks/2_-7.bin",
+      "featureCount": 25,
+      "bytes": 54816
+     },
+     {
+      "ix": 3,
+      "iz": -7,
+      "url": "tiles/midtown-manhattan/sidewalks/3_-7.bin",
+      "featureCount": 8,
+      "bytes": 13836
+     },
+     {
+      "ix": 0,
+      "iz": -6,
+      "url": "tiles/midtown-manhattan/sidewalks/0_-6.bin",
+      "featureCount": 78,
+      "bytes": 14556
+     },
+     {
+      "ix": 1,
+      "iz": -6,
+      "url": "tiles/midtown-manhattan/sidewalks/1_-6.bin",
+      "featureCount": 101,
+      "bytes": 22336
+     },
+     {
+      "ix": 2,
+      "iz": -6,
+      "url": "tiles/midtown-manhattan/sidewalks/2_-6.bin",
+      "featureCount": 78,
+      "bytes": 18844
+     },
+     {
+      "ix": 3,
+      "iz": -6,
+      "url": "tiles/midtown-manhattan/sidewalks/3_-6.bin",
+      "featureCount": 38,
+      "bytes": 7468
+     },
+     {
+      "ix": -1,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/sidewalks/-1_-5.bin",
+      "featureCount": 21,
+      "bytes": 6452
+     },
+     {
+      "ix": 0,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/sidewalks/0_-5.bin",
+      "featureCount": 96,
+      "bytes": 22924
+     },
+     {
+      "ix": 1,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/sidewalks/1_-5.bin",
+      "featureCount": 72,
+      "bytes": 17904
+     },
+     {
+      "ix": 2,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/sidewalks/2_-5.bin",
+      "featureCount": 97,
+      "bytes": 24612
+     },
+     {
+      "ix": 3,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/sidewalks/3_-5.bin",
+      "featureCount": 61,
+      "bytes": 15944
+     },
+     {
+      "ix": 4,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/sidewalks/4_-5.bin",
+      "featureCount": 2,
+      "bytes": 1620
+     },
+     {
+      "ix": -1,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/sidewalks/-1_-4.bin",
+      "featureCount": 38,
+      "bytes": 8896
+     },
+     {
+      "ix": 0,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/sidewalks/0_-4.bin",
+      "featureCount": 119,
+      "bytes": 24096
+     },
+     {
+      "ix": 1,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/sidewalks/1_-4.bin",
+      "featureCount": 99,
+      "bytes": 26000
+     },
+     {
+      "ix": 2,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/sidewalks/2_-4.bin",
+      "featureCount": 103,
+      "bytes": 23428
+     },
+     {
+      "ix": 3,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/sidewalks/3_-4.bin",
+      "featureCount": 4,
+      "bytes": 1252
+     },
+     {
+      "ix": -1,
+      "iz": -3,
+      "url": "tiles/midtown-manhattan/sidewalks/-1_-3.bin",
+      "featureCount": 80,
+      "bytes": 16328
+     },
+     {
+      "ix": 0,
+      "iz": -3,
+      "url": "tiles/midtown-manhattan/sidewalks/0_-3.bin",
+      "featureCount": 129,
+      "bytes": 35576
+     },
+     {
+      "ix": 1,
+      "iz": -3,
+      "url": "tiles/midtown-manhattan/sidewalks/1_-3.bin",
+      "featureCount": 101,
+      "bytes": 31412
+     },
+     {
+      "ix": 2,
+      "iz": -3,
+      "url": "tiles/midtown-manhattan/sidewalks/2_-3.bin",
+      "featureCount": 97,
+      "bytes": 30084
+     },
+     {
+      "ix": -1,
+      "iz": -2,
+      "url": "tiles/midtown-manhattan/sidewalks/-1_-2.bin",
+      "featureCount": 19,
+      "bytes": 3880
+     },
+     {
+      "ix": 0,
+      "iz": -2,
+      "url": "tiles/midtown-manhattan/sidewalks/0_-2.bin",
+      "featureCount": 61,
+      "bytes": 14372
+     },
+     {
+      "ix": 1,
+      "iz": -2,
+      "url": "tiles/midtown-manhattan/sidewalks/1_-2.bin",
+      "featureCount": 99,
+      "bytes": 22324
+     },
+     {
+      "ix": 2,
+      "iz": -2,
+      "url": "tiles/midtown-manhattan/sidewalks/2_-2.bin",
+      "featureCount": 66,
+      "bytes": 26956
+     },
+     {
+      "ix": 1,
+      "iz": -1,
+      "url": "tiles/midtown-manhattan/sidewalks/1_-1.bin",
+      "featureCount": 1,
+      "bytes": 656
+     },
+     {
+      "ix": 2,
+      "iz": -1,
+      "url": "tiles/midtown-manhattan/sidewalks/2_-1.bin",
+      "featureCount": 6,
+      "bytes": 4616
+     }
+    ],
+    "parks": [
+     {
+      "ix": 4,
+      "iz": -10,
+      "url": "tiles/midtown-manhattan/parks/4_-10.bin",
+      "featureCount": 3,
+      "bytes": 744
+     },
+     {
+      "ix": 3,
+      "iz": -9,
+      "url": "tiles/midtown-manhattan/parks/3_-9.bin",
+      "featureCount": 28,
+      "bytes": 2212
+     },
+     {
+      "ix": 4,
+      "iz": -9,
+      "url": "tiles/midtown-manhattan/parks/4_-9.bin",
+      "featureCount": 7,
+      "bytes": 1488
+     },
+     {
+      "ix": 3,
+      "iz": -8,
+      "url": "tiles/midtown-manhattan/parks/3_-8.bin",
+      "featureCount": 13,
+      "bytes": 3708
+     },
+     {
+      "ix": 0,
+      "iz": -7,
+      "url": "tiles/midtown-manhattan/parks/0_-7.bin",
+      "featureCount": 17,
+      "bytes": 1736
+     },
+     {
+      "ix": 1,
+      "iz": -7,
+      "url": "tiles/midtown-manhattan/parks/1_-7.bin",
+      "featureCount": 2,
+      "bytes": 708
+     },
+     {
+      "ix": 2,
+      "iz": -7,
+      "url": "tiles/midtown-manhattan/parks/2_-7.bin",
+      "featureCount": 16,
+      "bytes": 2404
+     },
+     {
+      "ix": 0,
+      "iz": -6,
+      "url": "tiles/midtown-manhattan/parks/0_-6.bin",
+      "featureCount": 13,
+      "bytes": 2016
+     },
+     {
+      "ix": 1,
+      "iz": -6,
+      "url": "tiles/midtown-manhattan/parks/1_-6.bin",
+      "featureCount": 35,
+      "bytes": 2420
+     },
+     {
+      "ix": 2,
+      "iz": -6,
+      "url": "tiles/midtown-manhattan/parks/2_-6.bin",
+      "featureCount": 17,
+      "bytes": 2108
+     },
+     {
+      "ix": 3,
+      "iz": -6,
+      "url": "tiles/midtown-manhattan/parks/3_-6.bin",
+      "featureCount": 1,
+      "bytes": 412
+     },
+     {
+      "ix": -1,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/parks/-1_-5.bin",
+      "featureCount": 6,
+      "bytes": 1192
+     },
+     {
+      "ix": 0,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/parks/0_-5.bin",
+      "featureCount": 16,
+      "bytes": 1300
+     },
+     {
+      "ix": 1,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/parks/1_-5.bin",
+      "featureCount": 2,
+      "bytes": 572
+     },
+     {
+      "ix": 2,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/parks/2_-5.bin",
+      "featureCount": 9,
+      "bytes": 1296
+     },
+     {
+      "ix": 3,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/parks/3_-5.bin",
+      "featureCount": 16,
+      "bytes": 2156
+     },
+     {
+      "ix": -1,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/parks/-1_-4.bin",
+      "featureCount": 11,
+      "bytes": 3668
+     },
+     {
+      "ix": 0,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/parks/0_-4.bin",
+      "featureCount": 29,
+      "bytes": 2976
+     },
+     {
+      "ix": 1,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/parks/1_-4.bin",
+      "featureCount": 20,
+      "bytes": 2156
+     },
+     {
+      "ix": 2,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/parks/2_-4.bin",
+      "featureCount": 22,
+      "bytes": 1924
+     },
+     {
+      "ix": 3,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/parks/3_-4.bin",
+      "featureCount": 8,
+      "bytes": 896
+     },
+     {
+      "ix": -1,
+      "iz": -3,
+      "url": "tiles/midtown-manhattan/parks/-1_-3.bin",
+      "featureCount": 3,
+      "bytes": 848
+     },
+     {
+      "ix": 0,
+      "iz": -3,
+      "url": "tiles/midtown-manhattan/parks/0_-3.bin",
+      "featureCount": 36,
+      "bytes": 3040
+     },
+     {
+      "ix": 1,
+      "iz": -3,
+      "url": "tiles/midtown-manhattan/parks/1_-3.bin",
+      "featureCount": 13,
+      "bytes": 1772
+     },
+     {
+      "ix": 2,
+      "iz": -3,
+      "url": "tiles/midtown-manhattan/parks/2_-3.bin",
+      "featureCount": 32,
+      "bytes": 2796
+     },
+     {
+      "ix": -1,
+      "iz": -2,
+      "url": "tiles/midtown-manhattan/parks/-1_-2.bin",
+      "featureCount": 3,
+      "bytes": 576
+     },
+     {
+      "ix": 0,
+      "iz": -2,
+      "url": "tiles/midtown-manhattan/parks/0_-2.bin",
+      "featureCount": 27,
+      "bytes": 2080
+     },
+     {
+      "ix": 1,
+      "iz": -2,
+      "url": "tiles/midtown-manhattan/parks/1_-2.bin",
+      "featureCount": 20,
+      "bytes": 1700
+     },
+     {
+      "ix": 2,
+      "iz": -2,
+      "url": "tiles/midtown-manhattan/parks/2_-2.bin",
+      "featureCount": 47,
+      "bytes": 3616
+     },
+     {
+      "ix": 2,
+      "iz": -1,
+      "url": "tiles/midtown-manhattan/parks/2_-1.bin",
+      "featureCount": 5,
+      "bytes": 1212
+     }
+    ],
+    "plazas": [
+     {
+      "ix": 0,
+      "iz": -7,
+      "url": "tiles/midtown-manhattan/plazas/0_-7.bin",
+      "featureCount": 1,
+      "bytes": 508
+     },
+     {
+      "ix": 1,
+      "iz": -7,
+      "url": "tiles/midtown-manhattan/plazas/1_-7.bin",
+      "featureCount": 3,
+      "bytes": 620
+     },
+     {
+      "ix": 0,
+      "iz": -6,
+      "url": "tiles/midtown-manhattan/plazas/0_-6.bin",
+      "featureCount": 4,
+      "bytes": 972
+     },
+     {
+      "ix": 1,
+      "iz": -6,
+      "url": "tiles/midtown-manhattan/plazas/1_-6.bin",
+      "featureCount": 17,
+      "bytes": 1344
+     },
+     {
+      "ix": 2,
+      "iz": -6,
+      "url": "tiles/midtown-manhattan/plazas/2_-6.bin",
+      "featureCount": 3,
+      "bytes": 448
+     },
+     {
+      "ix": 3,
+      "iz": -6,
+      "url": "tiles/midtown-manhattan/plazas/3_-6.bin",
+      "featureCount": 9,
+      "bytes": 672
+     },
+     {
+      "ix": -1,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/plazas/-1_-5.bin",
+      "featureCount": 6,
+      "bytes": 1128
+     },
+     {
+      "ix": 0,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/plazas/0_-5.bin",
+      "featureCount": 19,
+      "bytes": 3292
+     },
+     {
+      "ix": 1,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/plazas/1_-5.bin",
+      "featureCount": 3,
+      "bytes": 432
+     },
+     {
+      "ix": 2,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/plazas/2_-5.bin",
+      "featureCount": 2,
+      "bytes": 432
+     },
+     {
+      "ix": 3,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/plazas/3_-5.bin",
+      "featureCount": 8,
+      "bytes": 1032
+     },
+     {
+      "ix": 4,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/plazas/4_-5.bin",
+      "featureCount": 1,
+      "bytes": 340
+     },
+     {
+      "ix": -1,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/plazas/-1_-4.bin",
+      "featureCount": 5,
+      "bytes": 1224
+     },
+     {
+      "ix": 0,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/plazas/0_-4.bin",
+      "featureCount": 18,
+      "bytes": 1756
+     },
+     {
+      "ix": 1,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/plazas/1_-4.bin",
+      "featureCount": 2,
+      "bytes": 392
+     },
+     {
+      "ix": 2,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/plazas/2_-4.bin",
+      "featureCount": 10,
+      "bytes": 1196
+     },
+     {
+      "ix": 3,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/plazas/3_-4.bin",
+      "featureCount": 2,
+      "bytes": 472
+     },
+     {
+      "ix": -1,
+      "iz": -3,
+      "url": "tiles/midtown-manhattan/plazas/-1_-3.bin",
+      "featureCount": 6,
+      "bytes": 2112
+     },
+     {
+      "ix": 0,
+      "iz": -3,
+      "url": "tiles/midtown-manhattan/plazas/0_-3.bin",
+      "featureCount": 7,
+      "bytes": 908
+     },
+     {
+      "ix": 1,
+      "iz": -3,
+      "url": "tiles/midtown-manhattan/plazas/1_-3.bin",
+      "featureCount": 10,
+      "bytes": 1524
+     },
+     {
+      "ix": 2,
+      "iz": -3,
+      "url": "tiles/midtown-manhattan/plazas/2_-3.bin",
+      "featureCount": 22,
+      "bytes": 2500
+     },
+     {
+      "ix": -1,
+      "iz": -2,
+      "url": "tiles/midtown-manhattan/plazas/-1_-2.bin",
+      "featureCount": 2,
+      "bytes": 440
+     },
+     {
+      "ix": 0,
+      "iz": -2,
+      "url": "tiles/midtown-manhattan/plazas/0_-2.bin",
+      "featureCount": 1,
+      "bytes": 336
+     },
+     {
+      "ix": 1,
+      "iz": -2,
+      "url": "tiles/midtown-manhattan/plazas/1_-2.bin",
+      "featureCount": 15,
+      "bytes": 1852
+     },
+     {
+      "ix": 2,
+      "iz": -2,
+      "url": "tiles/midtown-manhattan/plazas/2_-2.bin",
+      "featureCount": 43,
+      "bytes": 4164
+     },
+     {
+      "ix": 1,
+      "iz": -1,
+      "url": "tiles/midtown-manhattan/plazas/1_-1.bin",
+      "featureCount": 1,
+      "bytes": 364
+     },
+     {
+      "ix": 2,
+      "iz": -1,
+      "url": "tiles/midtown-manhattan/plazas/2_-1.bin",
+      "featureCount": 9,
+      "bytes": 1056
+     }
+    ],
+    "piers": [
+     {
+      "ix": 3,
+      "iz": -8,
+      "url": "tiles/midtown-manhattan/piers/3_-8.bin",
+      "featureCount": 1,
+      "bytes": 400
+     },
+     {
+      "ix": 0,
+      "iz": -7,
+      "url": "tiles/midtown-manhattan/piers/0_-7.bin",
+      "featureCount": 13,
+      "bytes": 2096
+     },
+     {
+      "ix": 0,
+      "iz": -6,
+      "url": "tiles/midtown-manhattan/piers/0_-6.bin",
+      "featureCount": 22,
+      "bytes": 3960
+     },
+     {
+      "ix": -1,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/piers/-1_-5.bin",
+      "featureCount": 9,
+      "bytes": 1820
+     },
+     {
+      "ix": 0,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/piers/0_-5.bin",
+      "featureCount": 1,
+      "bytes": 528
+     },
+     {
+      "ix": 3,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/piers/3_-5.bin",
+      "featureCount": 5,
+      "bytes": 1876
+     },
+     {
+      "ix": 4,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/piers/4_-5.bin",
+      "featureCount": 1,
+      "bytes": 860
+     },
+     {
+      "ix": -1,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/piers/-1_-4.bin",
+      "featureCount": 12,
+      "bytes": 4216
+     },
+     {
+      "ix": 2,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/piers/2_-4.bin",
+      "featureCount": 1,
+      "bytes": 736
+     },
+     {
+      "ix": 3,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/piers/3_-4.bin",
+      "featureCount": 1,
+      "bytes": 484
+     },
+     {
+      "ix": 4,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/piers/4_-4.bin",
+      "featureCount": 1,
+      "bytes": 432
+     },
+     {
+      "ix": -1,
+      "iz": -3,
+      "url": "tiles/midtown-manhattan/piers/-1_-3.bin",
+      "featureCount": 4,
+      "bytes": 980
+     },
+     {
+      "ix": 2,
+      "iz": -3,
+      "url": "tiles/midtown-manhattan/piers/2_-3.bin",
+      "featureCount": 4,
+      "bytes": 936
+     },
+     {
+      "ix": -1,
+      "iz": -2,
+      "url": "tiles/midtown-manhattan/piers/-1_-2.bin",
+      "featureCount": 2,
+      "bytes": 648
+     },
+     {
+      "ix": 2,
+      "iz": -2,
+      "url": "tiles/midtown-manhattan/piers/2_-2.bin",
+      "featureCount": 1,
+      "bytes": 2580
+     },
+     {
+      "ix": 2,
+      "iz": -1,
+      "url": "tiles/midtown-manhattan/piers/2_-1.bin",
+      "featureCount": 1,
+      "bytes": 408
+     }
+    ],
+    "water": [
+     {
+      "ix": 3,
+      "iz": -10,
+      "url": "tiles/midtown-manhattan/water/3_-10.bin",
+      "featureCount": 2,
+      "bytes": 1408
+     },
+     {
+      "ix": 4,
+      "iz": -10,
+      "url": "tiles/midtown-manhattan/water/4_-10.bin",
+      "featureCount": 4,
+      "bytes": 3740
+     },
+     {
+      "ix": 3,
+      "iz": -9,
+      "url": "tiles/midtown-manhattan/water/3_-9.bin",
+      "featureCount": 1,
+      "bytes": 1436
+     },
+     {
+      "ix": 2,
+      "iz": -8,
+      "url": "tiles/midtown-manhattan/water/2_-8.bin",
+      "featureCount": 1,
+      "bytes": 4112
+     },
+     {
+      "ix": 3,
+      "iz": -8,
+      "url": "tiles/midtown-manhattan/water/3_-8.bin",
+      "featureCount": 1,
+      "bytes": 1768
+     },
+     {
+      "ix": 2,
+      "iz": -7,
+      "url": "tiles/midtown-manhattan/water/2_-7.bin",
+      "featureCount": 6,
+      "bytes": 1496
+     },
+     {
+      "ix": 3,
+      "iz": -7,
+      "url": "tiles/midtown-manhattan/water/3_-7.bin",
+      "featureCount": 1,
+      "bytes": 948
+     },
+     {
+      "ix": 2,
+      "iz": -6,
+      "url": "tiles/midtown-manhattan/water/2_-6.bin",
+      "featureCount": 1,
+      "bytes": 2132
+     },
+     {
+      "ix": 2,
+      "iz": -2,
+      "url": "tiles/midtown-manhattan/water/2_-2.bin",
+      "featureCount": 1,
+      "bytes": 14592
+     }
+    ],
+    "trees": [
+     {
+      "ix": 3,
+      "iz": -10,
+      "url": "tiles/midtown-manhattan/trees/3_-10.bin",
+      "featureCount": 62,
+      "bytes": 940
+     },
+     {
+      "ix": 4,
+      "iz": -10,
+      "url": "tiles/midtown-manhattan/trees/4_-10.bin",
+      "featureCount": 65,
+      "bytes": 972
+     },
+     {
+      "ix": 3,
+      "iz": -9,
+      "url": "tiles/midtown-manhattan/trees/3_-9.bin",
+      "featureCount": 84,
+      "bytes": 1152
+     },
+     {
+      "ix": 2,
+      "iz": -8,
+      "url": "tiles/midtown-manhattan/trees/2_-8.bin",
+      "featureCount": 61,
+      "bytes": 928
+     },
+     {
+      "ix": 3,
+      "iz": -8,
+      "url": "tiles/midtown-manhattan/trees/3_-8.bin",
+      "featureCount": 24,
+      "bytes": 552
+     },
+     {
+      "ix": 0,
+      "iz": -7,
+      "url": "tiles/midtown-manhattan/trees/0_-7.bin",
+      "featureCount": 181,
+      "bytes": 2132
+     },
+     {
+      "ix": 1,
+      "iz": -7,
+      "url": "tiles/midtown-manhattan/trees/1_-7.bin",
+      "featureCount": 677,
+      "bytes": 7096
+     },
+     {
+      "ix": 2,
+      "iz": -7,
+      "url": "tiles/midtown-manhattan/trees/2_-7.bin",
+      "featureCount": 94,
+      "bytes": 1256
+     },
+     {
+      "ix": 3,
+      "iz": -7,
+      "url": "tiles/midtown-manhattan/trees/3_-7.bin",
+      "featureCount": 60,
+      "bytes": 912
+     },
+     {
+      "ix": 0,
+      "iz": -6,
+      "url": "tiles/midtown-manhattan/trees/0_-6.bin",
+      "featureCount": 759,
+      "bytes": 7908
+     },
+     {
+      "ix": 1,
+      "iz": -6,
+      "url": "tiles/midtown-manhattan/trees/1_-6.bin",
+      "featureCount": 1396,
+      "bytes": 14284
+     },
+     {
+      "ix": 2,
+      "iz": -6,
+      "url": "tiles/midtown-manhattan/trees/2_-6.bin",
+      "featureCount": 696,
+      "bytes": 7280
+     },
+     {
+      "ix": 3,
+      "iz": -6,
+      "url": "tiles/midtown-manhattan/trees/3_-6.bin",
+      "featureCount": 483,
+      "bytes": 5152
+     },
+     {
+      "ix": -1,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/trees/-1_-5.bin",
+      "featureCount": 219,
+      "bytes": 2512
+     },
+     {
+      "ix": 0,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/trees/0_-5.bin",
+      "featureCount": 1232,
+      "bytes": 12640
+     },
+     {
+      "ix": 1,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/trees/1_-5.bin",
+      "featureCount": 480,
+      "bytes": 5120
+     },
+     {
+      "ix": 2,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/trees/2_-5.bin",
+      "featureCount": 974,
+      "bytes": 10064
+     },
+     {
+      "ix": 3,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/trees/3_-5.bin",
+      "featureCount": 1172,
+      "bytes": 12044
+     },
+     {
+      "ix": 4,
+      "iz": -5,
+      "url": "tiles/midtown-manhattan/trees/4_-5.bin",
+      "featureCount": 7,
+      "bytes": 380
+     },
+     {
+      "ix": -1,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/trees/-1_-4.bin",
+      "featureCount": 260,
+      "bytes": 2920
+     },
+     {
+      "ix": 0,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/trees/0_-4.bin",
+      "featureCount": 1557,
+      "bytes": 15896
+     },
+     {
+      "ix": 1,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/trees/1_-4.bin",
+      "featureCount": 935,
+      "bytes": 9672
+     },
+     {
+      "ix": 2,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/trees/2_-4.bin",
+      "featureCount": 1727,
+      "bytes": 17596
+     },
+     {
+      "ix": 3,
+      "iz": -4,
+      "url": "tiles/midtown-manhattan/trees/3_-4.bin",
+      "featureCount": 70,
+      "bytes": 1016
+     },
+     {
+      "ix": -1,
+      "iz": -3,
+      "url": "tiles/midtown-manhattan/trees/-1_-3.bin",
+      "featureCount": 951,
+      "bytes": 9832
+     },
+     {
+      "ix": 0,
+      "iz": -3,
+      "url": "tiles/midtown-manhattan/trees/0_-3.bin",
+      "featureCount": 2325,
+      "bytes": 23576
+     },
+     {
+      "ix": 1,
+      "iz": -3,
+      "url": "tiles/midtown-manhattan/trees/1_-3.bin",
+      "featureCount": 1603,
+      "bytes": 16356
+     },
+     {
+      "ix": 2,
+      "iz": -3,
+      "url": "tiles/midtown-manhattan/trees/2_-3.bin",
+      "featureCount": 952,
+      "bytes": 9840
+     },
+     {
+      "ix": -1,
+      "iz": -2,
+      "url": "tiles/midtown-manhattan/trees/-1_-2.bin",
+      "featureCount": 204,
+      "bytes": 2360
+     },
+     {
+      "ix": 0,
+      "iz": -2,
+      "url": "tiles/midtown-manhattan/trees/0_-2.bin",
+      "featureCount": 853,
+      "bytes": 8852
+     },
+     {
+      "ix": 1,
+      "iz": -2,
+      "url": "tiles/midtown-manhattan/trees/1_-2.bin",
+      "featureCount": 1499,
+      "bytes": 15316
+     },
+     {
+      "ix": 2,
+      "iz": -2,
+      "url": "tiles/midtown-manhattan/trees/2_-2.bin",
+      "featureCount": 2179,
+      "bytes": 22116
+     },
+     {
+      "ix": 1,
+      "iz": -1,
+      "url": "tiles/midtown-manhattan/trees/1_-1.bin",
+      "featureCount": 19,
+      "bytes": 504
+     },
+     {
+      "ix": 2,
+      "iz": -1,
+      "url": "tiles/midtown-manhattan/trees/2_-1.bin",
+      "featureCount": 256,
+      "bytes": 2880
+     }
+    ]
+   },
+   "boundary": [
+    [
+     -1181,
+     -1799
+    ],
+    [
+     -843.4,
+     -3584.5
+    ],
+    [
+     -379.4,
+     -5254.3
+    ],
+    [
+     252.9,
+     -7113.3
+    ],
+    [
+     2028.5,
+     -6151.8
+    ],
+    [
+     4019.6,
+     -9763.8
+    ],
+    [
+     4753,
+     -9352.4
+    ],
+    [
+     2782.3,
+     -5744.6
+    ],
+    [
+     4553.5,
+     -4754.7
+    ],
+    [
+     3879.6,
+     -3585.5
+    ],
+    [
+     3374,
+     -2472.1
+    ],
+    [
+     3121.4,
+     -1470.1
+    ],
+    [
+     3121.7,
+     -785.5
+    ],
+    [
+     2463.6,
+     -785.2
+    ],
+    [
+     2235.8,
+     -857.5
+    ],
+    [
+     1940.5,
+     -946.5
+    ],
+    [
+     1653.6,
+     -1063.3
+    ],
+    [
+     1375.2,
+     -1213.5
+    ],
+    [
+     1138.9,
+     -1302.5
+    ],
+    [
+     776.1,
+     -1408.2
+    ],
+    [
+     548.3,
+     -1580.8
+    ],
+    [
+     236.2,
+     -1736.6
+    ],
+    [
+     50.6,
+     -1747.7
+    ],
+    [
+     -126.5,
+     -1764.4
+    ],
+    [
+     -404.9,
+     -1797.8
+    ]
+   ]
+  },
+  {
+   "id": "lower-manhattan",
+   "name": "Lower Manhattan",
+   "description": "Manhattan south of Houston Street (SoHo, Tribeca, LES, Chinatown, FiDi, Battery Park City, Governors/Liberty/Ellis Islands)",
+   "provider": "nyc",
+   "builtAt": "2026-11-27T08:32:49.217Z",
+   "bounds": [
+    -3830.871683213193,
+    -2950.209921875119,
+    3788.2122788187785,
+    3971.2430488634245
+   ],
+   "camera": {
+    "lon": -74.009,
+    "lat": 40.7075,
+    "distance": 2600,
+    "heading": 25,
+    "pitch": 38
+   },
+   "layers": {
+    "buildings": [
+     {
+      "ix": -1,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/buildings/-1_-2.bin",
+      "featureCount": 329,
+      "bytes": 24312
+     },
+     {
+      "ix": 0,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/buildings/0_-2.bin",
+      "featureCount": 991,
+      "bytes": 78436
+     },
+     {
+      "ix": 1,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/buildings/1_-2.bin",
+      "featureCount": 190,
+      "bytes": 15756
+     },
+     {
+      "ix": -1,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/buildings/-1_-1.bin",
+      "featureCount": 732,
+      "bytes": 56388
+     },
+     {
+      "ix": 0,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/buildings/0_-1.bin",
+      "featureCount": 1603,
+      "bytes": 126508
+     },
+     {
+      "ix": 1,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/buildings/1_-1.bin",
+      "featureCount": 1629,
+      "bytes": 142200
+     },
+     {
+      "ix": 2,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/buildings/2_-1.bin",
+      "featureCount": 194,
+      "bytes": 20036
+     },
+     {
+      "ix": -2,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/buildings/-2_0.bin",
+      "featureCount": 26,
+      "bytes": 3260
+     },
+     {
+      "ix": -1,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/buildings/-1_0.bin",
+      "featureCount": 1415,
+      "bytes": 114208
+     },
+     {
+      "ix": 0,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/buildings/0_0.bin",
+      "featureCount": 503,
+      "bytes": 47724
+     },
+     {
+      "ix": 1,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/buildings/1_0.bin",
+      "featureCount": 133,
+      "bytes": 12488
+     },
+     {
+      "ix": 2,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/buildings/2_0.bin",
+      "featureCount": 35,
+      "bytes": 3320
+     },
+     {
+      "ix": -4,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/buildings/-4_1.bin",
+      "featureCount": 8,
+      "bytes": 3276
+     },
+     {
+      "ix": -3,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/buildings/-3_1.bin",
+      "featureCount": 5,
+      "bytes": 2608
+     },
+     {
+      "ix": -1,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/buildings/-1_1.bin",
+      "featureCount": 115,
+      "bytes": 11504
+     },
+     {
+      "ix": 0,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/buildings/0_1.bin",
+      "featureCount": 3,
+      "bytes": 1032
+     },
+     {
+      "ix": -4,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/buildings/-4_2.bin",
+      "featureCount": 36,
+      "bytes": 3168
+     },
+     {
+      "ix": -2,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/buildings/-2_2.bin",
+      "featureCount": 25,
+      "bytes": 3972
+     },
+     {
+      "ix": -1,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/buildings/-1_2.bin",
+      "featureCount": 97,
+      "bytes": 10204
+     },
+     {
+      "ix": 0,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/buildings/0_2.bin",
+      "featureCount": 5,
+      "bytes": 928
+     },
+     {
+      "ix": -2,
+      "iz": 3,
+      "url": "tiles/lower-manhattan/buildings/-2_3.bin",
+      "featureCount": 15,
+      "bytes": 1712
+     }
+    ],
+    "roads": [
+     {
+      "ix": -1,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/roads/-1_-2.bin",
+      "featureCount": 86,
+      "bytes": 11860
+     },
+     {
+      "ix": 0,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/roads/0_-2.bin",
+      "featureCount": 175,
+      "bytes": 17448
+     },
+     {
+      "ix": 1,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/roads/1_-2.bin",
+      "featureCount": 27,
+      "bytes": 5996
+     },
+     {
+      "ix": -1,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/roads/-1_-1.bin",
+      "featureCount": 171,
+      "bytes": 21696
+     },
+     {
+      "ix": 0,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/roads/0_-1.bin",
+      "featureCount": 294,
+      "bytes": 31004
+     },
+     {
+      "ix": 1,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/roads/1_-1.bin",
+      "featureCount": 270,
+      "bytes": 29412
+     },
+     {
+      "ix": 2,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/roads/2_-1.bin",
+      "featureCount": 75,
+      "bytes": 10956
+     },
+     {
+      "ix": -2,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/roads/-2_0.bin",
+      "featureCount": 1,
+      "bytes": 728
+     },
+     {
+      "ix": -1,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/roads/-1_0.bin",
+      "featureCount": 278,
+      "bytes": 35252
+     },
+     {
+      "ix": 0,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/roads/0_0.bin",
+      "featureCount": 223,
+      "bytes": 28480
+     },
+     {
+      "ix": 1,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/roads/1_0.bin",
+      "featureCount": 69,
+      "bytes": 8144
+     },
+     {
+      "ix": 2,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/roads/2_0.bin",
+      "featureCount": 6,
+      "bytes": 1480
+     },
+     {
+      "ix": -4,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/roads/-4_1.bin",
+      "featureCount": 6,
+      "bytes": 1792
+     },
+     {
+      "ix": -1,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/roads/-1_1.bin",
+      "featureCount": 41,
+      "bytes": 8176
+     },
+     {
+      "ix": -2,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/roads/-2_2.bin",
+      "featureCount": 38,
+      "bytes": 15428
+     },
+     {
+      "ix": -1,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/roads/-1_2.bin",
+      "featureCount": 28,
+      "bytes": 8344
+     },
+     {
+      "ix": -2,
+      "iz": 3,
+      "url": "tiles/lower-manhattan/roads/-2_3.bin",
+      "featureCount": 2,
+      "bytes": 1152
+     }
+    ],
+    "sidewalks": [
+     {
+      "ix": -1,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/sidewalks/-1_-2.bin",
+      "featureCount": 72,
+      "bytes": 16788
+     },
+     {
+      "ix": 0,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/sidewalks/0_-2.bin",
+      "featureCount": 82,
+      "bytes": 17644
+     },
+     {
+      "ix": 1,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/sidewalks/1_-2.bin",
+      "featureCount": 34,
+      "bytes": 5056
+     },
+     {
+      "ix": -1,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/sidewalks/-1_-1.bin",
+      "featureCount": 102,
+      "bytes": 31480
+     },
+     {
+      "ix": 0,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/sidewalks/0_-1.bin",
+      "featureCount": 130,
+      "bytes": 35472
+     },
+     {
+      "ix": 1,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/sidewalks/1_-1.bin",
+      "featureCount": 171,
+      "bytes": 40504
+     },
+     {
+      "ix": 2,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/sidewalks/2_-1.bin",
+      "featureCount": 64,
+      "bytes": 26636
+     },
+     {
+      "ix": -2,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/sidewalks/-2_0.bin",
+      "featureCount": 5,
+      "bytes": 4544
+     },
+     {
+      "ix": -1,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/sidewalks/-1_0.bin",
+      "featureCount": 131,
+      "bytes": 37164
+     },
+     {
+      "ix": 0,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/sidewalks/0_0.bin",
+      "featureCount": 69,
+      "bytes": 19940
+     },
+     {
+      "ix": 1,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/sidewalks/1_0.bin",
+      "featureCount": 44,
+      "bytes": 12996
+     },
+     {
+      "ix": 2,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/sidewalks/2_0.bin",
+      "featureCount": 9,
+      "bytes": 3444
+     },
+     {
+      "ix": -4,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/sidewalks/-4_1.bin",
+      "featureCount": 3,
+      "bytes": 5180
+     },
+     {
+      "ix": -3,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/sidewalks/-3_1.bin",
+      "featureCount": 1,
+      "bytes": 1824
+     },
+     {
+      "ix": -1,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/sidewalks/-1_1.bin",
+      "featureCount": 19,
+      "bytes": 12904
+     },
+     {
+      "ix": -4,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/sidewalks/-4_2.bin",
+      "featureCount": 2,
+      "bytes": 1208
+     },
+     {
+      "ix": -2,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/sidewalks/-2_2.bin",
+      "featureCount": 24,
+      "bytes": 9856
+     },
+     {
+      "ix": -1,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/sidewalks/-1_2.bin",
+      "featureCount": 26,
+      "bytes": 5352
+     },
+     {
+      "ix": -2,
+      "iz": 3,
+      "url": "tiles/lower-manhattan/sidewalks/-2_3.bin",
+      "featureCount": 1,
+      "bytes": 492
+     }
+    ],
+    "parks": [
+     {
+      "ix": -1,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/parks/-1_-2.bin",
+      "featureCount": 7,
+      "bytes": 1216
+     },
+     {
+      "ix": 0,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/parks/0_-2.bin",
+      "featureCount": 26,
+      "bytes": 2120
+     },
+     {
+      "ix": 1,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/parks/1_-2.bin",
+      "featureCount": 22,
+      "bytes": 2208
+     },
+     {
+      "ix": -1,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/parks/-1_-1.bin",
+      "featureCount": 24,
+      "bytes": 2964
+     },
+     {
+      "ix": 0,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/parks/0_-1.bin",
+      "featureCount": 28,
+      "bytes": 3332
+     },
+     {
+      "ix": 1,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/parks/1_-1.bin",
+      "featureCount": 65,
+      "bytes": 5988
+     },
+     {
+      "ix": 2,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/parks/2_-1.bin",
+      "featureCount": 57,
+      "bytes": 5596
+     },
+     {
+      "ix": -1,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/parks/-1_0.bin",
+      "featureCount": 18,
+      "bytes": 4644
+     },
+     {
+      "ix": 0,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/parks/0_0.bin",
+      "featureCount": 29,
+      "bytes": 3244
+     },
+     {
+      "ix": 1,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/parks/1_0.bin",
+      "featureCount": 28,
+      "bytes": 2480
+     },
+     {
+      "ix": 2,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/parks/2_0.bin",
+      "featureCount": 5,
+      "bytes": 800
+     },
+     {
+      "ix": -1,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/parks/-1_1.bin",
+      "featureCount": 6,
+      "bytes": 2140
+     },
+     {
+      "ix": 0,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/parks/0_1.bin",
+      "featureCount": 6,
+      "bytes": 2448
+     },
+     {
+      "ix": -2,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/parks/-2_2.bin",
+      "featureCount": 6,
+      "bytes": 940
+     },
+     {
+      "ix": -1,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/parks/-1_2.bin",
+      "featureCount": 3,
+      "bytes": 612
+     },
+     {
+      "ix": 0,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/parks/0_2.bin",
+      "featureCount": 3,
+      "bytes": 416
+     }
+    ],
+    "plazas": [
+     {
+      "ix": -1,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/plazas/-1_-2.bin",
+      "featureCount": 2,
+      "bytes": 856
+     },
+     {
+      "ix": 0,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/plazas/0_-2.bin",
+      "featureCount": 9,
+      "bytes": 972
+     },
+     {
+      "ix": 1,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/plazas/1_-2.bin",
+      "featureCount": 1,
+      "bytes": 436
+     },
+     {
+      "ix": -1,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/plazas/-1_-1.bin",
+      "featureCount": 11,
+      "bytes": 2148
+     },
+     {
+      "ix": 0,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/plazas/0_-1.bin",
+      "featureCount": 8,
+      "bytes": 948
+     },
+     {
+      "ix": 1,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/plazas/1_-1.bin",
+      "featureCount": 35,
+      "bytes": 3156
+     },
+     {
+      "ix": 2,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/plazas/2_-1.bin",
+      "featureCount": 26,
+      "bytes": 2860
+     },
+     {
+      "ix": -1,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/plazas/-1_0.bin",
+      "featureCount": 8,
+      "bytes": 1036
+     },
+     {
+      "ix": 0,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/plazas/0_0.bin",
+      "featureCount": 32,
+      "bytes": 3300
+     },
+     {
+      "ix": 1,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/plazas/1_0.bin",
+      "featureCount": 24,
+      "bytes": 2180
+     },
+     {
+      "ix": 2,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/plazas/2_0.bin",
+      "featureCount": 4,
+      "bytes": 560
+     },
+     {
+      "ix": -1,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/plazas/-1_1.bin",
+      "featureCount": 1,
+      "bytes": 372
+     },
+     {
+      "ix": -2,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/plazas/-2_2.bin",
+      "featureCount": 9,
+      "bytes": 1416
+     },
+     {
+      "ix": -1,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/plazas/-1_2.bin",
+      "featureCount": 4,
+      "bytes": 844
+     },
+     {
+      "ix": -2,
+      "iz": 3,
+      "url": "tiles/lower-manhattan/plazas/-2_3.bin",
+      "featureCount": 1,
+      "bytes": 380
+     }
+    ],
+    "piers": [
+     {
+      "ix": -1,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/piers/-1_-2.bin",
+      "featureCount": 3,
+      "bytes": 864
+     },
+     {
+      "ix": -1,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/piers/-1_-1.bin",
+      "featureCount": 9,
+      "bytes": 4888
+     },
+     {
+      "ix": 3,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/piers/3_-1.bin",
+      "featureCount": 2,
+      "bytes": 748
+     },
+     {
+      "ix": -2,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/piers/-2_0.bin",
+      "featureCount": 4,
+      "bytes": 1156
+     },
+     {
+      "ix": -1,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/piers/-1_0.bin",
+      "featureCount": 7,
+      "bytes": 1336
+     },
+     {
+      "ix": 0,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/piers/0_0.bin",
+      "featureCount": 14,
+      "bytes": 2400
+     },
+     {
+      "ix": 1,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/piers/1_0.bin",
+      "featureCount": 1,
+      "bytes": 812
+     },
+     {
+      "ix": 2,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/piers/2_0.bin",
+      "featureCount": 4,
+      "bytes": 1288
+     },
+     {
+      "ix": -3,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/piers/-3_1.bin",
+      "featureCount": 5,
+      "bytes": 1196
+     },
+     {
+      "ix": -1,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/piers/-1_1.bin",
+      "featureCount": 21,
+      "bytes": 3696
+     },
+     {
+      "ix": 0,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/piers/0_1.bin",
+      "featureCount": 8,
+      "bytes": 4784
+     },
+     {
+      "ix": -4,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/piers/-4_2.bin",
+      "featureCount": 4,
+      "bytes": 1312
+     },
+     {
+      "ix": -2,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/piers/-2_2.bin",
+      "featureCount": 2,
+      "bytes": 1952
+     },
+     {
+      "ix": -1,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/piers/-1_2.bin",
+      "featureCount": 14,
+      "bytes": 2916
+     },
+     {
+      "ix": 0,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/piers/0_2.bin",
+      "featureCount": 5,
+      "bytes": 836
+     },
+     {
+      "ix": -2,
+      "iz": 3,
+      "url": "tiles/lower-manhattan/piers/-2_3.bin",
+      "featureCount": 3,
+      "bytes": 776
+     }
+    ],
+    "water": [
+     {
+      "ix": -3,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/water/-3_1.bin",
+      "featureCount": 1,
+      "bytes": 1132
+     },
+     {
+      "ix": 0,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/water/0_1.bin",
+      "featureCount": 6,
+      "bytes": 1424
+     },
+     {
+      "ix": -4,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/water/-4_2.bin",
+      "featureCount": 1,
+      "bytes": 364
+     },
+     {
+      "ix": -1,
+      "iz": 2,
+      "url": "tiles/lower-manhattan/water/-1_2.bin",
+      "featureCount": 1,
+      "bytes": 2476
+     }
+    ],
+    "trees": [
+     {
+      "ix": -1,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/trees/-1_-2.bin",
+      "featureCount": 716,
+      "bytes": 7480
+     },
+     {
+      "ix": 0,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/trees/0_-2.bin",
+      "featureCount": 874,
+      "bytes": 9060
+     },
+     {
+      "ix": 1,
+      "iz": -2,
+      "url": "tiles/lower-manhattan/trees/1_-2.bin",
+      "featureCount": 461,
+      "bytes": 4932
+     },
+     {
+      "ix": -1,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/trees/-1_-1.bin",
+      "featureCount": 1112,
+      "bytes": 11444
+     },
+     {
+      "ix": 0,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/trees/0_-1.bin",
+      "featureCount": 957,
+      "bytes": 9892
+     },
+     {
+      "ix": 1,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/trees/1_-1.bin",
+      "featureCount": 2190,
+      "bytes": 22228
+     },
+     {
+      "ix": 2,
+      "iz": -1,
+      "url": "tiles/lower-manhattan/trees/2_-1.bin",
+      "featureCount": 575,
+      "bytes": 6068
+     },
+     {
+      "ix": -2,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/trees/-2_0.bin",
+      "featureCount": 47,
+      "bytes": 780
+     },
+     {
+      "ix": -1,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/trees/-1_0.bin",
+      "featureCount": 1186,
+      "bytes": 12184
+     },
+     {
+      "ix": 0,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/trees/0_0.bin",
+      "featureCount": 1048,
+      "bytes": 10792
+     },
+     {
+      "ix": 1,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/trees/1_0.bin",
+      "featureCount": 435,
+      "bytes": 4664
+     },
+     {
+      "ix": 2,
+      "iz": 0,
+      "url": "tiles/lower-manhattan/trees/2_0.bin",
+      "featureCount": 329,
+      "bytes": 3608
+     },
+     {
+      "ix": -1,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/trees/-1_1.bin",
+      "featureCount": 518,
+      "bytes": 5500
+     },
+     {
+      "ix": 0,
+      "iz": 1,
+      "url": "tiles/lower-manhattan/trees/0_1.bin",
+      "featureCount": 1,
+      "bytes": 316
+     }
+    ]
+   },
+   "boundary": [
+    [
+     -4559,
+     4206.5
+    ],
+    [
+     -4555.4,
+     -1804.8
+    ],
+    [
+     -404.9,
+     -1797.8
+    ],
+    [
+     -126.5,
+     -1764.4
+    ],
+    [
+     50.6,
+     -1747.7
+    ],
+    [
+     236.2,
+     -1736.6
+    ],
+    [
+     548.3,
+     -1580.8
+    ],
+    [
+     776.1,
+     -1408.2
+    ],
+    [
+     1138.9,
+     -1302.5
+    ],
+    [
+     1375.2,
+     -1213.5
+    ],
+    [
+     1653.6,
+     -1063.3
+    ],
+    [
+     1940.5,
+     -946.5
+    ],
+    [
+     2235.8,
+     -857.5
+    ],
+    [
+     2463.6,
+     -785.2
+    ],
+    [
+     3881,
+     -785.8
+    ],
+    [
+     3883.6,
+     4206.9
     ]
    ]
   }
