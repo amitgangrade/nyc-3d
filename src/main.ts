@@ -247,6 +247,7 @@ async function main() {
     const dist = ctrl.mode === 'map' ? camera.position.distanceTo(ctrl.target) : Math.max(300, camera.position.y * 2);
     tiles.update(camera, focus);
     env.updateShadow(focus, dist);
+    env.updateFog(camera.position.y);
     setTreeShadows(dist < 1600);
     sky.follow(camera);
 

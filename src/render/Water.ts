@@ -10,7 +10,9 @@ export class Water {
   private rt: THREE.WebGLRenderTarget;
   private mirrorCam = new THREE.PerspectiveCamera();
   private textureMatrix = new THREE.Matrix4();
-  private clip = [new THREE.Plane(new THREE.Vector3(0, 1, 0), 0.05)];
+  /** water surface height: kept 2 m below the land so the two never depth-fight from high altitude */
+  static readonly LEVEL = -2;
+  private clip = [new THREE.Plane(new THREE.Vector3(0, 1, 0), -Water.LEVEL - 0.05)];
   private material: THREE.ShaderMaterial;
   scale = 0.5;
 
@@ -109,11 +111,11 @@ export class Water {
 
   /** Follows the camera horizontally (keeps the plane centred) and renders the reflection. */
   render(renderer: THREE.WebGLRenderer, scene: THREE.Scene, camera: THREE.PerspectiveCamera, skyMesh: THREE.Object3D) {
-    this.mesh.position.set(camera.position.x, 0, camera.position.z);
+    this.mesh.position.set(camera.position.x, Water.LEVEL, camera.position.z);
     const mc = this.mirrorCam;
     mc.copy(camera, false);
     mc.layers.set(0); // skip fine detail (trees) in the reflection
-    mc.position.set(camera.position.x, -camera.position.y, camera.position.z);
+    mc.position.set(camera.position.x, 2 * Water.LEVEL - camera.position.y, camera.position.z);
     const dir = new THREE.Vector3(); camera.getWorldDirection(dir); dir.y = -dir.y;
     const up = new THREE.Vector3(0, 1, 0).applyQuaternion(camera.quaternion); up.y = -up.y;
     mc.up.copy(up);

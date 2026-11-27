@@ -71,6 +71,11 @@ export class Environment {
   }
   private keyDir = new THREE.Vector3(0, 1, 0);
 
+  /** Haze is a ground-level effect: thin it out as the camera climbs so wide overviews stay crisp. */
+  updateFog(altitude: number) {
+    if (this.atm) this.fog.density = this.atm.fogDensity / (1 + Math.max(0, altitude) / 1500);
+  }
+
   /** Keep the shadow frustum centred on what the camera looks at, sized by distance. */
   updateShadow(focus: THREE.Vector3, camDistance: number) {
     const ext = THREE.MathUtils.clamp(camDistance * 0.9, 250, 4000);
