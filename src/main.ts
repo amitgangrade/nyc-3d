@@ -19,7 +19,8 @@ import { CameraController } from './controls/CameraController';
 import { UI } from './ui/UI';
 import { DETAIL_LAYER, setTreeShadows } from './render/Trees';
 
-const DATA = `${import.meta.env.BASE_URL}data`;
+// absolute URL: workers resolve relative URLs against their own script location
+const DATA = new URL(`${import.meta.env.BASE_URL}data`, window.location.href).href.replace(/\/$/, '');
 
 async function main() {
   const ui = new UI();
