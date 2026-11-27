@@ -161,7 +161,15 @@ async function main() {
     const hg = tiles.buildingGeometry(b);
     if (hg) { highlight = new THREE.Mesh(hg.geometry, highlightMat); highlight.position.copy(hg.position); scene.add(highlight); }
     const [lon, lat] = proj.inverse(b.centroid[0], b.centroid[1]);
-    ui.showInfo({ title: b.bin ? `Building · BIN ${b.bin}` : 'Building', height: b.height, year: b.year, note: null, lonlat: [lon, lat] });
+    if (b.osm) {
+      ui.showInfo({
+        title: `Building · OSM ${b.osm.type} ${b.osm.id}`, height: b.height, year: b.year, lonlat: [lon, lat],
+        note: 'Source: OpenStreetMap contributors (ODbL). Height from OSM tags or a Microsoft ML estimate.',
+        link: { href: `https://www.openstreetmap.org/${b.osm.type}/${b.osm.id}`, label: 'View in OpenStreetMap ↗' },
+      });
+    } else {
+      ui.showInfo({ title: b.bin ? `Building · BIN ${b.bin}` : 'Building', height: b.height, year: b.year, note: null, lonlat: [lon, lat] });
+    }
   };
 
   let downAt: [number, number] | null = null;

@@ -37,7 +37,18 @@ const LANDMARKS: LandmarkDef[] = [
     // (Transportation Structures) intersected with the borough shorelines.
     id: 'brooklyn-bridge', lon: -73.99691, lat: 40.70614, anchor: 'free', bearing: 136.7,
     info: { name: 'Brooklyn Bridge', height: 84.3, year: 1883, description: 'Hybrid cable-stayed / suspension bridge, main span 486 m. Towers 84 m above the East River.' },
-    build: buildBrooklynBridge,
+    build: (fp) => buildSuspensionBridge(fp, BROOKLYN),
+  },
+  {
+    // derived the same way from the Manhattan Bridge deck polygon
+    id: 'manhattan-bridge', lon: -73.99055, lat: 40.70713, anchor: 'free', bearing: 157.0,
+    info: { name: 'Manhattan Bridge', height: 102, year: 1909, description: 'Suspension bridge, main span 448 m, carrying road traffic and four subway tracks.' },
+    build: (fp) => buildSuspensionBridge(fp, MANHATTAN),
+  },
+  {
+    id: 'williamsburg-bridge', lon: -73.97204, lat: 40.71352, anchor: 'free', bearing: 110.4,
+    info: { name: 'Williamsburg Bridge', height: 102, year: 1903, description: 'Suspension bridge with steel lattice towers, main span 488 m, from Delancey St to Williamsburg.' },
+    build: (fp) => buildSuspensionBridge(fp, WILLIAMSBURG),
   },
 ];
 
@@ -184,114 +195,181 @@ function buildOneWTC(fp: Footprint): THREE.Object3D {
   return g;
 }
 
-// ------------------------------------------------------------------ Brooklyn Bridge
-function buildBrooklynBridge(fp: Footprint): THREE.Object3D {
+// ------------------------------------------------------------------ suspension bridges
+interface BridgeSpec {
+  /** half of the main span (centre to tower) and side-span length, metres */
+  mainHalf: number; side: number;
+  /** deck extent along the axis (negative = Manhattan side) */
+  endM: number; endB: number;
+  towerH: number; deckMid: number; deckTower: number; deckAnchor: number;
+  deckHalfW: number; deckThick: number;
+  cableS: number[]; cableMid: number; cableAnchor: number;
+  stays: boolean;
+  tower: 'gothic' | 'steel';
+  colors: {
+    stone: number;            // daytime tower colour
+    towerGlow: number[];      // night tower wash, cycles slowly through these
+    necklace: 'rainbow' | number;
+    lines: number;            // night colour of suspenders / stays
+  };
+}
+
+const lerpN = (a: number, b: number, t: number) => a + (b - a) * t;
+
+function buildSuspensionBridge(fp: Footprint, b: BridgeSpec): THREE.Object3D {
   const g = new THREE.Group();
   const ax = new THREE.Vector2(Math.cos(fp.angle), Math.sin(fp.angle)); // towards Brooklyn
   const nx = new THREE.Vector2(-ax.y, ax.x);
   const P = (t: number, s: number, y: number) =>
     new THREE.Vector3(fp.center.x + ax.x * t + nx.x * s, y, fp.center.y + ax.y * t + nx.y * s);
-
-  const TOWER = 243, ANCHOR = 526, END_M = -983, END_B = 898;
+  const T = b.mainHalf, A = b.mainHalf + b.side;
   const deckY = (t: number) => {
     const a = Math.abs(t);
-    if (a <= TOWER) return 42 - (t / TOWER) ** 2 * 4.5;
-    if (a <= ANCHOR) return 37.5 - ((a - TOWER) / (ANCHOR - TOWER)) * 8;
-    const end = t < 0 ? -END_M : END_B;
-    const k = Math.min(1, (a - ANCHOR) / (end - ANCHOR));
-    return 29.5 * (1 - k * k * (3 - 2 * k)) + 2 * k;
+    if (a <= T) return b.deckMid - (t / T) ** 2 * (b.deckMid - b.deckTower);
+    if (a <= A) return lerpN(b.deckTower, b.deckAnchor, (a - T) / b.side);
+    const end = t < 0 ? -b.endM : b.endB;
+    const k = Math.min(1, (a - A) / (end - A));
+    return b.deckAnchor * (1 - k * k * (3 - 2 * k)) + 2 * k;
+  };
+  const cableY = (t: number) => {
+    const a = Math.abs(t);
+    if (a <= T) return b.cableMid + (b.towerH - 4 - b.cableMid) * (t / T) ** 2;
+    const k = (a - T) / b.side;
+    return lerpN(b.towerH - 4, b.cableAnchor, k) - 0.06 * b.side * Math.sin(Math.PI * k);
   };
 
-  const stone = new THREE.MeshStandardMaterial({ color: 0xa3927a, roughness: 0.92, emissive: 0xffcf96, emissiveIntensity: 0 });
-  stone.onBeforeRender = () => { stone.emissiveIntensity = 0.16 * shared.uLights.value; };
-  const steel = new THREE.MeshStandardMaterial({ color: 0x5a554d, roughness: 0.7, metalness: 0.4 });
-  const road = new THREE.MeshStandardMaterial({ color: 0x3b3a39, roughness: 0.9 });
+  // ---- materials: towers get a slowly cycling coloured wash at night
+  const towerMat = new THREE.MeshStandardMaterial({
+    color: b.colors.stone, roughness: b.tower === 'gothic' ? 0.92 : 0.55, metalness: b.tower === 'gothic' ? 0 : 0.5, emissive: 0xffffff, emissiveIntensity: 0,
+  });
+  const glowCols = b.colors.towerGlow.map((c) => new THREE.Color(c));
+  towerMat.onBeforeRender = () => {
+    const L = shared.uLights.value;
+    const k = (shared.uTime.value * 0.05) % glowCols.length;
+    const i = Math.floor(k), f = k - i;
+    towerMat.emissive.copy(glowCols[i]).lerp(glowCols[(i + 1) % glowCols.length], f * f * (3 - 2 * f));
+    towerMat.emissiveIntensity = (b.tower === 'gothic' ? 0.55 : 0.7) * L;
+  };
+  const steel = new THREE.MeshStandardMaterial({ color: b.tower === 'steel' ? b.colors.stone : 0x5a554d, roughness: 0.6, metalness: 0.5 });
+  const road = new THREE.MeshStandardMaterial({ color: 0x3b3a39, roughness: 0.9, emissive: new THREE.Color(1.0, 0.65, 0.35), emissiveIntensity: 0 });
+  road.onBeforeRender = () => { road.emissiveIntensity = 0.12 * shared.uLights.value; };
 
-  // ---- deck: box ribbon sampled along the profile
-  const W = 13, TH = 4;
+  // ---- deck: box ribbon following the profile
+  const W = b.deckHalfW, TH = b.deckThick;
   const dpos: number[] = [], didx: number[] = [], rpos: number[] = [], ridx: number[] = [];
-  const quad = (arr: number[], idx: number[], a: THREE.Vector3, b: THREE.Vector3, c: THREE.Vector3, d: THREE.Vector3) => {
-    const o = arr.length / 3; arr.push(a.x, a.y, a.z, b.x, b.y, b.z, c.x, c.y, c.z, d.x, d.y, d.z);
+  const quad = (arr: number[], idx: number[], p0: THREE.Vector3, p1: THREE.Vector3, p2: THREE.Vector3, p3: THREE.Vector3) => {
+    const o = arr.length / 3; arr.push(p0.x, p0.y, p0.z, p1.x, p1.y, p1.z, p2.x, p2.y, p2.z, p3.x, p3.y, p3.z);
     idx.push(o, o + 1, o + 2, o, o + 2, o + 3);
   };
-  for (let t = END_M; t < END_B; t += 8) {
-    const t2 = Math.min(END_B, t + 8), y1 = deckY(t), y2 = deckY(t2);
-    quad(rpos, ridx, P(t, -W, y1), P(t, W, y1), P(t2, W, y2), P(t2, -W, y2));               // roadway (top)
-    quad(dpos, didx, P(t, W, y1), P(t, W, y1 - TH), P(t2, W, y2 - TH), P(t2, W, y2));       // side
-    quad(dpos, didx, P(t2, -W, y2), P(t2, -W, y2 - TH), P(t, -W, y1 - TH), P(t, -W, y1));   // side
-    quad(dpos, didx, P(t, -W, y1 - TH), P(t, W, y1 - TH), P(t2, W, y2 - TH), P(t2, -W, y2 - TH)); // underside
+  for (let t = b.endM; t < b.endB; t += 8) {
+    const t2 = Math.min(b.endB, t + 8), y1 = deckY(t), y2 = deckY(t2);
+    quad(rpos, ridx, P(t, -W, y1), P(t, W, y1), P(t2, W, y2), P(t2, -W, y2));
+    quad(dpos, didx, P(t, W, y1), P(t, W, y1 - TH), P(t2, W, y2 - TH), P(t2, W, y2));
+    quad(dpos, didx, P(t2, -W, y2), P(t2, -W, y2 - TH), P(t, -W, y1 - TH), P(t, -W, y1));
+    quad(dpos, didx, P(t, -W, y1 - TH), P(t, W, y1 - TH), P(t2, W, y2 - TH), P(t2, -W, y2 - TH));
   }
-  const mk = (pos: number[], idx: number[], mat: THREE.Material) => {
+  const mk = (pos: number[], idx: number[], mat: THREE.MeshStandardMaterial) => {
     const geo = new THREE.BufferGeometry();
     geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); geo.setIndex(idx);
     geo.computeVertexNormals();
+    mat.side = THREE.DoubleSide;
     const m = new THREE.Mesh(geo, mat); m.castShadow = m.receiveShadow = true;
-    (mat as THREE.MeshStandardMaterial).side = THREE.DoubleSide;
     return m;
   };
-  g.add(mk(rpos, ridx, road), mk(dpos, didx, steel));
+  g.add(mk(dpos, didx, steel), mk(rpos, ridx, road));
 
-  // ---- towers: base block, three piers, crown block
+  // ---- towers
   const box = (t: number, s: number, y0: number, y1: number, lt: number, ls: number) => {
-    const m = new THREE.Mesh(new THREE.BoxGeometry(lt, y1 - y0, ls), stone);
-    const c = P(t, s, (y0 + y1) / 2);
-    m.position.copy(c);
+    const m = new THREE.Mesh(new THREE.BoxGeometry(lt, y1 - y0, ls), towerMat);
+    m.position.copy(P(t, s, (y0 + y1) / 2));
     m.rotation.y = -fp.angle;
     m.castShadow = m.receiveShadow = true;
-    return m;
+    g.add(m);
   };
-  for (const tt of [-TOWER, TOWER]) {
-    const dy = deckY(tt);
-    g.add(box(tt, 0, -3, dy - 2, 22, 44));                 // caisson + base
-    g.add(box(tt, -17.5, dy - 2, 66, 16, 9));              // outer pier
-    g.add(box(tt, 17.5, dy - 2, 66, 16, 9));               // outer pier
-    g.add(box(tt, 0, dy - 2, 66, 16, 8));                  // centre pier
-    g.add(box(tt, 0, 58, 66, 15, 44));                     // arch spandrel
-    g.add(box(tt, 0, 66, 81, 18, 44));                     // crown
-    g.add(box(tt, 0, 81, 84.3, 20, 46));                   // cornice
+  for (const tt of [-T, T]) {
+    const dy = deckY(tt), H = b.towerH, Wt = W + 4;
+    if (b.tower === 'gothic') {
+      box(tt, 0, -3, dy - 2, 22, Wt * 2 + 6);
+      box(tt, -Wt + 1, dy - 2, H * 0.78, 16, 9);
+      box(tt, Wt - 1, dy - 2, H * 0.78, 16, 9);
+      box(tt, 0, dy - 2, H * 0.78, 16, 8);
+      box(tt, 0, H * 0.69, H * 0.78, 15, Wt * 2);
+      box(tt, 0, H * 0.78, H - 3.3, 18, Wt * 2 + 1);
+      box(tt, 0, H - 3.3, H, 20, Wt * 2 + 3);
+    } else {
+      box(tt, 0, -3, 6, 16, Wt * 2 + 8);                                      // pier
+      for (const sgn of [-1, 1]) box(tt, sgn * Wt, 6, H, 7, 6);               // legs
+      for (const f of [0.42, 0.62, 0.82]) box(tt, 0, H * f - 2, H * f + 2, 4, Wt * 2); // portal bracing
+      box(tt, 0, H - 4, H, 8, Wt * 2 + 6);                                    // crown
+    }
   }
 
-  // ---- main cables (4), suspenders, diagonal stays
-  const cableS = [-15.5, -5, 5, 15.5];
-  const cableY = (t: number) => {
-    const a = Math.abs(t);
-    if (a <= TOWER) return 46 + 34 * (t / TOWER) ** 2;          // main span: 46 m at centre -> 80 m at towers
-    const k = (a - TOWER) / (ANCHOR - TOWER);                    // side span: tower 80 -> anchorage 33 with sag
-    return 80 + (33 - 80) * k - 9 * Math.sin(Math.PI * k);
-  };
-  const cablePts: number[] = [], susp: number[] = [], stays: number[] = [], necklace: number[] = [];
-  for (const s of cableS) {
-    for (let t = -ANCHOR; t < ANCHOR; t += 4) {
-      const a = P(t, s, cableY(t)), b = P(t + 4, s, cableY(t + 4));
-      cablePts.push(a.x, a.y, a.z, b.x, b.y, b.z);
+  // ---- cables, suspenders, stays (night-glowing colour lines) + necklace lights
+  const cablePts: number[] = [], susp: number[] = [], stays: number[] = [], necklace: number[] = [], phase: number[] = [];
+  for (const s of b.cableS) {
+    for (let t = -A; t < A; t += 4) cablePts.push(...P(t, s, cableY(t)).toArray(), ...P(t + 4, s, cableY(t + 4)).toArray());
+    for (let t = -A + 6; t < A; t += 6) {
+      if (Math.abs(Math.abs(t) - T) < 10) continue;
+      susp.push(...P(t, s, cableY(t)).toArray(), ...P(t, s, deckY(t)).toArray());
     }
-    for (let t = -ANCHOR + 6; t < ANCHOR; t += 6) {
-      if (Math.abs(Math.abs(t) - TOWER) < 10) continue;
-      const a = P(t, s, cableY(t)), b = P(t, s, deckY(t));
-      susp.push(a.x, a.y, a.z, b.x, b.y, b.z);
+    if (Math.abs(s) >= Math.max(...b.cableS.map(Math.abs)) - 0.1) {
+      for (let t = -A; t <= A; t += 6) { necklace.push(...P(t, s, cableY(t) + 0.6).toArray()); phase.push((t + A) / (2 * A)); }
     }
-    if (Math.abs(s) > 10) for (let t = -ANCHOR; t <= ANCHOR; t += 7) necklace.push(...P(t, s, cableY(t) + 0.6).toArray());
   }
-  // diagonal stays radiating from each tower top to the deck
-  for (const tt of [-TOWER, TOWER]) for (const dir of [-1, 1]) for (const s of [-15.5, 15.5]) {
-    const top = P(tt, s, 79);
+  if (b.stays) for (const tt of [-T, T]) for (const dir of [-1, 1]) for (const s of [b.cableS[0], b.cableS[b.cableS.length - 1]]) {
+    const top = P(tt, s, b.towerH - 5);
     for (let d = 14; d <= 140; d += 9) {
       const t = tt + dir * d;
-      if (Math.abs(t) > ANCHOR) continue;
-      const b = P(t, s, deckY(t));
-      stays.push(top.x, top.y, top.z, b.x, b.y, b.z);
+      if (Math.abs(t) > A) continue;
+      stays.push(top.x, top.y, top.z, ...P(t, s, deckY(t)).toArray());
     }
   }
-  const line = (pts: number[], color: number, opacity: number) => {
-    const geo = new THREE.BufferGeometry();
-    geo.setAttribute('position', new THREE.Float32BufferAttribute(pts, 3));
-    return new THREE.LineSegments(geo, new THREE.LineBasicMaterial({ color, transparent: opacity < 1, opacity }));
-  };
-  g.add(line(cablePts, 0x2e2b28, 1), line(susp, 0x3b3835, 0.55), line(stays, 0x3b3835, 0.5));
-  g.add(createGlowPoints(necklace));
-  // lamp posts along the promenade
+  g.add(glowLines(cablePts, 0x2e2b28, b.colors.lines, 1.0), glowLines(susp, 0x3b3835, b.colors.lines, 0.55), glowLines(stays, 0x3b3835, b.colors.lines, 0.5));
+  g.add(createGlowPoints(necklace, typeof b.colors.necklace === 'number' ? new THREE.Color(b.colors.necklace) : undefined, 2600, b.colors.necklace === 'rainbow' ? phase : undefined));
   const lamps: number[] = [];
-  for (let t = END_M + 40; t < END_B - 40; t += 30) for (const s of [-3, 3]) lamps.push(...P(t, s, deckY(t) + 4).toArray());
+  for (let t = b.endM + 40; t < b.endB - 40; t += 30) for (const s of [-W + 1, W - 1]) lamps.push(...P(t, s, deckY(t) + 4).toArray());
   g.add(createGlowPoints(lamps, new THREE.Color(1.0, 0.72, 0.42), 1500));
   return g;
 }
+
+/** Line segments that are dark steel by day and glow in a colour (with a moving shimmer) at night. */
+function glowLines(pts: number[], day: number, night: number, opacity: number) {
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.Float32BufferAttribute(pts, 3));
+  const m = new THREE.ShaderMaterial({
+    uniforms: { uLights: shared.uLights, uTime: shared.uTime, uDay: { value: new THREE.Color(day) }, uNightC: { value: new THREE.Color(night) }, uOpacity: { value: opacity } },
+    vertexShader: `#include <common>
+      #include <logdepthbuf_pars_vertex>
+      varying vec3 vP;
+      void main(){ vP = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        #include <logdepthbuf_vertex>
+      }`,
+    fragmentShader: `#include <common>
+      #include <logdepthbuf_pars_fragment>
+      uniform float uLights; uniform float uTime; uniform vec3 uDay; uniform vec3 uNightC; uniform float uOpacity; varying vec3 vP;
+      void main(){
+        #include <logdepthbuf_fragment>
+        float shimmer = 0.7 + 0.3 * sin(vP.x * 0.02 + vP.z * 0.02 - uTime * 1.5);
+        vec3 c = mix(uDay, uNightC * 0.75 * shimmer, uLights);
+        gl_FragColor = vec4(c, mix(uOpacity, uOpacity * 0.7, uLights));
+      }`,
+    transparent: true, depthWrite: false,
+  });
+  return new THREE.LineSegments(geo, m);
+}
+
+const BROOKLYN: BridgeSpec = {
+  mainHalf: 243, side: 283, endM: -983, endB: 898, towerH: 84.3, deckMid: 42, deckTower: 37.5, deckAnchor: 29.5,
+  deckHalfW: 13, deckThick: 4, cableS: [-15.5, -5, 5, 15.5], cableMid: 46, cableAnchor: 33, stays: true, tower: 'gothic',
+  colors: { stone: 0xa3927a, towerGlow: [0xffc98a, 0x7a8cff, 0xd070ff, 0xffc98a, 0x4fd6ff], necklace: 'rainbow', lines: 0x9fdcff },
+};
+const MANHATTAN: BridgeSpec = {
+  mainHalf: 224, side: 221, endM: -998, endB: 937, towerH: 102, deckMid: 46, deckTower: 42, deckAnchor: 30,
+  deckHalfW: 18, deckThick: 8, cableS: [-17, -6, 6, 17], cableMid: 50, cableAnchor: 30, stays: false, tower: 'steel',
+  colors: { stone: 0x6f8aa3, towerGlow: [0x2f7bff, 0x31d0ff, 0x7a5cff], necklace: 0x9fe0ff, lines: 0x3fa8ff },
+};
+const WILLIAMSBURG: BridgeSpec = {
+  mainHalf: 244, side: 182, endM: -1229, endB: 983, towerH: 102, deckMid: 45, deckTower: 41, deckAnchor: 32,
+  deckHalfW: 18, deckThick: 9, cableS: [-17, -6, 6, 17], cableMid: 49, cableAnchor: 34, stays: false, tower: 'steel',
+  colors: { stone: 0x8c8a84, towerGlow: [0xff3fb4, 0xb04bff, 0xff7a3f], necklace: 0xffa6e8, lines: 0xff63c8 },
+};

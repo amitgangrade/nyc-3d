@@ -14,10 +14,12 @@ THREE.Mesh.prototype.raycast = acceleratedRaycast;
 export interface BuildingInfo {
   region: string; tileKey: string; index: number;
   height: number; year: number; bin: number; centroid: [number, number];
+  /** set for OpenStreetMap-sourced buildings */
+  osm?: { type: 'way' | 'relation'; id: number };
 }
 
 interface TileState {
-  key: string; region: string; layer: LayerDef; tile: ManifestTile;
+  key: string; region: string; provider?: string; layer: LayerDef; tile: ManifestTile;
   center: THREE.Vector2; radius: number;
   status: 'idle' | 'loading' | 'loaded';
   object?: THREE.Object3D;
@@ -46,7 +48,7 @@ export class TileManager {
       for (const layer of LAYERS) {
         for (const tile of region.layers[layer.name] ?? []) {
           this.tiles.push({
-            key: `${region.id}/${layer.name}/${tile.ix}_${tile.iz}`, region: region.id, layer, tile,
+            key: `${region.id}/${layer.name}/${tile.ix}_${tile.iz}`, region: region.id, provider: region.provider, layer, tile,
             center: new THREE.Vector2((tile.ix + 0.5) * T, (tile.iz + 0.5) * T), radius: T * 0.75,
             status: 'idle',
           });
@@ -96,7 +98,7 @@ export class TileManager {
       t.mesh = mesh;
     }
     if (res.lights) group.add(createStreetLights(res.lights, res.origin));
-    if (res.trees?.length) group.add(createTrees(res.trees, res.origin));
+    if (res.trees?.length) group.add(createTrees(res.trees, res.origin, t.layer.name === 'parks'));
     t.features = res.features;
     t.object = group;
     t.status = 'loaded';
@@ -147,6 +149,7 @@ export class TileManager {
     return {
       region: t.region, tileKey: t.key, index: i, height: f.height[i], year: f.year[i], bin: f.bin[i],
       centroid: [f.centroid[i * 2], f.centroid[i * 2 + 1]],
+      osm: t.provider === 'osm' ? { type: f.osmType?.[i] ? 'relation' : 'way', id: f.bin[i] } : undefined,
     };
   }
 

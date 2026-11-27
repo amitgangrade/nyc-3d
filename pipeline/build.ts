@@ -16,6 +16,7 @@ import { cachedJSON, fetchRetry } from './fetch';
 import { centroid, cleanPoly, distToPolys, pointInRing, ringBBox, signedArea, type Poly } from './geo';
 import type { Feature, Provider, RegionDef } from './providers/types';
 import { nycProvider, geomToPolys } from './providers/nyc';
+import { osmProvider } from './providers/osm';
 import * as shapefile from 'shapefile';
 import polygonClipping from 'polygon-clipping';
 
@@ -27,7 +28,7 @@ const regionsCfg = JSON.parse(readFileSync(join(ROOT, 'config/regions.json'), 'u
 const proj = new Projection(world.origin);
 const TILE: number = world.tileSize;
 
-const PROVIDERS: Record<string, Provider> = { nyc: nycProvider };
+const PROVIDERS: Record<string, Provider> = { nyc: nycProvider, osm: osmProvider };
 
 const args = process.argv.slice(2);
 const refresh = args.includes('--refresh');
@@ -50,21 +51,23 @@ function encodeFeatures(feats: Feature[], propTypes: Record<string, string>, hea
     feats.forEach((f, i) => { coords[i * 2] = f.point![0] - header.origin[0]; coords[i * 2 + 1] = f.point![1] - header.origin[1]; });
     return encodeTile({ ...header, featureCount: feats.length, meta: { geometry: 'point' } }, addProps({ coords }));
   }
+  const isLine = !!(feats.length && feats[0].line);
+  const rings = (f: Feature) => (isLine ? [f.line!] : f.poly!);
   let ringCount = 0, vertCount = 0;
-  for (const f of feats) { ringCount += f.poly!.length; for (const r of f.poly!) vertCount += r.length; }
+  for (const f of feats) { ringCount += rings(f).length; for (const r of rings(f)) vertCount += r.length; }
   const featRings = new Uint32Array(feats.length + 1);
   const ringVerts = new Uint32Array(ringCount + 1);
   const coords = new Float32Array(vertCount * 2);
   let ri = 0, vi = 0;
   feats.forEach((f, fi) => {
     featRings[fi] = ri;
-    for (const r of f.poly!) {
+    for (const r of rings(f)) {
       ringVerts[ri++] = vi;
       for (const p of r) { coords[vi * 2] = p[0] - header.origin[0]; coords[vi * 2 + 1] = p[1] - header.origin[1]; vi++; }
     }
   });
   featRings[feats.length] = ri; ringVerts[ringCount] = vi;
-  return encodeTile({ ...header, featureCount: feats.length }, addProps({ featRings, ringVerts, coords }));
+  return encodeTile({ ...header, featureCount: feats.length, meta: isLine ? { geometry: 'line' } : undefined }, addProps({ featRings, ringVerts, coords }));
 }
 
 function readManifest(): Manifest {
@@ -99,7 +102,8 @@ async function buildRegion(def: RegionDef) {
   const lons = def.boundary.map((p) => p[0]), lats = def.boundary.map((p) => p[1]);
   const bbox: [number, number, number, number] = [Math.min(...lons), Math.min(...lats), Math.max(...lons), Math.max(...lats)];
   const boundary = def.boundary.map(([lon, lat]) => proj.forward(lon, lat));
-  const boros = def.borough ? await boroughs() : null;
+  const boros = def.borough || def.excludeNYC ? await boroughs() : null;
+  const allBoroPolys = boros ? Object.values(boros).flat() : [];
   // cache nearest-borough lookups (bbox prefilter keeps this fast)
   const boroBoxes = boros ? Object.entries(boros).map(([n, ps]) => ({ n, ps, bb: ringBBox(ps.flatMap((p) => p[0])) })) : [];
   const nearestBorough = (p: [number, number]) => {
@@ -116,7 +120,7 @@ async function buildRegion(def: RegionDef) {
   const regionDir = join(OUT, 'tiles', def.id);
   if (existsSync(regionDir)) rmSync(regionDir, { recursive: true });
   const entry: ManifestRegion = {
-    id: def.id, name: def.name, description: def.description, builtAt: new Date().toISOString(),
+    id: def.id, name: def.name, description: def.description, provider: def.provider, builtAt: new Date().toISOString(),
     bounds: [Infinity, Infinity, -Infinity, -Infinity], camera: def.camera, layers: {},
     boundary: boundary.map(([x, z]) => [Math.round(x * 10) / 10, Math.round(z * 10) / 10] as [number, number]),
   };
@@ -127,16 +131,17 @@ async function buildRegion(def: RegionDef) {
     const tiles = new Map<string, Feature[]>();
     let kept = 0;
     for (const f of feats) {
-      const c = f.point ?? centroid(f.poly![0]);
+      const c = f.point ?? (f.line ? f.line[f.line.length >> 1] : centroid(f.poly![0]));
       if (!pointInRing(c, boundary)) continue;
       if (def.borough && nearestBorough(c) !== def.borough) continue;
+      if (def.excludeNYC && distToPolys(c, allBoroPolys) === 0) continue;
       if (spec.flagOverWater && boros) {
         f.props.overWater = Object.values(boros).some((ps) => distToPolys(c, ps) === 0) ? 0 : 1;
       }
       kept++;
       const key = `${Math.floor(c[0] / TILE)}_${Math.floor(c[1] / TILE)}`;
       (tiles.get(key) ?? tiles.set(key, []).get(key)!).push(f);
-      const bb = f.point ? [c[0], c[1], c[0], c[1]] : ringBBox(f.poly![0]);
+      const bb = f.point ? [c[0], c[1], c[0], c[1]] : ringBBox(f.line ?? f.poly![0]);
       entry.bounds[0] = Math.min(entry.bounds[0], bb[0]); entry.bounds[1] = Math.min(entry.bounds[1], bb[1]);
       entry.bounds[2] = Math.max(entry.bounds[2], bb[2]); entry.bounds[3] = Math.max(entry.bounds[3], bb[3]);
     }

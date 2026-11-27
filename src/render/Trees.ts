@@ -1,6 +1,8 @@
 import * as THREE from 'three';
 import { TREE_STRIDE } from '../workers/meshWorker';
 import { Y } from '../core/constants';
+import { shared as shared_ } from './uniforms';
+import { GLSL_COMMON } from './shaders/common.glsl';
 
 /**
  * Instanced trees: a lumpy low-poly crown + trunk per tree, coloured per
@@ -11,6 +13,7 @@ let crownGeo: THREE.BufferGeometry | null = null;
 let coneGeo: THREE.BufferGeometry | null = null;
 let trunkGeo: THREE.BufferGeometry | null = null;
 let crownMat: THREE.MeshStandardMaterial | null = null;
+let parkCrownMat: THREE.MeshStandardMaterial | null = null;
 let trunkMat: THREE.MeshStandardMaterial | null = null;
 
 function lumpy(geo: THREE.BufferGeometry, amount: number) {
@@ -31,10 +34,55 @@ function shared() {
     crownGeo = lumpy(new THREE.IcosahedronGeometry(1, 1), 0.12);
     coneGeo = new THREE.ConeGeometry(1, 2, 7, 1);
     trunkGeo = new THREE.CylinderGeometry(0.12, 0.18, 1, 5, 1, true).translate(0, 0.5, 0);
-    crownMat = new THREE.MeshStandardMaterial({ roughness: 0.95, metalness: 0, flatShading: true });
+    crownMat = glowingCrown(false);
+    parkCrownMat = glowingCrown(true);
     trunkMat = new THREE.MeshStandardMaterial({ color: 0x4a3b2e, roughness: 1 });
   }
-  return { crownGeo: crownGeo!, coneGeo: coneGeo!, trunkGeo: trunkGeo!, crownMat: crownMat!, trunkMat: trunkMat! };
+  return { crownGeo: crownGeo!, coneGeo: coneGeo!, trunkGeo: trunkGeo!, crownMat: crownMat!, parkCrownMat: parkCrownMat!, trunkMat: trunkMat! };
+}
+
+/**
+ * Crown material with night-time glow: a soft emissive tint of the foliage
+ * colour plus twinkling fairy lights scattered over the crown surface.
+ * Park trees glow more and carry multicoloured lights; street trees get sparse warm lights.
+ */
+function glowingCrown(park: boolean) {
+  const m = new THREE.MeshStandardMaterial({ roughness: 0.95, metalness: 0, flatShading: true });
+  m.onBeforeCompile = (sh) => {
+    sh.uniforms.uLights = shared_.uLights;
+    sh.uniforms.uTime = shared_.uTime;
+    sh.vertexShader = sh.vertexShader
+      .replace('#include <common>', '#include <common>\nvarying vec3 vTreeWP;')
+      .replace('#include <project_vertex>', `#include <project_vertex>
+        vTreeWP = (modelMatrix * instanceMatrix * vec4(transformed, 1.0)).xyz;`);
+    sh.fragmentShader = sh.fragmentShader
+      .replace('#include <common>', `#include <common>
+        varying vec3 vTreeWP; uniform float uLights; uniform float uTime;
+        ${GLSL_COMMON}`)
+      .replace('#include <emissivemap_fragment>', `#include <emissivemap_fragment>
+        {
+          vec3 leaf = diffuseColor.rgb;
+          totalEmissiveRadiance += ${park ? 'leaf * vec3(0.35, 1.5, 0.75) * 0.6' : 'leaf * 0.15'} * uLights;
+          // fairy lights: one candidate bulb per ~0.7 m cell
+          vec3 q = vTreeWP * 1.4;
+          vec3 cell = floor(q);
+          float r = h31(cell);
+          float dens = ${park ? '0.8' : '0.9'};
+          vec3 bulbCol = ${park
+            ? 'h31(cell + 5.0) < 0.5 ? vec3(1.0, 0.78, 0.45) : (h31(cell + 9.0) < 0.33 ? vec3(1.0, 0.35, 0.7) : h31(cell + 9.0) < 0.66 ? vec3(0.35, 0.75, 1.0) : vec3(0.5, 1.0, 0.55))'
+            : 'vec3(1.0, 0.82, 0.55)'};
+          float tw = 0.6 + 0.4 * sin(uTime * (2.0 + r * 3.0) + r * 60.0);
+          float d = length(fract(q) - 0.5 - (h33(cell) - 0.5) * 0.4);
+          float bulb = step(dens, r) * smoothstep(0.22, 0.05, d) * tw;
+          // fade to the average when bulbs are smaller than a pixel
+          float px = length(fwidth(q));
+          float avg = (1.0 - dens) * 0.12;
+          float b = mix(bulb, avg, smoothstep(0.3, 1.2, px));
+          totalEmissiveRadiance += bulbCol * b * ${park ? '4.0' : '2.4'} * uLights;
+        }`);
+  };
+  m.customProgramCacheKey = () => `nyc-crown-${park}`;
+  return m;
 }
 
 const PALETTE = [
@@ -60,8 +108,9 @@ export function setTreeShadows(on: boolean) {
   }
 }
 
-export function createTrees(data: Float32Array, origin: [number, number]): THREE.Group {
-  const { crownGeo, coneGeo, trunkGeo, crownMat, trunkMat } = shared();
+export function createTrees(data: Float32Array, origin: [number, number], park = false): THREE.Group {
+  const { crownGeo, coneGeo, trunkGeo, crownMat: streetMat, parkCrownMat, trunkMat } = shared();
+  const crownMat = park ? parkCrownMat : streetMat;
   const n = data.length / TREE_STRIDE;
   const g = new THREE.Group();
   g.position.set(origin[0], 0, origin[1]);

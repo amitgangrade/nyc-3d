@@ -6,6 +6,7 @@ export const Y = {
   parks: 1.06,
   roads: 1.02,
   sidewalks: 1.16,
+  paths: 1.09,
   inlandWater: 1.12,
   buildingBase: 1.0,
 } as const;

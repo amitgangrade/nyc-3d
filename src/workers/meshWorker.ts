@@ -37,7 +37,7 @@ export interface BuildResult {
   id: number;
   geometry: GeometryArrays | null;
   /** per-feature attributes for picking (buildings) */
-  features?: { height: Float32Array; year: Uint16Array; bin: Uint32Array; centroid: Float32Array };
+  features?: { height: Float32Array; year: Uint16Array; bin: Uint32Array; centroid: Float32Array; osmType?: Uint8Array };
   lights?: Float32Array;
   trees?: Float32Array;
   origin: [number, number];
@@ -95,13 +95,21 @@ function cap(b: Buf, rings: Float32Array[], y: number, info: number[] | null, uv
   }
 }
 
+/** Downward-facing cap (underside of a raised building:part). */
+function capDown(b: Buf, rings: Float32Array[], y: number, info: number[] | null) {
+  const start = b.idx.length, v0 = b.count;
+  cap(b, rings, y, info);
+  for (let i = v0 * 3 + 1; i < b.nor.length; i += 3) b.nor[i] = -1;
+  for (let i = start; i < b.idx.length; i += 3) { const t = b.idx[i + 1]; b.idx[i + 1] = b.idx[i + 2]; b.idx[i + 2] = t; }
+}
+
 /**
  * Vertical walls along every ring from y0 to y1. Outer rings are CCW (seen from
  * above), so the outward normal of edge (dx,dz) is (-dz, dx). Adjacent edges
  * bending < ~28° share a smoothed normal so curved facades shade smoothly.
  * uv = (distance along facade, height above y0).
  */
-function walls(b: Buf, rings: Float32Array[], y0: number, y1: number, info: number[] | null) {
+function walls(b: Buf, rings: Float32Array[], y0: number, y1: number, info: number[] | null, v0 = 0) {
   for (const r of rings) {
     const n = r.length / 2;
     if (n < 3) continue;
@@ -131,7 +139,7 @@ function walls(b: Buf, rings: Float32Array[], y0: number, y1: number, info: numb
       const h = y1 - y0;
       b.pos.push(x0, y0, z0, x1, y0, z1, x1, y1, z1, x0, y1, z0);
       b.nor.push(nx0, 0, nz0, nx1, 0, nz1, nx1, 0, nz1, nx0, 0, nz0);
-      b.uv.push(u, 0, u + len[i], 0, u + len[i], h, u, h);
+      b.uv.push(u, v0, u + len[i], v0, u + len[i], v0 + h, u, v0 + h);
       if (info) for (let k = 0; k < 4; k++) b.info.push(info[0], info[1], info[2], info[3]);
       b.idx.push(base, base + 1, base + 2, base, base + 2, base + 3);
       u += len[i];
@@ -172,6 +180,7 @@ function buildBuildings(t: DecodedTile, req: BuildRequest): BuildResult {
   const n = t.header.featureCount;
   const H = t.sections.height as Float32Array, YR = t.sections.year as Uint16Array;
   const BIN = t.sections.bin as Uint32Array, KIND = t.sections.kind as Uint8Array;
+  const MINH = t.sections.minHeight as Float32Array | undefined;
   const [ox, oz] = t.header.origin;
   const centroid = new Float32Array(n * 2);
   const ex = (req.exclude ?? []).map(([x, z]) => [x - ox, z - oz]);
@@ -188,17 +197,82 @@ function buildBuildings(t: DecodedTile, req: BuildRequest): BuildResult {
     const style = pickStyle(h, YR[f], KIND[f], seed);
     // info: (height, seed, style, featureIndex)
     const info = [h, seed, style, f];
-    const y0 = Y.buildingBase, y1 = Y.buildingBase + h;
-    walls(b, rings, y0, y1, info);
+    const minH = MINH ? Math.min(MINH[f], h - 0.5) : 0;
+    const y0 = Y.buildingBase + minH, y1 = Y.buildingBase + h;
+    walls(b, rings, y0, y1, info, minH);
     cap(b, rings, y1, info);
+    if (minH > 0.5) capDown(b, rings, y0, info);
   }
   return {
     id: req.id, geometry: finish(b, true), origin: t.header.origin,
-    features: { height: H.slice(), year: YR.slice(), bin: BIN.slice(), centroid },
+    features: { height: H.slice(), year: YR.slice(), bin: BIN.slice(), centroid, osmType: (t.sections.osmType as Uint8Array | undefined)?.slice() },
   };
 }
 
+/**
+ * Polyline layers (OSM roads/paths): flat ribbons of the feature's width with
+ * round-ish joins; bridges (elev > 0) are lifted with side skirts.
+ */
+function buildLines(t: DecodedTile, req: BuildRequest): BuildResult {
+  const b = new Buf();
+  const W = t.sections.width as Float32Array, E = t.sections.elev as Float32Array | undefined, LIT = t.sections.lit as Uint8Array | undefined;
+  const baseY = req.y ?? 1;
+  const lightPts: number[] = [];
+  const quad = (ax: number, az: number, bx: number, bz: number, cx: number, cz: number, dx: number, dz: number, y: number) => {
+    const o = b.count;
+    b.pos.push(ax, y, az, bx, y, bz, cx, y, cz, dx, y, dz);
+    b.nor.push(0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0);
+    b.uv.push(ax, az, bx, bz, cx, cz, dx, dz);
+    b.idx.push(o, o + 2, o + 1, o, o + 3, o + 2);
+  };
+  for (let f = 0; f < t.header.featureCount; f++) {
+    const line = ringsOf(t, f)[0];
+    const n = line.length / 2;
+    const hw = W[f] / 2;
+    const elev = E ? E[f] : 0;
+    const y = baseY + elev;
+    for (let i = 0; i < n - 1; i++) {
+      const x0 = line[i * 2], z0 = line[i * 2 + 1], x1 = line[i * 2 + 2], z1 = line[i * 2 + 3];
+      const dx = x1 - x0, dz = z1 - z0, l = Math.hypot(dx, dz);
+      if (l < 1e-3) continue;
+      const nx = (-dz / l) * hw, nz = (dx / l) * hw;
+      quad(x0 + nx, z0 + nz, x1 + nx, z1 + nz, x1 - nx, z1 - nz, x0 - nx, z0 - nz, y);
+      if (elev > 0) {
+        // deck edges
+        for (const sgn of [1, -1]) {
+          const o = b.count, ex = nx * sgn, ez = nz * sgn;
+          b.pos.push(x0 + ex, y, z0 + ez, x1 + ex, y, z1 + ez, x1 + ex, y - 1.6, z1 + ez, x0 + ex, y - 1.6, z0 + ez);
+          const nn = [ex / hw, 0, ez / hw];
+          for (let k = 0; k < 4; k++) b.nor.push(...nn);
+          b.uv.push(0, 0, 0, 0, 0, 0, 0, 0);
+          if (sgn > 0) b.idx.push(o, o + 1, o + 2, o, o + 2, o + 3); else b.idx.push(o, o + 2, o + 1, o, o + 3, o + 2);
+        }
+      }
+      if (req.lights && LIT?.[f] && hw > 2.5) {
+        for (let s = 15; s < l; s += 32) for (const sgn of [1, -1]) {
+          const k = 1 + 1.6 / hw;
+          lightPts.push(x0 + (dx * s) / l + nx * k * sgn, z0 + (dz * s) / l + nz * k * sgn);
+        }
+      }
+    }
+    // joints: small polygon disc at interior vertices
+    for (let i = 1; i < n - 1; i++) {
+      const cx = line[i * 2], cz = line[i * 2 + 1], o = b.count, SEG = 8;
+      b.pos.push(cx, y, cz); b.nor.push(0, 1, 0); b.uv.push(cx, cz);
+      for (let k = 0; k < SEG; k++) {
+        const a = (k / SEG) * Math.PI * 2;
+        b.pos.push(cx + Math.cos(a) * hw, y, cz + Math.sin(a) * hw); b.nor.push(0, 1, 0); b.uv.push(cx, cz);
+      }
+      for (let k = 0; k < SEG; k++) b.idx.push(o, o + 1 + ((k + 1) % SEG), o + 1 + k);
+    }
+  }
+  const res: BuildResult = { id: req.id, geometry: finish(b, false), origin: t.header.origin };
+  if (req.lights) res.lights = thin(lightPts, 14);
+  return res;
+}
+
 function buildFlat(t: DecodedTile, req: BuildRequest): BuildResult {
+  if ((t.header.meta as { geometry?: string } | undefined)?.geometry === 'line') return buildLines(t, req);
   const b = new Buf();
   const y = req.y ?? 1;
   const skirt = req.skirt ?? 0;

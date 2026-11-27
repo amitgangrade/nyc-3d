@@ -51,8 +51,8 @@ interface Key {
   amb: number; ambI: number; fog: number; fogD: number; exposure: number; cloud: number; env: number;
 }
 const K: Key[] = [
-  { el: -18, zenith: 0x02050f, horizon: 0x0c1122, horizonSun: 0x0e1224, sun: 0x000000, sunI: 0, amb: 0x1a2648, ambI: 0.5, fog: 0x0b0f1c, fogD: 8e-5, exposure: 1.0, cloud: 0x2a1c18, env: 0.35 },
-  { el: -9, zenith: 0x060c22, horizon: 0x1b1d33, horizonSun: 0x3a2a3a, sun: 0x000000, sunI: 0, amb: 0x2b3660, ambI: 0.6, fog: 0x161a2c, fogD: 8e-5, exposure: 1.0, cloud: 0x3a2630, env: 0.4 },
+  { el: -18, zenith: 0x040b22, horizon: 0x15213f, horizonSun: 0x172342, sun: 0x000000, sunI: 0, amb: 0x2a3a6a, ambI: 0.55, fog: 0x101a33, fogD: 8e-5, exposure: 1.0, cloud: 0x2a1c18, env: 0.35 },
+  { el: -9, zenith: 0x081233, horizon: 0x222a4a, horizonSun: 0x3a2d48, sun: 0x000000, sunI: 0, amb: 0x34447a, ambI: 0.6, fog: 0x18203a, fogD: 8e-5, exposure: 1.0, cloud: 0x3a2630, env: 0.4 },
   { el: -3, zenith: 0x14204a, horizon: 0x5a4a6a, horizonSun: 0xc8604a, sun: 0xff6a3a, sunI: 0.0, amb: 0x5a5a88, ambI: 0.7, fog: 0x4a4560, fogD: 9e-5, exposure: 0.95, cloud: 0xd06a5a, env: 0.6 },
   { el: 1, zenith: 0x2a4a8a, horizon: 0xb88a7a, horizonSun: 0xff7a35, sun: 0xff8a45, sunI: 1.5, amb: 0x8a8ab0, ambI: 0.75, fog: 0x9a8a92, fogD: 1.0e-4, exposure: 0.85, cloud: 0xff9a6a, env: 0.8 },
   { el: 6, zenith: 0x3d6db5, horizon: 0xd6b496, horizonSun: 0xffb060, sun: 0xffb070, sunI: 2.6, amb: 0x9fb0d0, ambI: 0.8, fog: 0xbcb2aa, fogD: 9e-5, exposure: 0.75, cloud: 0xffd0a0, env: 1.0 },
@@ -69,8 +69,8 @@ export function computeAtmosphere(hour: number): Atmosphere {
   const { el, az } = sunPosition(hour);
   const elDeg = (el * 180) / Math.PI;
   const sunDir = dirFrom(az, el);
-  // moon: roughly opposite the sun, a bit higher so it is visible at night
-  const moonDir = dirFrom(az + Math.PI * 0.85, Math.max(0.35, -el * 0.8 + 0.25));
+  // full moon: low over the East River / Brooklyn, framed by the default skyline views
+  const moonDir = dirFrom((62 * Math.PI) / 180, (Math.max(6, Math.min(15, 6 - elDeg * 0.4)) * Math.PI) / 180);
 
   let i = 0;
   while (i < K.length - 2 && elDeg > K[i + 1].el) i++;

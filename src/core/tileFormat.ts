@@ -14,6 +14,8 @@
  *   coords     f32[2*vertexCount]    x,z pairs relative to header.origin
  * Ring 0 of each feature is the outer ring (CCW seen from above), the rest
  * are holes (CW). Rings are open (first vertex is not repeated).
+ * Line layers (header.meta.geometry === 'line') use the same three sections
+ * with exactly one open polyline "ring" per feature.
  * Point layers (header.meta.geometry === 'point') contain only
  *   coords     f32[2*featureCount]
  * Any other section is a per-feature attribute (length == featureCount).

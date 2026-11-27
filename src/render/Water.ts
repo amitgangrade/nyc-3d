@@ -44,7 +44,7 @@ export class Water {
         #include <logdepthbuf_pars_fragment>
         uniform sampler2D tReflection;
         uniform float uTime; uniform vec3 uSunDir; uniform vec3 uSunColor; uniform float uSunIntensity;
-        uniform vec3 uZenith; uniform vec3 uHorizon; uniform vec3 uAmbient; uniform float uNight; uniform float uLights;
+        uniform vec3 uZenith; uniform vec3 uHorizon; uniform vec3 uAmbient; uniform float uNight; uniform float uLights; uniform vec3 uMoonDir;
         varying vec4 vRefl; varying vec3 vWP;
 
         float gPx = 1.0; // metres per pixel, set in main()
@@ -78,8 +78,13 @@ export class Water {
           vec2 uv = vRefl.xy / vRefl.w + N.xz * 0.035 * (0.4 + 0.6 * fade);
           vec3 refl = texture2D(tReflection, uv).rgb;
           // water body colour: lit by sky ambient, deep green-blue harbour
-          vec3 body = mix(vec3(0.020, 0.050, 0.060), vec3(0.008, 0.012, 0.018), uNight) * (0.6 + 0.6 * uAmbient);
+          vec3 body = mix(vec3(0.016, 0.052, 0.075), vec3(0.010, 0.030, 0.075), uNight) * (0.6 + 0.6 * uAmbient);
+          refl *= mix(vec3(1.0), vec3(0.82, 0.95, 1.18), uNight);
           vec3 col = mix(body, refl, clamp(fres * 0.9 + mix(0.08, 0.3, uNight), 0.0, 1.0));
+          // full-moon glitter path
+          vec3 Hm = normalize(uMoonDir + V);
+          float ms = pow(max(dot(N, Hm), 0.0), 320.0) * 2.6 + pow(max(dot(N, Hm), 0.0), 60.0) * 0.025;
+          col += vec3(0.75, 0.85, 1.0) * ms * uNight;
           // sun glint
           vec3 H = normalize(uSunDir + V);
           float spec = pow(max(dot(N, H), 0.0), 380.0) * 6.0 + pow(max(dot(N, H), 0.0), 40.0) * 0.08;
@@ -90,7 +95,7 @@ export class Water {
     });
     Object.assign(this.material.uniforms, {
       uTime: shared.uTime, uSunDir: shared.uSunDir, uSunColor: shared.uSunColor, uSunIntensity: shared.uSunIntensity,
-      uZenith: shared.uZenith, uHorizon: shared.uHorizon, uAmbient: shared.uAmbient, uNight: shared.uNight, uLights: shared.uLights,
+      uZenith: shared.uZenith, uHorizon: shared.uHorizon, uAmbient: shared.uAmbient, uNight: shared.uNight, uLights: shared.uLights, uMoonDir: shared.uMoonDir,
     });
     this.material.uniforms.tReflection.value = this.rt.texture;
     this.material.uniforms.textureMatrix.value = this.textureMatrix;

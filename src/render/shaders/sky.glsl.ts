@@ -51,7 +51,7 @@ vec4 clouds(vec3 d){
   vec3 lit = uCloudLight * (0.55 + 0.45 * n2) * (0.6 + 0.4 * (1.0 - uNight));
   lit += uCloudLight * sunSide * 0.8 * (1.0 - uNight);
   vec3 cityGlow = vec3(0.11, 0.07, 0.06) * uLights * (0.7 + 0.6 * smoothstep(0.4, 0.0, d.y));
-  vec3 moonLit = vec3(0.05, 0.06, 0.09) * pow(max(dot(normalize(d), uMoonDir), 0.0), 4.0);
+  vec3 moonLit = vec3(0.10, 0.13, 0.2) * (0.4 + pow(max(dot(normalize(d), uMoonDir), 0.0), 3.0) * 1.6);
   vec3 col = mix(lit, cityGlow + moonLit + lit * 0.05, uNight);
   return vec4(col, a * 0.85);
 }
@@ -68,19 +68,21 @@ vec3 skyColor(vec3 d, bool withDiscs){
   // night sky
   if (uNight > 0.0) {
     float hv = clamp(d.y, 0.0, 1.0);
-    col += starField(d) * uNight * smoothstep(0.03, 0.35, hv) * (withDiscs ? 1.0 : 0.0);
     float md = max(dot(d, uMoonDir), 0.0);
+    col += starField(d) * uNight * smoothstep(0.03, 0.35, hv) * (withDiscs ? 1.0 : 0.0) * (1.0 - smoothstep(0.9, 0.995, md));
     vec3 moonCol = vec3(0.95, 0.93, 0.86);
     if (withDiscs) {
-      float disc = smoothstep(0.99993, 0.99996, md);
-      // faint maria
-      vec3 mp = d - uMoonDir;
-      float maria = vnoise(mp.xy * 1500.0) * 0.25 + vnoise(mp.yz * 900.0) * 0.2;
-      col = mix(col, moonCol * (2.4 - maria * 2.0), disc * uNight);
+      float disc = smoothstep(0.999855, 0.99988, md);
+      // maria: a few soft dark patches on the full disc
+      vec3 mp = (d - uMoonDir) * 700.0;
+      float maria = smoothstep(0.45, 0.75, vnoise(mp.xy * 0.9 + 3.0)) * 0.35 + smoothstep(0.5, 0.8, vnoise(mp.yz * 1.7)) * 0.2;
+      float limb = 0.85 + 0.15 * smoothstep(0.999855, 0.99996, md);
+      col = mix(col, moonCol * (5.0 - maria * 3.0) * limb, disc * uNight);
     }
-    col += vec3(0.25, 0.3, 0.42) * (pow(md, 900.0) * 0.6 + pow(md, 40.0) * 0.06) * uNight;
+    // halo + wide glow that lifts the sky around the moon
+    col += vec3(0.45, 0.55, 0.8) * (pow(md, 2500.0) * 1.2 + pow(md, 300.0) * 0.25 + pow(md, 25.0) * 0.08 + pow(md, 4.0) * 0.03) * uNight;
     // light dome over the city
-    col += vec3(0.20, 0.12, 0.10) * uLights * pow(1.0 - hv, 8.0) * 0.38;
+    col += vec3(0.16, 0.12, 0.16) * uLights * pow(1.0 - hv, 8.0) * 0.35;
   }
 
   vec4 c = clouds(d);

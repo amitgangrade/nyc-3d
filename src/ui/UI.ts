@@ -5,7 +5,7 @@ import { PLACES, type Place } from './places';
 
 const $ = <T extends HTMLElement = HTMLElement>(id: string) => document.getElementById(id) as T;
 
-export interface InfoCard { title: string; height: number; year: number; note: string | null; lonlat: [number, number] | null }
+export interface InfoCard { title: string; height: number; year: number; note: string | null; lonlat: [number, number] | null; link?: { href: string; label: string } }
 
 /** Thin DOM layer: wires the static markup in index.html to callbacks. */
 export class UI {
@@ -103,9 +103,11 @@ export class UI {
     $('info-rows').innerHTML = rows.map(([k, v]) => `<div class="row"><span>${k}</span><b>${v}</b></div>`).join('');
     $('info-note').textContent = c.note ?? 'Source: NYC Building Footprints (NYC Open Data)';
     const link = $<HTMLAnchorElement>('info-link');
-    if (c.lonlat) {
+    if (c.link) {
+      link.href = c.link.href; link.textContent = c.link.label; link.style.display = '';
+    } else if (c.lonlat) {
       link.href = `https://www.openstreetmap.org/?mlat=${c.lonlat[1]}&mlon=${c.lonlat[0]}#map=19/${c.lonlat[1]}/${c.lonlat[0]}`;
-      link.style.display = '';
+      link.textContent = 'Open in OpenStreetMap ↗'; link.style.display = '';
     } else link.style.display = 'none';
     el.classList.add('show');
   }

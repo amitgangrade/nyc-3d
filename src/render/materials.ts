@@ -45,6 +45,16 @@ const FACADE_GLSL = /* glsl */ `
 struct Surface { vec3 albedo; float rough; float metal; vec3 emit; };
 
 vec3 pick4(float r, vec3 a, vec3 b, vec3 c, vec3 d){ return r < 0.25 ? a : r < 0.5 ? b : r < 0.75 ? c : d; }
+/** saturated accent colours used for night-time facade lighting */
+vec3 accentColor(float r){
+  return r < 0.17 ? vec3(0.95, 0.25, 1.0)   // magenta
+       : r < 0.34 ? vec3(0.15, 0.7, 1.0)    // cyan
+       : r < 0.48 ? vec3(1.0, 0.55, 0.18)   // amber
+       : r < 0.63 ? vec3(0.5, 0.35, 1.0)    // violet
+       : r < 0.78 ? vec3(0.15, 1.0, 0.72)   // teal
+       : r < 0.9  ? vec3(1.0, 0.3, 0.45)    // rose
+       :            vec3(0.35, 0.55, 1.0);  // blue
+}
 
 Surface roofSurface(float seed){
   float r = h11(seed * 91.7);
@@ -69,17 +79,25 @@ Surface surface(){
   float glassRough = 0.12;
   if (style == 0) {           // brick walk-ups / lofts
     bayW = 2.5 + rs * 0.9; floorH = 3.3 + rs * 0.5; winW = 0.42; winH = 0.56;
-    wall = pick4(h11(seed * 7.3), vec3(0.42, 0.18, 0.12), vec3(0.50, 0.29, 0.20), vec3(0.33, 0.20, 0.16), vec3(0.62, 0.50, 0.38));
+    wall = h11(seed * 5.1) < 0.7
+      ? pick4(h11(seed * 7.3), vec3(0.46, 0.17, 0.11), vec3(0.55, 0.30, 0.19), vec3(0.36, 0.19, 0.15), vec3(0.68, 0.53, 0.37))
+      : pick4(h11(seed * 7.3), vec3(0.47, 0.55, 0.45), vec3(0.45, 0.52, 0.62), vec3(0.70, 0.40, 0.27), vec3(0.75, 0.68, 0.48)); // painted: sage, blue, terracotta, ochre
   } else if (style == 1) {    // limestone / pre-war
     bayW = 2.8 + rs * 0.8; floorH = 3.7 + rs * 0.5; winW = 0.40; winH = 0.58;
-    wall = pick4(h11(seed * 7.3), vec3(0.72, 0.66, 0.55), vec3(0.62, 0.58, 0.51), vec3(0.78, 0.74, 0.66), vec3(0.55, 0.50, 0.44));
+    wall = h11(seed * 5.1) < 0.75
+      ? pick4(h11(seed * 7.3), vec3(0.76, 0.67, 0.53), vec3(0.64, 0.58, 0.50), vec3(0.80, 0.75, 0.66), vec3(0.58, 0.50, 0.43))
+      : pick4(h11(seed * 7.3), vec3(0.72, 0.56, 0.52), vec3(0.62, 0.60, 0.68), vec3(0.80, 0.70, 0.55), vec3(0.55, 0.47, 0.50)); // rose granite, grey-lilac, sandstone, brownstone
   } else if (style == 2) {    // post-war concrete / ribbon windows
     bayW = 3.0 + rs * 2.0; floorH = 3.6 + rs * 0.4; winW = 0.80 + rs * 0.12; winH = 0.46 + rs * 0.12;
-    wall = pick4(h11(seed * 7.3), vec3(0.62, 0.62, 0.60), vec3(0.48, 0.48, 0.50), vec3(0.74, 0.73, 0.69), vec3(0.40, 0.38, 0.36));
+    wall = h11(seed * 5.1) < 0.7
+      ? pick4(h11(seed * 7.3), vec3(0.64, 0.63, 0.60), vec3(0.48, 0.49, 0.52), vec3(0.76, 0.74, 0.69), vec3(0.42, 0.39, 0.36))
+      : pick4(h11(seed * 7.3), vec3(0.78, 0.66, 0.58), vec3(0.58, 0.68, 0.66), vec3(0.80, 0.76, 0.60), vec3(0.62, 0.64, 0.75)); // salmon, mint, butter, periwinkle
     glassMetal = 0.55; glass = vec3(0.07, 0.08, 0.09);
   } else if (style == 3) {    // glass curtain wall
     bayW = 1.5 + rs * 0.6; floorH = 3.9 + rs * 0.4; winW = 0.93; winH = 0.78 + rs * 0.12;
-    glass = pick4(h11(seed * 7.3), vec3(0.42, 0.56, 0.62), vec3(0.52, 0.56, 0.60), vec3(0.36, 0.48, 0.62), vec3(0.55, 0.52, 0.44));
+    glass = h11(seed * 5.1) < 0.75
+      ? pick4(h11(seed * 7.3), vec3(0.42, 0.56, 0.62), vec3(0.52, 0.56, 0.60), vec3(0.36, 0.48, 0.66), vec3(0.58, 0.53, 0.42))
+      : pick4(h11(seed * 7.3), vec3(0.32, 0.60, 0.56), vec3(0.62, 0.48, 0.36), vec3(0.42, 0.42, 0.66), vec3(0.62, 0.62, 0.50)); // teal, copper, indigo, champagne
     wall = glass * 0.35 + 0.04;
     glassMetal = 0.92; glassRough = 0.07;
   } else {                    // plain: garages, sheds
@@ -135,6 +153,7 @@ Surface surface(){
     // interior falloff: ceiling brighter
     float fy = fract(cell.y);
     inten *= 0.75 + 0.5 * smoothstep(0.2, 0.9, fy);
+    if (h21(id * 2.3 + seed * 41.0) > 0.95) wc = accentColor(h21(id + seed)) * 0.9 + 0.1; // the odd coloured LED room
     if (ground) { wc = vec3(1.0, 0.78, 0.5); inten = 1.1; }
     vec3 sharp = on * wc * inten * mask;
     vec3 avg = p * mix(neutral, office > 0.5 ? cool : warm, 0.5) * 0.75 * avgMask * parapet;
@@ -146,6 +165,16 @@ Surface surface(){
       vec3 cc = cr < 0.65 ? vec3(1.0, 0.92, 0.8) : cr < 0.82 ? vec3(0.45, 0.65, 1.0) : vec3(1.0, 0.7, 0.35);
       emit += cc * 0.7 * uLights * smoothstep(h - 6.0, h - 2.0, v);
     }
+
+    // architectural accent lighting: coloured uplight wash from the base and a lit crown band
+    float ac = h11(seed * 13.7);
+    if (ac < 0.38 && h > 12.0) {
+      vec3 acc = accentColor(h11(seed * 29.3));
+      float wash = exp(-v / max(7.0, h * 0.16));
+      float band = h > 35.0 ? smoothstep(h - max(3.0, h * 0.05), h - 0.5, v) : 0.0;
+      float pulse = 0.85 + 0.15 * sin(uTime * 0.6 + seed * 40.0);
+      emit += acc * uLights * (wash * 0.55 + band * 1.1 * pulse) * (1.0 - mask * 0.6);
+    }
   }
   S.emit = emit;
   return S;
@@ -153,16 +182,18 @@ Surface surface(){
 `;
 
 /** Flat ground layers: standard material + subtle world-space noise so large areas aren't flat colour. */
-export function createGroundMaterial(color: number, opts: { rough?: number; noise?: number; scale?: number; kind?: 'park' | 'road' | 'plain' } = {}) {
+export function createGroundMaterial(color: number, opts: { rough?: number; noise?: number; scale?: number; kind?: 'park' | 'road' | 'walk' | 'plain'; glow?: [number, number, number] } = {}) {
   const m = new THREE.MeshStandardMaterial({ color, roughness: opts.rough ?? 0.92, metalness: 0 });
   const noise = opts.noise ?? 0.15, scale = opts.scale ?? 0.25, kind = opts.kind ?? 'plain';
+  const glow = opts.glow ?? [0, 0, 0];
+  const g3 = `vec3(${glow.map((v) => v.toFixed(4)).join(', ')})`;
   m.onBeforeCompile = (s) => {
     s.uniforms.uLights = shared.uLights;
     s.vertexShader = s.vertexShader
       .replace('#include <common>', '#include <common>\nvarying vec3 vWP2;')
       .replace('#include <worldpos_vertex>', '#include <worldpos_vertex>\nvWP2 = (modelMatrix * vec4(transformed, 1.0)).xyz;');
     s.fragmentShader = s.fragmentShader
-      .replace('#include <common>', `#include <common>\nvarying vec3 vWP2; uniform float uLights;\n${GLSL_COMMON}`)
+      .replace('#include <common>', `#include <common>\nvarying vec3 vWP2; uniform float uLights;\n${GLSL_COMMON}\nvec3 gGlow = vec3(0.0);`)
       .replace('#include <color_fragment>', `#include <color_fragment>
         {
           vec2 p = vWP2.xz;
@@ -178,9 +209,12 @@ export function createGroundMaterial(color: number, opts: { rough?: number; nois
             diffuseColor.rgb *= 0.85 + 0.3 * patchN;
           ` : ''}
           diffuseColor.rgb *= 1.0 + n * ${(noise * 2).toFixed(3)};
-        }`);
+          gGlow = ${g3} * (0.75 + 0.5 * vnoise(p * 0.05)) * uLights;
+          ${kind === 'park' ? 'gGlow *= 0.7 + 0.6 * vnoise(p * 0.2);' : ''}
+        }`)
+      .replace('#include <emissivemap_fragment>', '#include <emissivemap_fragment>\ntotalEmissiveRadiance += gGlow;');
   };
-  m.customProgramCacheKey = () => `nyc-ground-${kind}-${scale}-${noise}`;
+  m.customProgramCacheKey = () => `nyc-ground-${kind}-${scale}-${noise}-${g3}`;
   return m;
 }
 

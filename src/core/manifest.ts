@@ -12,6 +12,8 @@ export interface ManifestRegion {
   id: string;
   name: string;
   description?: string;
+  /** data provider id (nyc, osm, …) */
+  provider?: string;
   builtAt: string;
   /** scene-space bounds [minX, minZ, maxX, maxZ] */
   bounds: [number, number, number, number];

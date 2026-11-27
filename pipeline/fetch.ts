@@ -4,11 +4,11 @@ import { dirname } from 'node:path';
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 /** fetch with retries + exponential backoff (NYC Open Data is occasionally flaky). */
-export async function fetchRetry(url: string, tries = 7): Promise<Response> {
+export async function fetchRetry(url: string, tries = 7, init?: RequestInit): Promise<Response> {
   let last: unknown;
   for (let i = 0; i < tries; i++) {
     try {
-      const res = await fetch(url);
+      const res = await fetch(url, init);
       if (res.ok) return res;
       last = new Error(`HTTP ${res.status} ${(await res.text()).slice(0, 200)}`);
     } catch (e) { last = e; }

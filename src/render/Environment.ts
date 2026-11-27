@@ -42,13 +42,13 @@ export class Environment {
     shared.uAmbient.value.copy(a.ambientSky).multiplyScalar(a.ambientIntensity);
 
     // key light: sun by day, moon by night
-    const moonI = 0.12 * THREE.MathUtils.smoothstep(-a.sunElevation, 4, 10);
+    const moonI = 0.42 * THREE.MathUtils.smoothstep(-a.sunElevation, 4, 10);
     if (a.sunElevation > -4) {
       this.key.color.copy(a.sunColor);
       this.key.intensity = a.sunIntensity;
       this.keyDir.copy(a.sunDir);
     } else {
-      this.key.color.setRGB(0.55, 0.68, 1.0);
+      this.key.color.setRGB(0.62, 0.74, 1.0);
       this.key.intensity = moonI;
       this.keyDir.copy(a.moonDir);
     }
