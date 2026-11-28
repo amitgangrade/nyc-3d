@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { computeBoundsTree, disposeBoundsTree, acceleratedRaycast } from 'three-mesh-bvh';
 import type { Manifest, ManifestTile } from '../core/manifest';
-import type { BuildResult, GeometryArrays } from '../workers/meshWorker';
+import type { BuildResult, GeometryArrays, TerrainGrid } from '../workers/meshWorker';
 import { LAYERS, type LayerDef } from '../render/layers';
 import { createStreetLights } from '../render/Lights';
 import { createTrees, DETAIL_LAYER } from '../render/Trees';
@@ -44,6 +44,8 @@ export class TileManager {
   onTileLoaded?: (t: { layer: string; features?: BuildResult['features']; origin: [number, number] }) => void;
   exclude: [number, number][] = [];
   specials: { x: number; z: number; r: number; code: number }[] = [];
+  /** terrain patches: building tiles overlapping one are lifted onto its relief */
+  terrains: { grid: TerrainGrid; bbox: [number, number, number, number] }[] = [];
 
   constructor(manifest: Manifest, private dataRoot: string) {
     const T = manifest.tileSize;
@@ -94,6 +96,7 @@ export class TileManager {
       ...t.layer.build, url: `${this.dataRoot}/${t.tile.url}`,
       exclude: t.layer.build.kind === 'buildings' ? this.exclude : undefined,
       specials: t.layer.build.kind === 'buildings' ? this.specials : undefined,
+      terrain: t.layer.build.kind === 'buildings' ? this.terrainFor(t) : undefined,
     });
     this.inflight--;
     if (res.error) console.warn(t.key, res.error);
@@ -123,6 +126,15 @@ export class TileManager {
     this.group.add(group);
     this.onTileLoaded?.({ layer: t.layer.name, features: res.features, origin: res.origin });
     this.onProgress?.(this.loaded, this.total);
+  }
+
+  private terrainFor(t: TileState): TerrainGrid | undefined {
+    const T = t.radius / 0.75 / 2; // half tile size
+    for (const tr of this.terrains) {
+      const [x0, z0, x1, z1] = tr.bbox;
+      if (t.center.x + T > x0 && t.center.x - T < x1 && t.center.y + T > z0 && t.center.y - T < z1) return tr.grid;
+    }
+    return undefined;
   }
 
   private unload(t: TileState) {

@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { shared } from './uniforms';
+import { shared, PATCH_TEST_GLSL } from './uniforms';
 
 /**
  * Harbour water: planar reflection (scene rendered from a mirrored camera into
@@ -48,6 +48,7 @@ export class Water {
         uniform float uTime; uniform vec3 uSunDir; uniform vec3 uSunColor; uniform float uSunIntensity;
         uniform vec3 uZenith; uniform vec3 uHorizon; uniform vec3 uAmbient; uniform float uNight; uniform float uLights; uniform vec3 uMoonDir;
         varying vec4 vRefl; varying vec3 vWP;
+        ${PATCH_TEST_GLSL}
 
         float gPx = 1.0; // metres per pixel, set in main()
         vec2 wave(vec2 p, vec2 dir, float freq, float speed){
@@ -68,6 +69,7 @@ export class Water {
         }
         void main(){
           #include <logdepthbuf_fragment>
+          if (onPatch(vWP.xz)) discard;
           vec3 toCam = cameraPosition - vWP;
           float dist = length(toCam);
           vec3 V = toCam / dist;
@@ -98,6 +100,7 @@ export class Water {
     Object.assign(this.material.uniforms, {
       uTime: shared.uTime, uSunDir: shared.uSunDir, uSunColor: shared.uSunColor, uSunIntensity: shared.uSunIntensity,
       uZenith: shared.uZenith, uHorizon: shared.uHorizon, uAmbient: shared.uAmbient, uNight: shared.uNight, uLights: shared.uLights, uMoonDir: shared.uMoonDir,
+      uPatchOn: shared.uPatchOn, uPatchClass: shared.uPatchClass, uPatchOrigin: shared.uPatchOrigin, uPatchU: shared.uPatchU, uPatchV: shared.uPatchV, uPatchSizeM: shared.uPatchSizeM,
     });
     this.material.uniforms.tReflection.value = this.rt.texture;
     this.material.uniforms.textureMatrix.value = this.textureMatrix;

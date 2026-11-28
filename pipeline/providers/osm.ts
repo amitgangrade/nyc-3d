@@ -38,7 +38,7 @@ const LAYERS: Record<string, LayerSpec> = {
 };
 
 // ------------------------------------------------------------------ Overpass
-interface OsmEl {
+export interface OsmEl {
   type: 'node' | 'way' | 'relation'; id: number; tags?: Record<string, string>;
   lat?: number; lon?: number;
   geometry?: { lat: number; lon: number }[];
@@ -94,7 +94,7 @@ async function loadOsm(bbox: [number, number, number, number], refresh: boolean,
 const memo = new Map<string, OsmEl[]>();
 
 /** POST a query with curl (more reliable than Node fetch against public Overpass mirrors), retrying 504s. */
-async function overpass(query: string, cacheDir: string): Promise<string> {
+export async function overpass(query: string, cacheDir: string): Promise<string> {
   mkdirSync(cacheDir, { recursive: true });
   const qf = join(cacheDir, 'overpass-query.txt');
   writeFileSync(qf, query);
@@ -133,7 +133,7 @@ function stitch(parts: LL[][]): LL[][] {
   return rings;
 }
 
-function elPolys(el: OsmEl, proj: Projection): Poly[] {
+export function elPolys(el: OsmEl, proj: Projection): Poly[] {
   const conv = (r: LL[]): Ring => r.map((p) => proj.forward(p.lon, p.lat));
   if (el.type === 'way') {
     const g = el.geometry;
@@ -148,7 +148,7 @@ function elPolys(el: OsmEl, proj: Projection): Poly[] {
   return [];
 }
 
-function elLine(el: OsmEl, proj: Projection): Pt[] | null {
+export function elLine(el: OsmEl, proj: Projection): Pt[] | null {
   if (el.type !== 'way' || !el.geometry || el.geometry.length < 2) return null;
   return el.geometry.map((p) => proj.forward(p.lon, p.lat));
 }

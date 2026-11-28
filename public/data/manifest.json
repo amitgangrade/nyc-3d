@@ -4670,7 +4670,7 @@
    "name": "Manhattan: Houston St to Central Park",
    "description": "Greenwich Village, East Village, SoHo north edge, Chelsea, Flatiron, Gramercy, Murray Hill, Midtown, Hell's Kitchen, Hudson Yards, Billionaires' Row and Central Park",
    "provider": "nyc",
-   "builtAt": "2026-11-27T09:12:29.649Z",
+   "builtAt": "2026-11-28T12:07:34.766Z",
    "bounds": [
     -771.6031257356237,
     -9762.013849271745,
@@ -4937,43 +4937,36 @@
       "ix": 3,
       "iz": -10,
       "url": "tiles/midtown-manhattan/roads/3_-10.bin",
-      "featureCount": 3,
-      "bytes": 1388
+      "featureCount": 2,
+      "bytes": 928
      },
      {
       "ix": 4,
       "iz": -10,
       "url": "tiles/midtown-manhattan/roads/4_-10.bin",
-      "featureCount": 4,
-      "bytes": 1752
+      "featureCount": 1,
+      "bytes": 548
      },
      {
       "ix": 3,
       "iz": -9,
       "url": "tiles/midtown-manhattan/roads/3_-9.bin",
-      "featureCount": 19,
-      "bytes": 14180
-     },
-     {
-      "ix": 4,
-      "iz": -9,
-      "url": "tiles/midtown-manhattan/roads/4_-9.bin",
-      "featureCount": 4,
-      "bytes": 1412
+      "featureCount": 9,
+      "bytes": 1408
      },
      {
       "ix": 2,
       "iz": -8,
       "url": "tiles/midtown-manhattan/roads/2_-8.bin",
-      "featureCount": 12,
-      "bytes": 3392
+      "featureCount": 6,
+      "bytes": 1056
      },
      {
       "ix": 3,
       "iz": -8,
       "url": "tiles/midtown-manhattan/roads/3_-8.bin",
-      "featureCount": 18,
-      "bytes": 4088
+      "featureCount": 1,
+      "bytes": 400
      },
      {
       "ix": 0,
@@ -4993,15 +4986,8 @@
       "ix": 2,
       "iz": -7,
       "url": "tiles/midtown-manhattan/roads/2_-7.bin",
-      "featureCount": 33,
-      "bytes": 12600
-     },
-     {
-      "ix": 3,
-      "iz": -7,
-      "url": "tiles/midtown-manhattan/roads/3_-7.bin",
-      "featureCount": 2,
-      "bytes": 964
+      "featureCount": 15,
+      "bytes": 2928
      },
      {
       "ix": 0,
@@ -5021,8 +5007,8 @@
       "ix": 2,
       "iz": -6,
       "url": "tiles/midtown-manhattan/roads/2_-6.bin",
-      "featureCount": 162,
-      "bytes": 16776
+      "featureCount": 161,
+      "bytes": 16216
      },
      {
       "ix": 3,
@@ -5177,43 +5163,29 @@
       "ix": 3,
       "iz": -10,
       "url": "tiles/midtown-manhattan/sidewalks/3_-10.bin",
-      "featureCount": 2,
-      "bytes": 12976
+      "featureCount": 1,
+      "bytes": 624
      },
      {
       "ix": 4,
       "iz": -10,
       "url": "tiles/midtown-manhattan/sidewalks/4_-10.bin",
-      "featureCount": 8,
-      "bytes": 20472
+      "featureCount": 1,
+      "bytes": 404
      },
      {
       "ix": 3,
       "iz": -9,
       "url": "tiles/midtown-manhattan/sidewalks/3_-9.bin",
-      "featureCount": 8,
-      "bytes": 7840
-     },
-     {
-      "ix": 4,
-      "iz": -9,
-      "url": "tiles/midtown-manhattan/sidewalks/4_-9.bin",
-      "featureCount": 2,
-      "bytes": 5356
+      "featureCount": 3,
+      "bytes": 744
      },
      {
       "ix": 2,
       "iz": -8,
       "url": "tiles/midtown-manhattan/sidewalks/2_-8.bin",
-      "featureCount": 5,
-      "bytes": 4744
-     },
-     {
-      "ix": 3,
-      "iz": -8,
-      "url": "tiles/midtown-manhattan/sidewalks/3_-8.bin",
-      "featureCount": 11,
-      "bytes": 75280
+      "featureCount": 2,
+      "bytes": 680
      },
      {
       "ix": 0,
@@ -5233,15 +5205,15 @@
       "ix": 2,
       "iz": -7,
       "url": "tiles/midtown-manhattan/sidewalks/2_-7.bin",
-      "featureCount": 25,
-      "bytes": 54816
+      "featureCount": 5,
+      "bytes": 1904
      },
      {
       "ix": 3,
       "iz": -7,
       "url": "tiles/midtown-manhattan/sidewalks/3_-7.bin",
-      "featureCount": 8,
-      "bytes": 13836
+      "featureCount": 1,
+      "bytes": 460
      },
      {
       "ix": 0,
@@ -5261,8 +5233,8 @@
       "ix": 2,
       "iz": -6,
       "url": "tiles/midtown-manhattan/sidewalks/2_-6.bin",
-      "featureCount": 78,
-      "bytes": 18844
+      "featureCount": 77,
+      "bytes": 18644
      },
      {
       "ix": 3,
@@ -5421,34 +5393,6 @@
     ],
     "parks": [
      {
-      "ix": 4,
-      "iz": -10,
-      "url": "tiles/midtown-manhattan/parks/4_-10.bin",
-      "featureCount": 3,
-      "bytes": 744
-     },
-     {
-      "ix": 3,
-      "iz": -9,
-      "url": "tiles/midtown-manhattan/parks/3_-9.bin",
-      "featureCount": 28,
-      "bytes": 2212
-     },
-     {
-      "ix": 4,
-      "iz": -9,
-      "url": "tiles/midtown-manhattan/parks/4_-9.bin",
-      "featureCount": 7,
-      "bytes": 1488
-     },
-     {
-      "ix": 3,
-      "iz": -8,
-      "url": "tiles/midtown-manhattan/parks/3_-8.bin",
-      "featureCount": 13,
-      "bytes": 3708
-     },
-     {
       "ix": 0,
       "iz": -7,
       "url": "tiles/midtown-manhattan/parks/0_-7.bin",
@@ -5466,8 +5410,8 @@
       "ix": 2,
       "iz": -7,
       "url": "tiles/midtown-manhattan/parks/2_-7.bin",
-      "featureCount": 16,
-      "bytes": 2404
+      "featureCount": 2,
+      "bytes": 720
      },
      {
       "ix": 0,
@@ -5824,13 +5768,6 @@
     ],
     "piers": [
      {
-      "ix": 3,
-      "iz": -8,
-      "url": "tiles/midtown-manhattan/piers/3_-8.bin",
-      "featureCount": 1,
-      "bytes": 400
-     },
-     {
       "ix": 0,
       "iz": -7,
       "url": "tiles/midtown-manhattan/piers/0_-7.bin",
@@ -5938,62 +5875,6 @@
     ],
     "water": [
      {
-      "ix": 3,
-      "iz": -10,
-      "url": "tiles/midtown-manhattan/water/3_-10.bin",
-      "featureCount": 2,
-      "bytes": 1408
-     },
-     {
-      "ix": 4,
-      "iz": -10,
-      "url": "tiles/midtown-manhattan/water/4_-10.bin",
-      "featureCount": 4,
-      "bytes": 3740
-     },
-     {
-      "ix": 3,
-      "iz": -9,
-      "url": "tiles/midtown-manhattan/water/3_-9.bin",
-      "featureCount": 1,
-      "bytes": 1436
-     },
-     {
-      "ix": 2,
-      "iz": -8,
-      "url": "tiles/midtown-manhattan/water/2_-8.bin",
-      "featureCount": 1,
-      "bytes": 4112
-     },
-     {
-      "ix": 3,
-      "iz": -8,
-      "url": "tiles/midtown-manhattan/water/3_-8.bin",
-      "featureCount": 1,
-      "bytes": 1768
-     },
-     {
-      "ix": 2,
-      "iz": -7,
-      "url": "tiles/midtown-manhattan/water/2_-7.bin",
-      "featureCount": 6,
-      "bytes": 1496
-     },
-     {
-      "ix": 3,
-      "iz": -7,
-      "url": "tiles/midtown-manhattan/water/3_-7.bin",
-      "featureCount": 1,
-      "bytes": 948
-     },
-     {
-      "ix": 2,
-      "iz": -6,
-      "url": "tiles/midtown-manhattan/water/2_-6.bin",
-      "featureCount": 1,
-      "bytes": 2132
-     },
-     {
       "ix": 2,
       "iz": -2,
       "url": "tiles/midtown-manhattan/water/2_-2.bin",
@@ -6013,29 +5894,29 @@
       "ix": 4,
       "iz": -10,
       "url": "tiles/midtown-manhattan/trees/4_-10.bin",
-      "featureCount": 65,
-      "bytes": 972
+      "featureCount": 8,
+      "bytes": 388
      },
      {
       "ix": 3,
       "iz": -9,
       "url": "tiles/midtown-manhattan/trees/3_-9.bin",
-      "featureCount": 84,
-      "bytes": 1152
+      "featureCount": 63,
+      "bytes": 944
      },
      {
       "ix": 2,
       "iz": -8,
       "url": "tiles/midtown-manhattan/trees/2_-8.bin",
-      "featureCount": 61,
-      "bytes": 928
+      "featureCount": 58,
+      "bytes": 896
      },
      {
       "ix": 3,
       "iz": -8,
       "url": "tiles/midtown-manhattan/trees/3_-8.bin",
-      "featureCount": 24,
-      "bytes": 552
+      "featureCount": 8,
+      "bytes": 388
      },
      {
       "ix": 0,
@@ -6055,15 +5936,15 @@
       "ix": 2,
       "iz": -7,
       "url": "tiles/midtown-manhattan/trees/2_-7.bin",
-      "featureCount": 94,
-      "bytes": 1256
+      "featureCount": 82,
+      "bytes": 1136
      },
      {
       "ix": 3,
       "iz": -7,
       "url": "tiles/midtown-manhattan/trees/3_-7.bin",
-      "featureCount": 60,
-      "bytes": 912
+      "featureCount": 56,
+      "bytes": 872
      },
      {
       "ix": 0,
@@ -6083,8 +5964,8 @@
       "ix": 2,
       "iz": -6,
       "url": "tiles/midtown-manhattan/trees/2_-6.bin",
-      "featureCount": 696,
-      "bytes": 7280
+      "featureCount": 684,
+      "bytes": 7160
      },
      {
       "ix": 3,
@@ -7142,6 +7023,3777 @@
      ]
     ]
    ]
+  },
+  {
+   "id": "upper-manhattan",
+   "name": "Upper Manhattan",
+   "description": "Upper West Side, Upper East Side, Roosevelt Island, Harlem, East Harlem, Morningside Heights, Washington Heights, Inwood, Randall's Island and Marble Hill (59th St northward, around Central Park)",
+   "provider": "nyc",
+   "builtAt": "2026-11-28T12:01:09.284Z",
+   "bounds": [
+    -1636.3986640515798,
+    -22751.22727581076,
+    10115.018571420569,
+    2221.582104438141
+   ],
+   "camera": {
+    "lon": -73.95,
+    "lat": 40.81,
+    "distance": 5000,
+    "heading": 20,
+    "pitch": 35
+   },
+   "layers": {
+    "buildings": [
+     {
+      "ix": 6,
+      "iz": -19,
+      "url": "tiles/upper-manhattan/buildings/6_-19.bin",
+      "featureCount": 3,
+      "bytes": 840
+     },
+     {
+      "ix": 7,
+      "iz": -19,
+      "url": "tiles/upper-manhattan/buildings/7_-19.bin",
+      "featureCount": 86,
+      "bytes": 10044
+     },
+     {
+      "ix": 8,
+      "iz": -19,
+      "url": "tiles/upper-manhattan/buildings/8_-19.bin",
+      "featureCount": 148,
+      "bytes": 16132
+     },
+     {
+      "ix": 6,
+      "iz": -18,
+      "url": "tiles/upper-manhattan/buildings/6_-18.bin",
+      "featureCount": 136,
+      "bytes": 19400
+     },
+     {
+      "ix": 7,
+      "iz": -18,
+      "url": "tiles/upper-manhattan/buildings/7_-18.bin",
+      "featureCount": 282,
+      "bytes": 36292
+     },
+     {
+      "ix": 8,
+      "iz": -18,
+      "url": "tiles/upper-manhattan/buildings/8_-18.bin",
+      "featureCount": 7,
+      "bytes": 1316
+     },
+     {
+      "ix": 5,
+      "iz": -17,
+      "url": "tiles/upper-manhattan/buildings/5_-17.bin",
+      "featureCount": 11,
+      "bytes": 4260
+     },
+     {
+      "ix": 6,
+      "iz": -17,
+      "url": "tiles/upper-manhattan/buildings/6_-17.bin",
+      "featureCount": 349,
+      "bytes": 55004
+     },
+     {
+      "ix": 7,
+      "iz": -17,
+      "url": "tiles/upper-manhattan/buildings/7_-17.bin",
+      "featureCount": 142,
+      "bytes": 17088
+     },
+     {
+      "ix": 5,
+      "iz": -16,
+      "url": "tiles/upper-manhattan/buildings/5_-16.bin",
+      "featureCount": 275,
+      "bytes": 51412
+     },
+     {
+      "ix": 6,
+      "iz": -16,
+      "url": "tiles/upper-manhattan/buildings/6_-16.bin",
+      "featureCount": 493,
+      "bytes": 62396
+     },
+     {
+      "ix": 5,
+      "iz": -15,
+      "url": "tiles/upper-manhattan/buildings/5_-15.bin",
+      "featureCount": 490,
+      "bytes": 67616
+     },
+     {
+      "ix": 6,
+      "iz": -15,
+      "url": "tiles/upper-manhattan/buildings/6_-15.bin",
+      "featureCount": 72,
+      "bytes": 9140
+     },
+     {
+      "ix": 4,
+      "iz": -14,
+      "url": "tiles/upper-manhattan/buildings/4_-14.bin",
+      "featureCount": 99,
+      "bytes": 16912
+     },
+     {
+      "ix": 5,
+      "iz": -14,
+      "url": "tiles/upper-manhattan/buildings/5_-14.bin",
+      "featureCount": 734,
+      "bytes": 87636
+     },
+     {
+      "ix": 3,
+      "iz": -13,
+      "url": "tiles/upper-manhattan/buildings/3_-13.bin",
+      "featureCount": 3,
+      "bytes": 768
+     },
+     {
+      "ix": 4,
+      "iz": -13,
+      "url": "tiles/upper-manhattan/buildings/4_-13.bin",
+      "featureCount": 866,
+      "bytes": 92780
+     },
+     {
+      "ix": 5,
+      "iz": -13,
+      "url": "tiles/upper-manhattan/buildings/5_-13.bin",
+      "featureCount": 1073,
+      "bytes": 117764
+     },
+     {
+      "ix": 6,
+      "iz": -13,
+      "url": "tiles/upper-manhattan/buildings/6_-13.bin",
+      "featureCount": 2,
+      "bytes": 684
+     },
+     {
+      "ix": 3,
+      "iz": -12,
+      "url": "tiles/upper-manhattan/buildings/3_-12.bin",
+      "featureCount": 91,
+      "bytes": 12660
+     },
+     {
+      "ix": 4,
+      "iz": -12,
+      "url": "tiles/upper-manhattan/buildings/4_-12.bin",
+      "featureCount": 584,
+      "bytes": 68708
+     },
+     {
+      "ix": 5,
+      "iz": -12,
+      "url": "tiles/upper-manhattan/buildings/5_-12.bin",
+      "featureCount": 1383,
+      "bytes": 127168
+     },
+     {
+      "ix": 6,
+      "iz": -12,
+      "url": "tiles/upper-manhattan/buildings/6_-12.bin",
+      "featureCount": 1,
+      "bytes": 660
+     },
+     {
+      "ix": 2,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/buildings/2_-11.bin",
+      "featureCount": 2,
+      "bytes": 720
+     },
+     {
+      "ix": 3,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/buildings/3_-11.bin",
+      "featureCount": 416,
+      "bytes": 54444
+     },
+     {
+      "ix": 4,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/buildings/4_-11.bin",
+      "featureCount": 1485,
+      "bytes": 139900
+     },
+     {
+      "ix": 5,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/buildings/5_-11.bin",
+      "featureCount": 1284,
+      "bytes": 108416
+     },
+     {
+      "ix": 6,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/buildings/6_-11.bin",
+      "featureCount": 29,
+      "bytes": 2800
+     },
+     {
+      "ix": 2,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/buildings/2_-10.bin",
+      "featureCount": 278,
+      "bytes": 32960
+     },
+     {
+      "ix": 3,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/buildings/3_-10.bin",
+      "featureCount": 787,
+      "bytes": 98820
+     },
+     {
+      "ix": 4,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/buildings/4_-10.bin",
+      "featureCount": 427,
+      "bytes": 58584
+     },
+     {
+      "ix": 5,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/buildings/5_-10.bin",
+      "featureCount": 1174,
+      "bytes": 97632
+     },
+     {
+      "ix": 6,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/buildings/6_-10.bin",
+      "featureCount": 371,
+      "bytes": 33100
+     },
+     {
+      "ix": 7,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/buildings/7_-10.bin",
+      "featureCount": 11,
+      "bytes": 2364
+     },
+     {
+      "ix": 1,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/buildings/1_-9.bin",
+      "featureCount": 3,
+      "bytes": 876
+     },
+     {
+      "ix": 2,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/buildings/2_-9.bin",
+      "featureCount": 1144,
+      "bytes": 116332
+     },
+     {
+      "ix": 3,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/buildings/3_-9.bin",
+      "featureCount": 471,
+      "bytes": 41872
+     },
+     {
+      "ix": 4,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/buildings/4_-9.bin",
+      "featureCount": 678,
+      "bytes": 72968
+     },
+     {
+      "ix": 5,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/buildings/5_-9.bin",
+      "featureCount": 600,
+      "bytes": 61908
+     },
+     {
+      "ix": 6,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/buildings/6_-9.bin",
+      "featureCount": 67,
+      "bytes": 10792
+     },
+     {
+      "ix": 7,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/buildings/7_-9.bin",
+      "featureCount": 61,
+      "bytes": 5292
+     },
+     {
+      "ix": 1,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/buildings/1_-8.bin",
+      "featureCount": 441,
+      "bytes": 43472
+     },
+     {
+      "ix": 2,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/buildings/2_-8.bin",
+      "featureCount": 1227,
+      "bytes": 107828
+     },
+     {
+      "ix": 3,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/buildings/3_-8.bin",
+      "featureCount": 316,
+      "bytes": 29400
+     },
+     {
+      "ix": 4,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/buildings/4_-8.bin",
+      "featureCount": 1509,
+      "bytes": 148172
+     },
+     {
+      "ix": 5,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/buildings/5_-8.bin",
+      "featureCount": 196,
+      "bytes": 23976
+     },
+     {
+      "ix": 6,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/buildings/6_-8.bin",
+      "featureCount": 5,
+      "bytes": 980
+     },
+     {
+      "ix": 0,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/buildings/0_-7.bin",
+      "featureCount": 1,
+      "bytes": 700
+     },
+     {
+      "ix": 1,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/buildings/1_-7.bin",
+      "featureCount": 256,
+      "bytes": 26648
+     },
+     {
+      "ix": 2,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/buildings/2_-7.bin",
+      "featureCount": 305,
+      "bytes": 27556
+     },
+     {
+      "ix": 3,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/buildings/3_-7.bin",
+      "featureCount": 1175,
+      "bytes": 98940
+     },
+     {
+      "ix": 4,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/buildings/4_-7.bin",
+      "featureCount": 1282,
+      "bytes": 127016
+     },
+     {
+      "ix": 5,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/buildings/5_-7.bin",
+      "featureCount": 77,
+      "bytes": 9520
+     },
+     {
+      "ix": 2,
+      "iz": -6,
+      "url": "tiles/upper-manhattan/buildings/2_-6.bin",
+      "featureCount": 101,
+      "bytes": 8356
+     },
+     {
+      "ix": 3,
+      "iz": -6,
+      "url": "tiles/upper-manhattan/buildings/3_-6.bin",
+      "featureCount": 1091,
+      "bytes": 87712
+     },
+     {
+      "ix": 4,
+      "iz": -6,
+      "url": "tiles/upper-manhattan/buildings/4_-6.bin",
+      "featureCount": 218,
+      "bytes": 34756
+     },
+     {
+      "ix": 5,
+      "iz": -6,
+      "url": "tiles/upper-manhattan/buildings/5_-6.bin",
+      "featureCount": 6,
+      "bytes": 1292
+     },
+     {
+      "ix": 4,
+      "iz": -5,
+      "url": "tiles/upper-manhattan/buildings/4_-5.bin",
+      "featureCount": 5,
+      "bytes": 1044
+     }
+    ],
+    "roads": [
+     {
+      "ix": 6,
+      "iz": -19,
+      "url": "tiles/upper-manhattan/roads/6_-19.bin",
+      "featureCount": 2,
+      "bytes": 524
+     },
+     {
+      "ix": 7,
+      "iz": -19,
+      "url": "tiles/upper-manhattan/roads/7_-19.bin",
+      "featureCount": 6,
+      "bytes": 2780
+     },
+     {
+      "ix": 8,
+      "iz": -19,
+      "url": "tiles/upper-manhattan/roads/8_-19.bin",
+      "featureCount": 9,
+      "bytes": 2984
+     },
+     {
+      "ix": 6,
+      "iz": -18,
+      "url": "tiles/upper-manhattan/roads/6_-18.bin",
+      "featureCount": 48,
+      "bytes": 9724
+     },
+     {
+      "ix": 7,
+      "iz": -18,
+      "url": "tiles/upper-manhattan/roads/7_-18.bin",
+      "featureCount": 100,
+      "bytes": 14316
+     },
+     {
+      "ix": 8,
+      "iz": -18,
+      "url": "tiles/upper-manhattan/roads/8_-18.bin",
+      "featureCount": 5,
+      "bytes": 2092
+     },
+     {
+      "ix": 5,
+      "iz": -17,
+      "url": "tiles/upper-manhattan/roads/5_-17.bin",
+      "featureCount": 7,
+      "bytes": 3140
+     },
+     {
+      "ix": 6,
+      "iz": -17,
+      "url": "tiles/upper-manhattan/roads/6_-17.bin",
+      "featureCount": 62,
+      "bytes": 15340
+     },
+     {
+      "ix": 7,
+      "iz": -17,
+      "url": "tiles/upper-manhattan/roads/7_-17.bin",
+      "featureCount": 59,
+      "bytes": 7716
+     },
+     {
+      "ix": 4,
+      "iz": -16,
+      "url": "tiles/upper-manhattan/roads/4_-16.bin",
+      "featureCount": 3,
+      "bytes": 1012
+     },
+     {
+      "ix": 5,
+      "iz": -16,
+      "url": "tiles/upper-manhattan/roads/5_-16.bin",
+      "featureCount": 205,
+      "bytes": 26368
+     },
+     {
+      "ix": 6,
+      "iz": -16,
+      "url": "tiles/upper-manhattan/roads/6_-16.bin",
+      "featureCount": 137,
+      "bytes": 17864
+     },
+     {
+      "ix": 5,
+      "iz": -15,
+      "url": "tiles/upper-manhattan/roads/5_-15.bin",
+      "featureCount": 215,
+      "bytes": 31096
+     },
+     {
+      "ix": 6,
+      "iz": -15,
+      "url": "tiles/upper-manhattan/roads/6_-15.bin",
+      "featureCount": 96,
+      "bytes": 13512
+     },
+     {
+      "ix": 4,
+      "iz": -14,
+      "url": "tiles/upper-manhattan/roads/4_-14.bin",
+      "featureCount": 35,
+      "bytes": 13068
+     },
+     {
+      "ix": 5,
+      "iz": -14,
+      "url": "tiles/upper-manhattan/roads/5_-14.bin",
+      "featureCount": 152,
+      "bytes": 24592
+     },
+     {
+      "ix": 6,
+      "iz": -14,
+      "url": "tiles/upper-manhattan/roads/6_-14.bin",
+      "featureCount": 2,
+      "bytes": 1076
+     },
+     {
+      "ix": 3,
+      "iz": -13,
+      "url": "tiles/upper-manhattan/roads/3_-13.bin",
+      "featureCount": 4,
+      "bytes": 804
+     },
+     {
+      "ix": 4,
+      "iz": -13,
+      "url": "tiles/upper-manhattan/roads/4_-13.bin",
+      "featureCount": 131,
+      "bytes": 16520
+     },
+     {
+      "ix": 5,
+      "iz": -13,
+      "url": "tiles/upper-manhattan/roads/5_-13.bin",
+      "featureCount": 156,
+      "bytes": 20528
+     },
+     {
+      "ix": 6,
+      "iz": -13,
+      "url": "tiles/upper-manhattan/roads/6_-13.bin",
+      "featureCount": 3,
+      "bytes": 1180
+     },
+     {
+      "ix": 3,
+      "iz": -12,
+      "url": "tiles/upper-manhattan/roads/3_-12.bin",
+      "featureCount": 74,
+      "bytes": 8748
+     },
+     {
+      "ix": 4,
+      "iz": -12,
+      "url": "tiles/upper-manhattan/roads/4_-12.bin",
+      "featureCount": 119,
+      "bytes": 17400
+     },
+     {
+      "ix": 5,
+      "iz": -12,
+      "url": "tiles/upper-manhattan/roads/5_-12.bin",
+      "featureCount": 151,
+      "bytes": 18116
+     },
+     {
+      "ix": 6,
+      "iz": -12,
+      "url": "tiles/upper-manhattan/roads/6_-12.bin",
+      "featureCount": 34,
+      "bytes": 5196
+     },
+     {
+      "ix": 2,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/roads/2_-11.bin",
+      "featureCount": 1,
+      "bytes": 400
+     },
+     {
+      "ix": 3,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/roads/3_-11.bin",
+      "featureCount": 80,
+      "bytes": 15556
+     },
+     {
+      "ix": 4,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/roads/4_-11.bin",
+      "featureCount": 191,
+      "bytes": 20084
+     },
+     {
+      "ix": 5,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/roads/5_-11.bin",
+      "featureCount": 238,
+      "bytes": 22084
+     },
+     {
+      "ix": 6,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/roads/6_-11.bin",
+      "featureCount": 58,
+      "bytes": 8516
+     },
+     {
+      "ix": 2,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/roads/2_-10.bin",
+      "featureCount": 65,
+      "bytes": 9884
+     },
+     {
+      "ix": 3,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/roads/3_-10.bin",
+      "featureCount": 137,
+      "bytes": 17680
+     },
+     {
+      "ix": 4,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/roads/4_-10.bin",
+      "featureCount": 116,
+      "bytes": 13380
+     },
+     {
+      "ix": 5,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/roads/5_-10.bin",
+      "featureCount": 242,
+      "bytes": 22212
+     },
+     {
+      "ix": 6,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/roads/6_-10.bin",
+      "featureCount": 146,
+      "bytes": 24348
+     },
+     {
+      "ix": 7,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/roads/7_-10.bin",
+      "featureCount": 52,
+      "bytes": 19156
+     },
+     {
+      "ix": 1,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/roads/1_-9.bin",
+      "featureCount": 12,
+      "bytes": 3628
+     },
+     {
+      "ix": 2,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/roads/2_-9.bin",
+      "featureCount": 172,
+      "bytes": 28052
+     },
+     {
+      "ix": 3,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/roads/3_-9.bin",
+      "featureCount": 30,
+      "bytes": 4828
+     },
+     {
+      "ix": 4,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/roads/4_-9.bin",
+      "featureCount": 150,
+      "bytes": 15284
+     },
+     {
+      "ix": 5,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/roads/5_-9.bin",
+      "featureCount": 108,
+      "bytes": 17208
+     },
+     {
+      "ix": 6,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/roads/6_-9.bin",
+      "featureCount": 71,
+      "bytes": 21364
+     },
+     {
+      "ix": 7,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/roads/7_-9.bin",
+      "featureCount": 32,
+      "bytes": 9032
+     },
+     {
+      "ix": 1,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/roads/1_-8.bin",
+      "featureCount": 50,
+      "bytes": 8432
+     },
+     {
+      "ix": 2,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/roads/2_-8.bin",
+      "featureCount": 136,
+      "bytes": 16988
+     },
+     {
+      "ix": 3,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/roads/3_-8.bin",
+      "featureCount": 54,
+      "bytes": 6356
+     },
+     {
+      "ix": 4,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/roads/4_-8.bin",
+      "featureCount": 205,
+      "bytes": 24344
+     },
+     {
+      "ix": 5,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/roads/5_-8.bin",
+      "featureCount": 49,
+      "bytes": 9196
+     },
+     {
+      "ix": 6,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/roads/6_-8.bin",
+      "featureCount": 7,
+      "bytes": 5612
+     },
+     {
+      "ix": 1,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/roads/1_-7.bin",
+      "featureCount": 85,
+      "bytes": 9144
+     },
+     {
+      "ix": 2,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/roads/2_-7.bin",
+      "featureCount": 37,
+      "bytes": 5312
+     },
+     {
+      "ix": 3,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/roads/3_-7.bin",
+      "featureCount": 190,
+      "bytes": 19028
+     },
+     {
+      "ix": 4,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/roads/4_-7.bin",
+      "featureCount": 159,
+      "bytes": 19056
+     },
+     {
+      "ix": 5,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/roads/5_-7.bin",
+      "featureCount": 24,
+      "bytes": 5128
+     },
+     {
+      "ix": 2,
+      "iz": -6,
+      "url": "tiles/upper-manhattan/roads/2_-6.bin",
+      "featureCount": 10,
+      "bytes": 1416
+     },
+     {
+      "ix": 3,
+      "iz": -6,
+      "url": "tiles/upper-manhattan/roads/3_-6.bin",
+      "featureCount": 170,
+      "bytes": 17656
+     },
+     {
+      "ix": 4,
+      "iz": -6,
+      "url": "tiles/upper-manhattan/roads/4_-6.bin",
+      "featureCount": 120,
+      "bytes": 15604
+     },
+     {
+      "ix": 5,
+      "iz": -6,
+      "url": "tiles/upper-manhattan/roads/5_-6.bin",
+      "featureCount": 2,
+      "bytes": 3704
+     },
+     {
+      "ix": 4,
+      "iz": -5,
+      "url": "tiles/upper-manhattan/roads/4_-5.bin",
+      "featureCount": 6,
+      "bytes": 3096
+     }
+    ],
+    "sidewalks": [
+     {
+      "ix": 7,
+      "iz": -19,
+      "url": "tiles/upper-manhattan/sidewalks/7_-19.bin",
+      "featureCount": 6,
+      "bytes": 3820
+     },
+     {
+      "ix": 8,
+      "iz": -19,
+      "url": "tiles/upper-manhattan/sidewalks/8_-19.bin",
+      "featureCount": 10,
+      "bytes": 9248
+     },
+     {
+      "ix": 6,
+      "iz": -18,
+      "url": "tiles/upper-manhattan/sidewalks/6_-18.bin",
+      "featureCount": 20,
+      "bytes": 33592
+     },
+     {
+      "ix": 7,
+      "iz": -18,
+      "url": "tiles/upper-manhattan/sidewalks/7_-18.bin",
+      "featureCount": 44,
+      "bytes": 17920
+     },
+     {
+      "ix": 8,
+      "iz": -18,
+      "url": "tiles/upper-manhattan/sidewalks/8_-18.bin",
+      "featureCount": 1,
+      "bytes": 724
+     },
+     {
+      "ix": 5,
+      "iz": -17,
+      "url": "tiles/upper-manhattan/sidewalks/5_-17.bin",
+      "featureCount": 3,
+      "bytes": 4080
+     },
+     {
+      "ix": 6,
+      "iz": -17,
+      "url": "tiles/upper-manhattan/sidewalks/6_-17.bin",
+      "featureCount": 42,
+      "bytes": 33860
+     },
+     {
+      "ix": 7,
+      "iz": -17,
+      "url": "tiles/upper-manhattan/sidewalks/7_-17.bin",
+      "featureCount": 25,
+      "bytes": 13388
+     },
+     {
+      "ix": 5,
+      "iz": -16,
+      "url": "tiles/upper-manhattan/sidewalks/5_-16.bin",
+      "featureCount": 50,
+      "bytes": 19652
+     },
+     {
+      "ix": 6,
+      "iz": -16,
+      "url": "tiles/upper-manhattan/sidewalks/6_-16.bin",
+      "featureCount": 59,
+      "bytes": 27972
+     },
+     {
+      "ix": 4,
+      "iz": -15,
+      "url": "tiles/upper-manhattan/sidewalks/4_-15.bin",
+      "featureCount": 1,
+      "bytes": 7300
+     },
+     {
+      "ix": 5,
+      "iz": -15,
+      "url": "tiles/upper-manhattan/sidewalks/5_-15.bin",
+      "featureCount": 84,
+      "bytes": 29376
+     },
+     {
+      "ix": 6,
+      "iz": -15,
+      "url": "tiles/upper-manhattan/sidewalks/6_-15.bin",
+      "featureCount": 17,
+      "bytes": 9632
+     },
+     {
+      "ix": 4,
+      "iz": -14,
+      "url": "tiles/upper-manhattan/sidewalks/4_-14.bin",
+      "featureCount": 36,
+      "bytes": 10340
+     },
+     {
+      "ix": 5,
+      "iz": -14,
+      "url": "tiles/upper-manhattan/sidewalks/5_-14.bin",
+      "featureCount": 91,
+      "bytes": 30996
+     },
+     {
+      "ix": 4,
+      "iz": -13,
+      "url": "tiles/upper-manhattan/sidewalks/4_-13.bin",
+      "featureCount": 84,
+      "bytes": 22996
+     },
+     {
+      "ix": 5,
+      "iz": -13,
+      "url": "tiles/upper-manhattan/sidewalks/5_-13.bin",
+      "featureCount": 105,
+      "bytes": 29292
+     },
+     {
+      "ix": 3,
+      "iz": -12,
+      "url": "tiles/upper-manhattan/sidewalks/3_-12.bin",
+      "featureCount": 38,
+      "bytes": 15308
+     },
+     {
+      "ix": 4,
+      "iz": -12,
+      "url": "tiles/upper-manhattan/sidewalks/4_-12.bin",
+      "featureCount": 56,
+      "bytes": 30612
+     },
+     {
+      "ix": 5,
+      "iz": -12,
+      "url": "tiles/upper-manhattan/sidewalks/5_-12.bin",
+      "featureCount": 108,
+      "bytes": 24448
+     },
+     {
+      "ix": 6,
+      "iz": -12,
+      "url": "tiles/upper-manhattan/sidewalks/6_-12.bin",
+      "featureCount": 4,
+      "bytes": 3784
+     },
+     {
+      "ix": 3,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/sidewalks/3_-11.bin",
+      "featureCount": 82,
+      "bytes": 34936
+     },
+     {
+      "ix": 4,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/sidewalks/4_-11.bin",
+      "featureCount": 93,
+      "bytes": 34940
+     },
+     {
+      "ix": 5,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/sidewalks/5_-11.bin",
+      "featureCount": 92,
+      "bytes": 32112
+     },
+     {
+      "ix": 6,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/sidewalks/6_-11.bin",
+      "featureCount": 18,
+      "bytes": 5456
+     },
+     {
+      "ix": 2,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/sidewalks/2_-10.bin",
+      "featureCount": 43,
+      "bytes": 11192
+     },
+     {
+      "ix": 3,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/sidewalks/3_-10.bin",
+      "featureCount": 107,
+      "bytes": 23948
+     },
+     {
+      "ix": 4,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/sidewalks/4_-10.bin",
+      "featureCount": 59,
+      "bytes": 16888
+     },
+     {
+      "ix": 5,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/sidewalks/5_-10.bin",
+      "featureCount": 121,
+      "bytes": 29992
+     },
+     {
+      "ix": 6,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/sidewalks/6_-10.bin",
+      "featureCount": 34,
+      "bytes": 20312
+     },
+     {
+      "ix": 7,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/sidewalks/7_-10.bin",
+      "featureCount": 13,
+      "bytes": 4108
+     },
+     {
+      "ix": 1,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/sidewalks/1_-9.bin",
+      "featureCount": 3,
+      "bytes": 5792
+     },
+     {
+      "ix": 2,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/sidewalks/2_-9.bin",
+      "featureCount": 106,
+      "bytes": 34608
+     },
+     {
+      "ix": 3,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/sidewalks/3_-9.bin",
+      "featureCount": 25,
+      "bytes": 6632
+     },
+     {
+      "ix": 4,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/sidewalks/4_-9.bin",
+      "featureCount": 79,
+      "bytes": 20952
+     },
+     {
+      "ix": 5,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/sidewalks/5_-9.bin",
+      "featureCount": 95,
+      "bytes": 20404
+     },
+     {
+      "ix": 6,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/sidewalks/6_-9.bin",
+      "featureCount": 48,
+      "bytes": 12688
+     },
+     {
+      "ix": 7,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/sidewalks/7_-9.bin",
+      "featureCount": 29,
+      "bytes": 8004
+     },
+     {
+      "ix": 1,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/sidewalks/1_-8.bin",
+      "featureCount": 34,
+      "bytes": 18268
+     },
+     {
+      "ix": 2,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/sidewalks/2_-8.bin",
+      "featureCount": 92,
+      "bytes": 17964
+     },
+     {
+      "ix": 3,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/sidewalks/3_-8.bin",
+      "featureCount": 29,
+      "bytes": 6100
+     },
+     {
+      "ix": 4,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/sidewalks/4_-8.bin",
+      "featureCount": 117,
+      "bytes": 24472
+     },
+     {
+      "ix": 5,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/sidewalks/5_-8.bin",
+      "featureCount": 34,
+      "bytes": 9712
+     },
+     {
+      "ix": 6,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/sidewalks/6_-8.bin",
+      "featureCount": 1,
+      "bytes": 496
+     },
+     {
+      "ix": 1,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/sidewalks/1_-7.bin",
+      "featureCount": 42,
+      "bytes": 10604
+     },
+     {
+      "ix": 2,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/sidewalks/2_-7.bin",
+      "featureCount": 36,
+      "bytes": 6404
+     },
+     {
+      "ix": 3,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/sidewalks/3_-7.bin",
+      "featureCount": 93,
+      "bytes": 21112
+     },
+     {
+      "ix": 4,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/sidewalks/4_-7.bin",
+      "featureCount": 83,
+      "bytes": 19472
+     },
+     {
+      "ix": 5,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/sidewalks/5_-7.bin",
+      "featureCount": 23,
+      "bytes": 13972
+     },
+     {
+      "ix": 2,
+      "iz": -6,
+      "url": "tiles/upper-manhattan/sidewalks/2_-6.bin",
+      "featureCount": 5,
+      "bytes": 1656
+     },
+     {
+      "ix": 3,
+      "iz": -6,
+      "url": "tiles/upper-manhattan/sidewalks/3_-6.bin",
+      "featureCount": 76,
+      "bytes": 17392
+     },
+     {
+      "ix": 4,
+      "iz": -6,
+      "url": "tiles/upper-manhattan/sidewalks/4_-6.bin",
+      "featureCount": 53,
+      "bytes": 15344
+     },
+     {
+      "ix": 5,
+      "iz": -6,
+      "url": "tiles/upper-manhattan/sidewalks/5_-6.bin",
+      "featureCount": 2,
+      "bytes": 804
+     },
+     {
+      "ix": 4,
+      "iz": -5,
+      "url": "tiles/upper-manhattan/sidewalks/4_-5.bin",
+      "featureCount": 3,
+      "bytes": 1300
+     }
+    ],
+    "parks": [
+     {
+      "ix": 6,
+      "iz": -19,
+      "url": "tiles/upper-manhattan/parks/6_-19.bin",
+      "featureCount": 2,
+      "bytes": 404
+     },
+     {
+      "ix": 7,
+      "iz": -19,
+      "url": "tiles/upper-manhattan/parks/7_-19.bin",
+      "featureCount": 1,
+      "bytes": 476
+     },
+     {
+      "ix": 8,
+      "iz": -19,
+      "url": "tiles/upper-manhattan/parks/8_-19.bin",
+      "featureCount": 6,
+      "bytes": 652
+     },
+     {
+      "ix": 6,
+      "iz": -18,
+      "url": "tiles/upper-manhattan/parks/6_-18.bin",
+      "featureCount": 15,
+      "bytes": 4924
+     },
+     {
+      "ix": 7,
+      "iz": -18,
+      "url": "tiles/upper-manhattan/parks/7_-18.bin",
+      "featureCount": 33,
+      "bytes": 3652
+     },
+     {
+      "ix": 5,
+      "iz": -17,
+      "url": "tiles/upper-manhattan/parks/5_-17.bin",
+      "featureCount": 4,
+      "bytes": 2448
+     },
+     {
+      "ix": 6,
+      "iz": -17,
+      "url": "tiles/upper-manhattan/parks/6_-17.bin",
+      "featureCount": 15,
+      "bytes": 2880
+     },
+     {
+      "ix": 7,
+      "iz": -17,
+      "url": "tiles/upper-manhattan/parks/7_-17.bin",
+      "featureCount": 10,
+      "bytes": 2184
+     },
+     {
+      "ix": 5,
+      "iz": -16,
+      "url": "tiles/upper-manhattan/parks/5_-16.bin",
+      "featureCount": 23,
+      "bytes": 7308
+     },
+     {
+      "ix": 6,
+      "iz": -16,
+      "url": "tiles/upper-manhattan/parks/6_-16.bin",
+      "featureCount": 13,
+      "bytes": 2684
+     },
+     {
+      "ix": 4,
+      "iz": -15,
+      "url": "tiles/upper-manhattan/parks/4_-15.bin",
+      "featureCount": 6,
+      "bytes": 904
+     },
+     {
+      "ix": 5,
+      "iz": -15,
+      "url": "tiles/upper-manhattan/parks/5_-15.bin",
+      "featureCount": 40,
+      "bytes": 6420
+     },
+     {
+      "ix": 6,
+      "iz": -15,
+      "url": "tiles/upper-manhattan/parks/6_-15.bin",
+      "featureCount": 13,
+      "bytes": 4052
+     },
+     {
+      "ix": 4,
+      "iz": -14,
+      "url": "tiles/upper-manhattan/parks/4_-14.bin",
+      "featureCount": 27,
+      "bytes": 4052
+     },
+     {
+      "ix": 5,
+      "iz": -14,
+      "url": "tiles/upper-manhattan/parks/5_-14.bin",
+      "featureCount": 44,
+      "bytes": 3884
+     },
+     {
+      "ix": 4,
+      "iz": -13,
+      "url": "tiles/upper-manhattan/parks/4_-13.bin",
+      "featureCount": 39,
+      "bytes": 5496
+     },
+     {
+      "ix": 5,
+      "iz": -13,
+      "url": "tiles/upper-manhattan/parks/5_-13.bin",
+      "featureCount": 87,
+      "bytes": 7756
+     },
+     {
+      "ix": 3,
+      "iz": -12,
+      "url": "tiles/upper-manhattan/parks/3_-12.bin",
+      "featureCount": 17,
+      "bytes": 3460
+     },
+     {
+      "ix": 4,
+      "iz": -12,
+      "url": "tiles/upper-manhattan/parks/4_-12.bin",
+      "featureCount": 47,
+      "bytes": 3648
+     },
+     {
+      "ix": 5,
+      "iz": -12,
+      "url": "tiles/upper-manhattan/parks/5_-12.bin",
+      "featureCount": 65,
+      "bytes": 6116
+     },
+     {
+      "ix": 6,
+      "iz": -12,
+      "url": "tiles/upper-manhattan/parks/6_-12.bin",
+      "featureCount": 10,
+      "bytes": 2104
+     },
+     {
+      "ix": 2,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/parks/2_-11.bin",
+      "featureCount": 4,
+      "bytes": 540
+     },
+     {
+      "ix": 3,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/parks/3_-11.bin",
+      "featureCount": 60,
+      "bytes": 7872
+     },
+     {
+      "ix": 4,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/parks/4_-11.bin",
+      "featureCount": 82,
+      "bytes": 7352
+     },
+     {
+      "ix": 5,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/parks/5_-11.bin",
+      "featureCount": 25,
+      "bytes": 2092
+     },
+     {
+      "ix": 6,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/parks/6_-11.bin",
+      "featureCount": 29,
+      "bytes": 3524
+     },
+     {
+      "ix": 2,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/parks/2_-10.bin",
+      "featureCount": 28,
+      "bytes": 4804
+     },
+     {
+      "ix": 3,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/parks/3_-10.bin",
+      "featureCount": 42,
+      "bytes": 3660
+     },
+     {
+      "ix": 4,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/parks/4_-10.bin",
+      "featureCount": 42,
+      "bytes": 3236
+     },
+     {
+      "ix": 5,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/parks/5_-10.bin",
+      "featureCount": 26,
+      "bytes": 2360
+     },
+     {
+      "ix": 6,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/parks/6_-10.bin",
+      "featureCount": 29,
+      "bytes": 7228
+     },
+     {
+      "ix": 7,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/parks/7_-10.bin",
+      "featureCount": 37,
+      "bytes": 8124
+     },
+     {
+      "ix": 1,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/parks/1_-9.bin",
+      "featureCount": 11,
+      "bytes": 2656
+     },
+     {
+      "ix": 2,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/parks/2_-9.bin",
+      "featureCount": 22,
+      "bytes": 7712
+     },
+     {
+      "ix": 3,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/parks/3_-9.bin",
+      "featureCount": 7,
+      "bytes": 604
+     },
+     {
+      "ix": 4,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/parks/4_-9.bin",
+      "featureCount": 25,
+      "bytes": 2040
+     },
+     {
+      "ix": 5,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/parks/5_-9.bin",
+      "featureCount": 51,
+      "bytes": 5180
+     },
+     {
+      "ix": 6,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/parks/6_-9.bin",
+      "featureCount": 29,
+      "bytes": 5832
+     },
+     {
+      "ix": 7,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/parks/7_-9.bin",
+      "featureCount": 10,
+      "bytes": 1920
+     },
+     {
+      "ix": 1,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/parks/1_-8.bin",
+      "featureCount": 19,
+      "bytes": 2480
+     },
+     {
+      "ix": 2,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/parks/2_-8.bin",
+      "featureCount": 16,
+      "bytes": 2192
+     },
+     {
+      "ix": 3,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/parks/3_-8.bin",
+      "featureCount": 4,
+      "bytes": 844
+     },
+     {
+      "ix": 4,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/parks/4_-8.bin",
+      "featureCount": 11,
+      "bytes": 1760
+     },
+     {
+      "ix": 5,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/parks/5_-8.bin",
+      "featureCount": 32,
+      "bytes": 3400
+     },
+     {
+      "ix": 6,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/parks/6_-8.bin",
+      "featureCount": 13,
+      "bytes": 1096
+     },
+     {
+      "ix": 1,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/parks/1_-7.bin",
+      "featureCount": 8,
+      "bytes": 1124
+     },
+     {
+      "ix": 2,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/parks/2_-7.bin",
+      "featureCount": 15,
+      "bytes": 2232
+     },
+     {
+      "ix": 3,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/parks/3_-7.bin",
+      "featureCount": 14,
+      "bytes": 2128
+     },
+     {
+      "ix": 4,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/parks/4_-7.bin",
+      "featureCount": 9,
+      "bytes": 1264
+     },
+     {
+      "ix": 5,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/parks/5_-7.bin",
+      "featureCount": 8,
+      "bytes": 1556
+     },
+     {
+      "ix": 3,
+      "iz": -6,
+      "url": "tiles/upper-manhattan/parks/3_-6.bin",
+      "featureCount": 30,
+      "bytes": 2804
+     },
+     {
+      "ix": 4,
+      "iz": -6,
+      "url": "tiles/upper-manhattan/parks/4_-6.bin",
+      "featureCount": 6,
+      "bytes": 1324
+     },
+     {
+      "ix": 4,
+      "iz": -5,
+      "url": "tiles/upper-manhattan/parks/4_-5.bin",
+      "featureCount": 1,
+      "bytes": 436
+     }
+    ],
+    "plazas": [
+     {
+      "ix": 7,
+      "iz": -19,
+      "url": "tiles/upper-manhattan/plazas/7_-19.bin",
+      "featureCount": 3,
+      "bytes": 568
+     },
+     {
+      "ix": 8,
+      "iz": -19,
+      "url": "tiles/upper-manhattan/plazas/8_-19.bin",
+      "featureCount": 9,
+      "bytes": 960
+     },
+     {
+      "ix": 6,
+      "iz": -18,
+      "url": "tiles/upper-manhattan/plazas/6_-18.bin",
+      "featureCount": 2,
+      "bytes": 504
+     },
+     {
+      "ix": 7,
+      "iz": -18,
+      "url": "tiles/upper-manhattan/plazas/7_-18.bin",
+      "featureCount": 7,
+      "bytes": 1808
+     },
+     {
+      "ix": 8,
+      "iz": -18,
+      "url": "tiles/upper-manhattan/plazas/8_-18.bin",
+      "featureCount": 1,
+      "bytes": 356
+     },
+     {
+      "ix": 5,
+      "iz": -17,
+      "url": "tiles/upper-manhattan/plazas/5_-17.bin",
+      "featureCount": 2,
+      "bytes": 384
+     },
+     {
+      "ix": 6,
+      "iz": -17,
+      "url": "tiles/upper-manhattan/plazas/6_-17.bin",
+      "featureCount": 5,
+      "bytes": 1196
+     },
+     {
+      "ix": 7,
+      "iz": -17,
+      "url": "tiles/upper-manhattan/plazas/7_-17.bin",
+      "featureCount": 11,
+      "bytes": 2068
+     },
+     {
+      "ix": 5,
+      "iz": -16,
+      "url": "tiles/upper-manhattan/plazas/5_-16.bin",
+      "featureCount": 8,
+      "bytes": 1008
+     },
+     {
+      "ix": 6,
+      "iz": -16,
+      "url": "tiles/upper-manhattan/plazas/6_-16.bin",
+      "featureCount": 7,
+      "bytes": 736
+     },
+     {
+      "ix": 5,
+      "iz": -15,
+      "url": "tiles/upper-manhattan/plazas/5_-15.bin",
+      "featureCount": 9,
+      "bytes": 984
+     },
+     {
+      "ix": 6,
+      "iz": -15,
+      "url": "tiles/upper-manhattan/plazas/6_-15.bin",
+      "featureCount": 1,
+      "bytes": 404
+     },
+     {
+      "ix": 4,
+      "iz": -14,
+      "url": "tiles/upper-manhattan/plazas/4_-14.bin",
+      "featureCount": 1,
+      "bytes": 468
+     },
+     {
+      "ix": 5,
+      "iz": -14,
+      "url": "tiles/upper-manhattan/plazas/5_-14.bin",
+      "featureCount": 28,
+      "bytes": 3588
+     },
+     {
+      "ix": 4,
+      "iz": -13,
+      "url": "tiles/upper-manhattan/plazas/4_-13.bin",
+      "featureCount": 9,
+      "bytes": 1416
+     },
+     {
+      "ix": 5,
+      "iz": -13,
+      "url": "tiles/upper-manhattan/plazas/5_-13.bin",
+      "featureCount": 26,
+      "bytes": 2068
+     },
+     {
+      "ix": 3,
+      "iz": -12,
+      "url": "tiles/upper-manhattan/plazas/3_-12.bin",
+      "featureCount": 7,
+      "bytes": 940
+     },
+     {
+      "ix": 4,
+      "iz": -12,
+      "url": "tiles/upper-manhattan/plazas/4_-12.bin",
+      "featureCount": 44,
+      "bytes": 4468
+     },
+     {
+      "ix": 5,
+      "iz": -12,
+      "url": "tiles/upper-manhattan/plazas/5_-12.bin",
+      "featureCount": 57,
+      "bytes": 3484
+     },
+     {
+      "ix": 3,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/plazas/3_-11.bin",
+      "featureCount": 14,
+      "bytes": 1720
+     },
+     {
+      "ix": 4,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/plazas/4_-11.bin",
+      "featureCount": 35,
+      "bytes": 2876
+     },
+     {
+      "ix": 5,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/plazas/5_-11.bin",
+      "featureCount": 102,
+      "bytes": 6200
+     },
+     {
+      "ix": 6,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/plazas/6_-11.bin",
+      "featureCount": 5,
+      "bytes": 520
+     },
+     {
+      "ix": 2,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/plazas/2_-10.bin",
+      "featureCount": 5,
+      "bytes": 712
+     },
+     {
+      "ix": 3,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/plazas/3_-10.bin",
+      "featureCount": 22,
+      "bytes": 2248
+     },
+     {
+      "ix": 4,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/plazas/4_-10.bin",
+      "featureCount": 38,
+      "bytes": 4320
+     },
+     {
+      "ix": 5,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/plazas/5_-10.bin",
+      "featureCount": 87,
+      "bytes": 8784
+     },
+     {
+      "ix": 6,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/plazas/6_-10.bin",
+      "featureCount": 34,
+      "bytes": 3220
+     },
+     {
+      "ix": 2,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/plazas/2_-9.bin",
+      "featureCount": 18,
+      "bytes": 1656
+     },
+     {
+      "ix": 3,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/plazas/3_-9.bin",
+      "featureCount": 8,
+      "bytes": 780
+     },
+     {
+      "ix": 4,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/plazas/4_-9.bin",
+      "featureCount": 29,
+      "bytes": 3668
+     },
+     {
+      "ix": 5,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/plazas/5_-9.bin",
+      "featureCount": 56,
+      "bytes": 5700
+     },
+     {
+      "ix": 6,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/plazas/6_-9.bin",
+      "featureCount": 14,
+      "bytes": 2128
+     },
+     {
+      "ix": 7,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/plazas/7_-9.bin",
+      "featureCount": 1,
+      "bytes": 460
+     },
+     {
+      "ix": 1,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/plazas/1_-8.bin",
+      "featureCount": 8,
+      "bytes": 980
+     },
+     {
+      "ix": 2,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/plazas/2_-8.bin",
+      "featureCount": 5,
+      "bytes": 724
+     },
+     {
+      "ix": 3,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/plazas/3_-8.bin",
+      "featureCount": 1,
+      "bytes": 452
+     },
+     {
+      "ix": 4,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/plazas/4_-8.bin",
+      "featureCount": 10,
+      "bytes": 1336
+     },
+     {
+      "ix": 5,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/plazas/5_-8.bin",
+      "featureCount": 7,
+      "bytes": 844
+     },
+     {
+      "ix": 1,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/plazas/1_-7.bin",
+      "featureCount": 12,
+      "bytes": 1872
+     },
+     {
+      "ix": 2,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/plazas/2_-7.bin",
+      "featureCount": 1,
+      "bytes": 348
+     },
+     {
+      "ix": 4,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/plazas/4_-7.bin",
+      "featureCount": 10,
+      "bytes": 824
+     },
+     {
+      "ix": 5,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/plazas/5_-7.bin",
+      "featureCount": 6,
+      "bytes": 1860
+     },
+     {
+      "ix": 2,
+      "iz": -6,
+      "url": "tiles/upper-manhattan/plazas/2_-6.bin",
+      "featureCount": 1,
+      "bytes": 340
+     },
+     {
+      "ix": 3,
+      "iz": -6,
+      "url": "tiles/upper-manhattan/plazas/3_-6.bin",
+      "featureCount": 6,
+      "bytes": 652
+     },
+     {
+      "ix": 4,
+      "iz": -6,
+      "url": "tiles/upper-manhattan/plazas/4_-6.bin",
+      "featureCount": 22,
+      "bytes": 2712
+     },
+     {
+      "ix": 4,
+      "iz": -5,
+      "url": "tiles/upper-manhattan/plazas/4_-5.bin",
+      "featureCount": 1,
+      "bytes": 500
+     }
+    ],
+    "piers": [
+     {
+      "ix": 6,
+      "iz": -19,
+      "url": "tiles/upper-manhattan/piers/6_-19.bin",
+      "featureCount": 1,
+      "bytes": 476
+     },
+     {
+      "ix": 7,
+      "iz": -19,
+      "url": "tiles/upper-manhattan/piers/7_-19.bin",
+      "featureCount": 2,
+      "bytes": 512
+     },
+     {
+      "ix": 6,
+      "iz": -18,
+      "url": "tiles/upper-manhattan/piers/6_-18.bin",
+      "featureCount": 4,
+      "bytes": 720
+     },
+     {
+      "ix": 7,
+      "iz": -18,
+      "url": "tiles/upper-manhattan/piers/7_-18.bin",
+      "featureCount": 7,
+      "bytes": 1252
+     },
+     {
+      "ix": 7,
+      "iz": -17,
+      "url": "tiles/upper-manhattan/piers/7_-17.bin",
+      "featureCount": 8,
+      "bytes": 1160
+     },
+     {
+      "ix": 6,
+      "iz": -16,
+      "url": "tiles/upper-manhattan/piers/6_-16.bin",
+      "featureCount": 1,
+      "bytes": 596
+     },
+     {
+      "ix": 7,
+      "iz": -16,
+      "url": "tiles/upper-manhattan/piers/7_-16.bin",
+      "featureCount": 1,
+      "bytes": 628
+     },
+     {
+      "ix": 6,
+      "iz": -15,
+      "url": "tiles/upper-manhattan/piers/6_-15.bin",
+      "featureCount": 1,
+      "bytes": 1124
+     },
+     {
+      "ix": 5,
+      "iz": -14,
+      "url": "tiles/upper-manhattan/piers/5_-14.bin",
+      "featureCount": 1,
+      "bytes": 508
+     },
+     {
+      "ix": 3,
+      "iz": -13,
+      "url": "tiles/upper-manhattan/piers/3_-13.bin",
+      "featureCount": 6,
+      "bytes": 1248
+     },
+     {
+      "ix": 4,
+      "iz": -13,
+      "url": "tiles/upper-manhattan/piers/4_-13.bin",
+      "featureCount": 1,
+      "bytes": 652
+     },
+     {
+      "ix": 6,
+      "iz": -13,
+      "url": "tiles/upper-manhattan/piers/6_-13.bin",
+      "featureCount": 2,
+      "bytes": 608
+     },
+     {
+      "ix": 3,
+      "iz": -12,
+      "url": "tiles/upper-manhattan/piers/3_-12.bin",
+      "featureCount": 3,
+      "bytes": 924
+     },
+     {
+      "ix": 6,
+      "iz": -12,
+      "url": "tiles/upper-manhattan/piers/6_-12.bin",
+      "featureCount": 2,
+      "bytes": 1208
+     },
+     {
+      "ix": 1,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/piers/1_-11.bin",
+      "featureCount": 2,
+      "bytes": 520
+     },
+     {
+      "ix": 2,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/piers/2_-10.bin",
+      "featureCount": 1,
+      "bytes": 564
+     },
+     {
+      "ix": 6,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/piers/6_-10.bin",
+      "featureCount": 5,
+      "bytes": 1244
+     },
+     {
+      "ix": 1,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/piers/1_-9.bin",
+      "featureCount": 5,
+      "bytes": 2928
+     },
+     {
+      "ix": 2,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/piers/2_-9.bin",
+      "featureCount": 1,
+      "bytes": 424
+     },
+     {
+      "ix": 5,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/piers/5_-9.bin",
+      "featureCount": 4,
+      "bytes": 2272
+     },
+     {
+      "ix": 6,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/piers/6_-9.bin",
+      "featureCount": 3,
+      "bytes": 1492
+     },
+     {
+      "ix": 7,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/piers/7_-9.bin",
+      "featureCount": 3,
+      "bytes": 944
+     },
+     {
+      "ix": 1,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/piers/1_-8.bin",
+      "featureCount": 6,
+      "bytes": 1064
+     },
+     {
+      "ix": 5,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/piers/5_-8.bin",
+      "featureCount": 5,
+      "bytes": 940
+     },
+     {
+      "ix": 0,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/piers/0_-7.bin",
+      "featureCount": 1,
+      "bytes": 636
+     },
+     {
+      "ix": 1,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/piers/1_-7.bin",
+      "featureCount": 4,
+      "bytes": 840
+     },
+     {
+      "ix": 4,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/piers/4_-7.bin",
+      "featureCount": 1,
+      "bytes": 584
+     },
+     {
+      "ix": 5,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/piers/5_-7.bin",
+      "featureCount": 3,
+      "bytes": 584
+     },
+     {
+      "ix": 4,
+      "iz": -6,
+      "url": "tiles/upper-manhattan/piers/4_-6.bin",
+      "featureCount": 5,
+      "bytes": 3604
+     },
+     {
+      "ix": 4,
+      "iz": -5,
+      "url": "tiles/upper-manhattan/piers/4_-5.bin",
+      "featureCount": 1,
+      "bytes": 440
+     }
+    ],
+    "water": [
+     {
+      "ix": 2,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/water/2_-11.bin",
+      "featureCount": 1,
+      "bytes": 18284
+     },
+     {
+      "ix": 3,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/water/3_-11.bin",
+      "featureCount": 1,
+      "bytes": 792
+     },
+     {
+      "ix": 6,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/water/6_-10.bin",
+      "featureCount": 1,
+      "bytes": 1084
+     },
+     {
+      "ix": 6,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/water/6_-9.bin",
+      "featureCount": 1,
+      "bytes": 540
+     }
+    ],
+    "trees": [
+     {
+      "ix": 6,
+      "iz": -19,
+      "url": "tiles/upper-manhattan/trees/6_-19.bin",
+      "featureCount": 99,
+      "bytes": 1304
+     },
+     {
+      "ix": 7,
+      "iz": -19,
+      "url": "tiles/upper-manhattan/trees/7_-19.bin",
+      "featureCount": 168,
+      "bytes": 2000
+     },
+     {
+      "ix": 8,
+      "iz": -19,
+      "url": "tiles/upper-manhattan/trees/8_-19.bin",
+      "featureCount": 159,
+      "bytes": 1912
+     },
+     {
+      "ix": 6,
+      "iz": -18,
+      "url": "tiles/upper-manhattan/trees/6_-18.bin",
+      "featureCount": 861,
+      "bytes": 8936
+     },
+     {
+      "ix": 7,
+      "iz": -18,
+      "url": "tiles/upper-manhattan/trees/7_-18.bin",
+      "featureCount": 1532,
+      "bytes": 15644
+     },
+     {
+      "ix": 8,
+      "iz": -18,
+      "url": "tiles/upper-manhattan/trees/8_-18.bin",
+      "featureCount": 14,
+      "bytes": 456
+     },
+     {
+      "ix": 5,
+      "iz": -17,
+      "url": "tiles/upper-manhattan/trees/5_-17.bin",
+      "featureCount": 258,
+      "bytes": 2904
+     },
+     {
+      "ix": 6,
+      "iz": -17,
+      "url": "tiles/upper-manhattan/trees/6_-17.bin",
+      "featureCount": 1937,
+      "bytes": 19700
+     },
+     {
+      "ix": 7,
+      "iz": -17,
+      "url": "tiles/upper-manhattan/trees/7_-17.bin",
+      "featureCount": 557,
+      "bytes": 5896
+     },
+     {
+      "ix": 4,
+      "iz": -16,
+      "url": "tiles/upper-manhattan/trees/4_-16.bin",
+      "featureCount": 16,
+      "bytes": 472
+     },
+     {
+      "ix": 5,
+      "iz": -16,
+      "url": "tiles/upper-manhattan/trees/5_-16.bin",
+      "featureCount": 1098,
+      "bytes": 11308
+     },
+     {
+      "ix": 6,
+      "iz": -16,
+      "url": "tiles/upper-manhattan/trees/6_-16.bin",
+      "featureCount": 1849,
+      "bytes": 18820
+     },
+     {
+      "ix": 7,
+      "iz": -16,
+      "url": "tiles/upper-manhattan/trees/7_-16.bin",
+      "featureCount": 45,
+      "bytes": 768
+     },
+     {
+      "ix": 4,
+      "iz": -15,
+      "url": "tiles/upper-manhattan/trees/4_-15.bin",
+      "featureCount": 144,
+      "bytes": 1760
+     },
+     {
+      "ix": 5,
+      "iz": -15,
+      "url": "tiles/upper-manhattan/trees/5_-15.bin",
+      "featureCount": 2201,
+      "bytes": 22340
+     },
+     {
+      "ix": 6,
+      "iz": -15,
+      "url": "tiles/upper-manhattan/trees/6_-15.bin",
+      "featureCount": 557,
+      "bytes": 5896
+     },
+     {
+      "ix": 4,
+      "iz": -14,
+      "url": "tiles/upper-manhattan/trees/4_-14.bin",
+      "featureCount": 794,
+      "bytes": 8264
+     },
+     {
+      "ix": 5,
+      "iz": -14,
+      "url": "tiles/upper-manhattan/trees/5_-14.bin",
+      "featureCount": 1894,
+      "bytes": 19268
+     },
+     {
+      "ix": 6,
+      "iz": -14,
+      "url": "tiles/upper-manhattan/trees/6_-14.bin",
+      "featureCount": 28,
+      "bytes": 592
+     },
+     {
+      "ix": 4,
+      "iz": -13,
+      "url": "tiles/upper-manhattan/trees/4_-13.bin",
+      "featureCount": 2088,
+      "bytes": 21204
+     },
+     {
+      "ix": 5,
+      "iz": -13,
+      "url": "tiles/upper-manhattan/trees/5_-13.bin",
+      "featureCount": 2355,
+      "bytes": 23876
+     },
+     {
+      "ix": 6,
+      "iz": -13,
+      "url": "tiles/upper-manhattan/trees/6_-13.bin",
+      "featureCount": 10,
+      "bytes": 416
+     },
+     {
+      "ix": 3,
+      "iz": -12,
+      "url": "tiles/upper-manhattan/trees/3_-12.bin",
+      "featureCount": 1158,
+      "bytes": 11908
+     },
+     {
+      "ix": 4,
+      "iz": -12,
+      "url": "tiles/upper-manhattan/trees/4_-12.bin",
+      "featureCount": 1773,
+      "bytes": 18060
+     },
+     {
+      "ix": 5,
+      "iz": -12,
+      "url": "tiles/upper-manhattan/trees/5_-12.bin",
+      "featureCount": 2055,
+      "bytes": 20876
+     },
+     {
+      "ix": 6,
+      "iz": -12,
+      "url": "tiles/upper-manhattan/trees/6_-12.bin",
+      "featureCount": 96,
+      "bytes": 1272
+     },
+     {
+      "ix": 2,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/trees/2_-11.bin",
+      "featureCount": 251,
+      "bytes": 2832
+     },
+     {
+      "ix": 3,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/trees/3_-11.bin",
+      "featureCount": 2569,
+      "bytes": 26020
+     },
+     {
+      "ix": 4,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/trees/4_-11.bin",
+      "featureCount": 2390,
+      "bytes": 24228
+     },
+     {
+      "ix": 5,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/trees/5_-11.bin",
+      "featureCount": 2382,
+      "bytes": 24148
+     },
+     {
+      "ix": 6,
+      "iz": -11,
+      "url": "tiles/upper-manhattan/trees/6_-11.bin",
+      "featureCount": 290,
+      "bytes": 3224
+     },
+     {
+      "ix": 2,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/trees/2_-10.bin",
+      "featureCount": 2248,
+      "bytes": 22804
+     },
+     {
+      "ix": 3,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/trees/3_-10.bin",
+      "featureCount": 1798,
+      "bytes": 18308
+     },
+     {
+      "ix": 4,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/trees/4_-10.bin",
+      "featureCount": 1249,
+      "bytes": 12820
+     },
+     {
+      "ix": 5,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/trees/5_-10.bin",
+      "featureCount": 1590,
+      "bytes": 16228
+     },
+     {
+      "ix": 6,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/trees/6_-10.bin",
+      "featureCount": 1208,
+      "bytes": 12404
+     },
+     {
+      "ix": 7,
+      "iz": -10,
+      "url": "tiles/upper-manhattan/trees/7_-10.bin",
+      "featureCount": 806,
+      "bytes": 8384
+     },
+     {
+      "ix": 1,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/trees/1_-9.bin",
+      "featureCount": 378,
+      "bytes": 4100
+     },
+     {
+      "ix": 2,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/trees/2_-9.bin",
+      "featureCount": 2574,
+      "bytes": 26068
+     },
+     {
+      "ix": 3,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/trees/3_-9.bin",
+      "featureCount": 678,
+      "bytes": 7100
+     },
+     {
+      "ix": 4,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/trees/4_-9.bin",
+      "featureCount": 1478,
+      "bytes": 15108
+     },
+     {
+      "ix": 5,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/trees/5_-9.bin",
+      "featureCount": 1310,
+      "bytes": 13428
+     },
+     {
+      "ix": 6,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/trees/6_-9.bin",
+      "featureCount": 1369,
+      "bytes": 14020
+     },
+     {
+      "ix": 7,
+      "iz": -9,
+      "url": "tiles/upper-manhattan/trees/7_-9.bin",
+      "featureCount": 396,
+      "bytes": 4276
+     },
+     {
+      "ix": 1,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/trees/1_-8.bin",
+      "featureCount": 1207,
+      "bytes": 12392
+     },
+     {
+      "ix": 2,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/trees/2_-8.bin",
+      "featureCount": 1754,
+      "bytes": 17868
+     },
+     {
+      "ix": 3,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/trees/3_-8.bin",
+      "featureCount": 736,
+      "bytes": 7676
+     },
+     {
+      "ix": 4,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/trees/4_-8.bin",
+      "featureCount": 2205,
+      "bytes": 22380
+     },
+     {
+      "ix": 5,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/trees/5_-8.bin",
+      "featureCount": 858,
+      "bytes": 8900
+     },
+     {
+      "ix": 6,
+      "iz": -8,
+      "url": "tiles/upper-manhattan/trees/6_-8.bin",
+      "featureCount": 1136,
+      "bytes": 11680
+     },
+     {
+      "ix": 1,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/trees/1_-7.bin",
+      "featureCount": 905,
+      "bytes": 9372
+     },
+     {
+      "ix": 2,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/trees/2_-7.bin",
+      "featureCount": 539,
+      "bytes": 5708
+     },
+     {
+      "ix": 3,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/trees/3_-7.bin",
+      "featureCount": 1793,
+      "bytes": 18260
+     },
+     {
+      "ix": 4,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/trees/4_-7.bin",
+      "featureCount": 1930,
+      "bytes": 19628
+     },
+     {
+      "ix": 5,
+      "iz": -7,
+      "url": "tiles/upper-manhattan/trees/5_-7.bin",
+      "featureCount": 596,
+      "bytes": 6276
+     },
+     {
+      "ix": 2,
+      "iz": -6,
+      "url": "tiles/upper-manhattan/trees/2_-6.bin",
+      "featureCount": 54,
+      "bytes": 856
+     },
+     {
+      "ix": 3,
+      "iz": -6,
+      "url": "tiles/upper-manhattan/trees/3_-6.bin",
+      "featureCount": 1263,
+      "bytes": 12956
+     },
+     {
+      "ix": 4,
+      "iz": -6,
+      "url": "tiles/upper-manhattan/trees/4_-6.bin",
+      "featureCount": 537,
+      "bytes": 5692
+     },
+     {
+      "ix": 5,
+      "iz": -6,
+      "url": "tiles/upper-manhattan/trees/5_-6.bin",
+      "featureCount": 5,
+      "bytes": 360
+     },
+     {
+      "ix": 4,
+      "iz": -5,
+      "url": "tiles/upper-manhattan/trees/4_-5.bin",
+      "featureCount": 6,
+      "bytes": 368
+     }
+    ]
+   },
+   "boundary": [
+    [
+     252.9,
+     -7113.3
+    ],
+    [
+     -2191.6,
+     -7481
+    ],
+    [
+     -2187.8,
+     -20282.7
+    ],
+    [
+     9340.4,
+     -20288.3
+    ],
+    [
+     9360.1,
+     -4759.3
+    ],
+    [
+     4553.5,
+     -4754.7
+    ],
+    [
+     2782.3,
+     -5744.6
+    ],
+    [
+     4753,
+     -9352.4
+    ],
+    [
+     4019.6,
+     -9763.8
+    ],
+    [
+     2028.5,
+     -6151.8
+    ]
+   ],
+   "mask": [
+    [
+     [
+      2028,
+      -6152
+     ],
+     [
+      4020,
+      -9764
+     ],
+     [
+      4753,
+      -9352
+     ],
+     [
+      2782,
+      -5745
+     ],
+     [
+      3988,
+      -5071
+     ],
+     [
+      4349,
+      -5499
+     ],
+     [
+      4834,
+      -6242
+     ],
+     [
+      5317,
+      -6890
+     ],
+     [
+      5395,
+      -7058
+     ],
+     [
+      5389,
+      -7140
+     ],
+     [
+      5358,
+      -7182
+     ],
+     [
+      5385,
+      -7177
+     ],
+     [
+      5367,
+      -7234
+     ],
+     [
+      5371,
+      -7187
+     ],
+     [
+      5356,
+      -7194
+     ],
+     [
+      5310,
+      -7355
+     ],
+     [
+      5333,
+      -7400
+     ],
+     [
+      5385,
+      -7421
+     ],
+     [
+      5359,
+      -7486
+     ],
+     [
+      5274,
+      -7456
+     ],
+     [
+      5236,
+      -7653
+     ],
+     [
+      5264,
+      -7806
+     ],
+     [
+      5358,
+      -7919
+     ],
+     [
+      5578,
+      -8068
+     ],
+     [
+      5722,
+      -8283
+     ],
+     [
+      5803,
+      -8504
+     ],
+     [
+      5879,
+      -8462
+     ],
+     [
+      5889,
+      -8477
+     ],
+     [
+      5809,
+      -8526
+     ],
+     [
+      5914,
+      -8718
+     ],
+     [
+      6111,
+      -8905
+     ],
+     [
+      6388,
+      -9108
+     ],
+     [
+      6466,
+      -9248
+     ],
+     [
+      6486,
+      -9350
+     ],
+     [
+      6486,
+      -9830
+     ],
+     [
+      6378,
+      -10131
+     ],
+     [
+      6104,
+      -10556
+     ],
+     [
+      6038,
+      -10774
+     ],
+     [
+      6077,
+      -11285
+     ],
+     [
+      6080,
+      -11905
+     ],
+     [
+      5967,
+      -13348
+     ],
+     [
+      5987,
+      -13631
+     ],
+     [
+      6325,
+      -14445
+     ],
+     [
+      6424,
+      -14745
+     ],
+     [
+      6867,
+      -15592
+     ],
+     [
+      7113,
+      -16011
+     ],
+     [
+      7098,
+      -16019
+     ],
+     [
+      7044,
+      -15909
+     ],
+     [
+      7041,
+      -16009
+     ],
+     [
+      7144,
+      -16117
+     ],
+     [
+      7164,
+      -16191
+     ],
+     [
+      7131,
+      -16267
+     ],
+     [
+      7083,
+      -16298
+     ],
+     [
+      7107,
+      -16398
+     ],
+     [
+      7133,
+      -16411
+     ],
+     [
+      7200,
+      -16290
+     ],
+     [
+      7283,
+      -16255
+     ],
+     [
+      7468,
+      -16577
+     ],
+     [
+      7629,
+      -16734
+     ],
+     [
+      7645,
+      -16829
+     ],
+     [
+      7588,
+      -16850
+     ],
+     [
+      7585,
+      -16870
+     ],
+     [
+      7654,
+      -16885
+     ],
+     [
+      7711,
+      -16855
+     ],
+     [
+      7667,
+      -16900
+     ],
+     [
+      7752,
+      -16919
+     ],
+     [
+      7926,
+      -17245
+     ],
+     [
+      7995,
+      -17410
+     ],
+     [
+      7957,
+      -17443
+     ],
+     [
+      8003,
+      -17441
+     ],
+     [
+      8045,
+      -17669
+     ],
+     [
+      7982,
+      -17836
+     ],
+     [
+      7888,
+      -17908
+     ],
+     [
+      7602,
+      -18007
+     ],
+     [
+      7487,
+      -17987
+     ],
+     [
+      7418,
+      -17938
+     ],
+     [
+      7443,
+      -18010
+     ],
+     [
+      7357,
+      -17892
+     ],
+     [
+      7365,
+      -17858
+     ],
+     [
+      7300,
+      -17910
+     ],
+     [
+      7334,
+      -18024
+     ],
+     [
+      7171,
+      -18113
+     ],
+     [
+      7139,
+      -18075
+     ],
+     [
+      7171,
+      -17970
+     ],
+     [
+      7256,
+      -17904
+     ],
+     [
+      7214,
+      -17848
+     ],
+     [
+      7145,
+      -17841
+     ],
+     [
+      7064,
+      -17902
+     ],
+     [
+      7019,
+      -17993
+     ],
+     [
+      7039,
+      -18255
+     ],
+     [
+      6961,
+      -18311
+     ],
+     [
+      6854,
+      -18330
+     ],
+     [
+      6717,
+      -18289
+     ],
+     [
+      6693,
+      -18351
+     ],
+     [
+      6466,
+      -18121
+     ],
+     [
+      6236,
+      -17628
+     ],
+     [
+      6212,
+      -17513
+     ],
+     [
+      6225,
+      -17458
+     ],
+     [
+      6218,
+      -17437
+     ],
+     [
+      6199,
+      -17447
+     ],
+     [
+      6200,
+      -17475
+     ],
+     [
+      6190,
+      -17444
+     ],
+     [
+      6213,
+      -17432
+     ],
+     [
+      6182,
+      -17396
+     ],
+     [
+      6208,
+      -17355
+     ],
+     [
+      6185,
+      -17360
+     ],
+     [
+      6175,
+      -17331
+     ],
+     [
+      6188,
+      -17355
+     ],
+     [
+      6207,
+      -17342
+     ],
+     [
+      6194,
+      -17231
+     ],
+     [
+      6179,
+      -17203
+     ],
+     [
+      6159,
+      -17214
+     ],
+     [
+      6174,
+      -17194
+     ],
+     [
+      6060,
+      -16949
+     ],
+     [
+      5532,
+      -16014
+     ],
+     [
+      5400,
+      -15706
+     ],
+     [
+      5264,
+      -15529
+     ],
+     [
+      5193,
+      -15478
+     ],
+     [
+      5164,
+      -15489
+     ],
+     [
+      5081,
+      -15410
+     ],
+     [
+      5042,
+      -15405
+     ],
+     [
+      5029,
+      -15368
+     ],
+     [
+      5010,
+      -15383
+     ],
+     [
+      4971,
+      -15327
+     ],
+     [
+      4999,
+      -15154
+     ],
+     [
+      4983,
+      -14956
+     ],
+     [
+      5023,
+      -14856
+     ],
+     [
+      5009,
+      -14829
+     ],
+     [
+      5038,
+      -14762
+     ],
+     [
+      5042,
+      -14595
+     ],
+     [
+      4849,
+      -14146
+     ],
+     [
+      4699,
+      -13527
+     ],
+     [
+      4616,
+      -13342
+     ],
+     [
+      4334,
+      -12810
+     ],
+     [
+      4293,
+      -12760
+     ],
+     [
+      4185,
+      -12819
+     ],
+     [
+      4132,
+      -12714
+     ],
+     [
+      4106,
+      -12727
+     ],
+     [
+      3912,
+      -12346
+     ],
+     [
+      4031,
+      -12271
+     ],
+     [
+      4049,
+      -12243
+     ],
+     [
+      4027,
+      -12189
+     ],
+     [
+      3999,
+      -12140
+     ],
+     [
+      3955,
+      -12217
+     ],
+     [
+      3965,
+      -12236
+     ],
+     [
+      3908,
+      -12268
+     ],
+     [
+      3883,
+      -12221
+     ],
+     [
+      3940,
+      -12189
+     ],
+     [
+      3959,
+      -12203
+     ],
+     [
+      3975,
+      -12104
+     ],
+     [
+      3952,
+      -12069
+     ],
+     [
+      3947,
+      -12109
+     ],
+     [
+      3923,
+      -12074
+     ],
+     [
+      3948,
+      -12065
+     ],
+     [
+      3891,
+      -11968
+     ],
+     [
+      3875,
+      -11977
+     ],
+     [
+      3527,
+      -11464
+     ],
+     [
+      3155,
+      -10718
+     ],
+     [
+      2861,
+      -10212
+     ],
+     [
+      1802,
+      -8214
+     ],
+     [
+      1690,
+      -8203
+     ],
+     [
+      1799,
+      -8208
+     ],
+     [
+      1769,
+      -8150
+     ],
+     [
+      1705,
+      -8171
+     ],
+     [
+      1763,
+      -8140
+     ],
+     [
+      1734,
+      -8084
+     ],
+     [
+      1675,
+      -8175
+     ],
+     [
+      1591,
+      -8061
+     ],
+     [
+      1671,
+      -8156
+     ],
+     [
+      1731,
+      -8078
+     ],
+     [
+      1511,
+      -7665
+     ],
+     [
+      1440,
+      -7506
+     ],
+     [
+      1443,
+      -7467
+     ],
+     [
+      1229,
+      -7454
+     ],
+     [
+      1218,
+      -7433
+     ],
+     [
+      1444,
+      -7447
+     ],
+     [
+      1315,
+      -7212
+     ],
+     [
+      1271,
+      -7210
+     ],
+     [
+      1148,
+      -6986
+     ],
+     [
+      1175,
+      -6980
+     ],
+     [
+      1158,
+      -6937
+     ],
+     [
+      1128,
+      -6921
+     ],
+     [
+      1017,
+      -6721
+     ],
+     [
+      828,
+      -6811
+     ]
+    ],
+    [
+     [
+      4424,
+      -4827
+     ],
+     [
+      4508,
+      -4932
+     ],
+     [
+      4572,
+      -5078
+     ],
+     [
+      4770,
+      -5317
+     ],
+     [
+      5324,
+      -6181
+     ],
+     [
+      5470,
+      -6304
+     ],
+     [
+      5541,
+      -6444
+     ],
+     [
+      5558,
+      -6695
+     ],
+     [
+      5489,
+      -6634
+     ],
+     [
+      5385,
+      -6596
+     ],
+     [
+      5166,
+      -6345
+     ],
+     [
+      5122,
+      -6233
+     ],
+     [
+      5095,
+      -6236
+     ],
+     [
+      5084,
+      -6183
+     ],
+     [
+      4799,
+      -5731
+     ],
+     [
+      4724,
+      -5662
+     ],
+     [
+      4546,
+      -5352
+     ],
+     [
+      4436,
+      -5233
+     ],
+     [
+      4243,
+      -4928
+     ]
+    ],
+    [
+     [
+      5680,
+      -7521
+     ],
+     [
+      5766,
+      -7535
+     ],
+     [
+      5762,
+      -7594
+     ],
+     [
+      5749,
+      -7570
+     ],
+     [
+      5728,
+      -7575
+     ],
+     [
+      5725,
+      -7641
+     ],
+     [
+      5669,
+      -7599
+     ],
+     [
+      5671,
+      -7540
+     ],
+     [
+      5599,
+      -7436
+     ]
+    ],
+    [
+     [
+      5983,
+      -7818
+     ],
+     [
+      6317,
+      -7750
+     ],
+     [
+      6533,
+      -7596
+     ],
+     [
+      6632,
+      -7605
+     ],
+     [
+      6767,
+      -7726
+     ],
+     [
+      6871,
+      -7742
+     ],
+     [
+      6991,
+      -7856
+     ],
+     [
+      7064,
+      -8097
+     ],
+     [
+      7374,
+      -8534
+     ],
+     [
+      7369,
+      -8564
+     ],
+     [
+      7492,
+      -8650
+     ],
+     [
+      7512,
+      -8638
+     ],
+     [
+      7571,
+      -8711
+     ],
+     [
+      7559,
+      -8722
+     ],
+     [
+      7657,
+      -8822
+     ],
+     [
+      7772,
+      -9025
+     ],
+     [
+      7770,
+      -9100
+     ],
+     [
+      7630,
+      -9384
+     ],
+     [
+      7531,
+      -9472
+     ],
+     [
+      7221,
+      -9641
+     ],
+     [
+      7086,
+      -9878
+     ],
+     [
+      7025,
+      -9918
+     ],
+     [
+      6784,
+      -9928
+     ],
+     [
+      6698,
+      -9783
+     ],
+     [
+      6667,
+      -9804
+     ],
+     [
+      6653,
+      -9783
+     ],
+     [
+      6668,
+      -9797
+     ],
+     [
+      6695,
+      -9777
+     ],
+     [
+      6685,
+      -9730
+     ],
+     [
+      6643,
+      -9755
+     ],
+     [
+      6647,
+      -9773
+     ],
+     [
+      6636,
+      -9754
+     ],
+     [
+      6683,
+      -9726
+     ],
+     [
+      6617,
+      -9501
+     ],
+     [
+      6640,
+      -9419
+     ],
+     [
+      6598,
+      -9409
+     ],
+     [
+      6648,
+      -9399
+     ],
+     [
+      6663,
+      -9209
+     ],
+     [
+      6545,
+      -8922
+     ],
+     [
+      6551,
+      -8856
+     ],
+     [
+      6590,
+      -8819
+     ],
+     [
+      6647,
+      -8812
+     ],
+     [
+      6585,
+      -8703
+     ],
+     [
+      6695,
+      -8706
+     ],
+     [
+      6714,
+      -8764
+     ],
+     [
+      6680,
+      -8812
+     ],
+     [
+      6775,
+      -8808
+     ],
+     [
+      6694,
+      -8804
+     ],
+     [
+      6729,
+      -8788
+     ],
+     [
+      6734,
+      -8678
+     ],
+     [
+      6568,
+      -8688
+     ],
+     [
+      6428,
+      -8749
+     ],
+     [
+      6334,
+      -8707
+     ],
+     [
+      6203,
+      -8565
+     ],
+     [
+      5924,
+      -8115
+     ],
+     [
+      5894,
+      -7952
+     ]
+    ],
+    [
+     [
+      8003,
+      -17965
+     ],
+     [
+      8105,
+      -17861
+     ],
+     [
+      8171,
+      -17744
+     ],
+     [
+      8210,
+      -17796
+     ],
+     [
+      8271,
+      -17821
+     ],
+     [
+      8362,
+      -18145
+     ],
+     [
+      8330,
+      -18272
+     ],
+     [
+      8122,
+      -18481
+     ],
+     [
+      8052,
+      -18510
+     ],
+     [
+      7955,
+      -18508
+     ],
+     [
+      7907,
+      -18408
+     ],
+     [
+      7672,
+      -18246
+     ],
+     [
+      7594,
+      -18140
+     ]
+    ]
+   ]
   }
  ],
  "context": [
@@ -7150,6 +10802,13 @@
    "layer": "land",
    "url": "context/land.bin",
    "bytes": 954328
+  }
+ ],
+ "patches": [
+  {
+   "id": "central-park",
+   "name": "Central Park",
+   "url": "patches/central-park.json"
   }
  ]
 }

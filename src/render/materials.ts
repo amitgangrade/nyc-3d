@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { GLSL_COMMON } from './shaders/common.glsl';
-import { shared } from './uniforms';
+import { shared, PATCH_TEST_GLSL } from './uniforms';
 
 /**
  * Building material: MeshStandardMaterial (so it gets PBR lighting, shadows,
@@ -256,6 +256,7 @@ export function createContextLandMaterial() {
     s.uniforms.uLights = shared.uLights;
     s.uniforms.uRegionMask = shared.uRegionMask;
     s.uniforms.uRegionMaskRect = shared.uRegionMaskRect;
+    for (const k of ['uPatchOn', 'uPatchClass', 'uPatchOrigin', 'uPatchU', 'uPatchV', 'uPatchSizeM'] as const) s.uniforms[k] = shared[k];
     s.vertexShader = s.vertexShader
       .replace('#include <common>', '#include <common>\nvarying vec3 vWP2; varying vec3 vWN2;')
       .replace('#include <worldpos_vertex>', '#include <worldpos_vertex>\nvWP2 = (modelMatrix * vec4(transformed, 1.0)).xyz; vWN2 = objectNormal;');
@@ -264,10 +265,12 @@ export function createContextLandMaterial() {
         varying vec3 vWP2; varying vec3 vWN2; uniform float uLights;
         uniform sampler2D uRegionMask; uniform vec4 uRegionMaskRect;
         ${GLSL_COMMON}
+        ${PATCH_TEST_GLSL}
         vec3 gEmit = vec3(0.0);`)
       .replace('#include <color_fragment>', `#include <color_fragment>
         {
           vec2 p = vWP2.xz;
+          if (onPatch(p)) discard;
           vec2 muv = (p - uRegionMaskRect.xy) / uRegionMaskRect.zw;
           float detailed = (muv.x > 0.0 && muv.x < 1.0 && muv.y > 0.0 && muv.y < 1.0) ? texture2D(uRegionMask, muv).r : 0.0;
           if (vWN2.y < 0.5) {

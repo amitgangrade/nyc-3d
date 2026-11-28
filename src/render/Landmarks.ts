@@ -50,6 +50,12 @@ const LANDMARKS: LandmarkDef[] = [
     info: { name: 'Williamsburg Bridge', height: 102, year: 1903, description: 'Suspension bridge with steel lattice towers, main span 488 m, from Delancey St to Williamsburg.' },
     build: (fp) => buildSuspensionBridge(fp, WILLIAMSBURG),
   },
+  {
+    // axis from the OSM bridge ways (towers split the ways); +t points to New Jersey
+    id: 'george-washington-bridge', lon: -73.95455, lat: 40.852075, anchor: 'free', bearing: 284.0,
+    info: { name: 'George Washington Bridge', height: 184, year: 1931, description: 'Double-deck suspension bridge across the Hudson to Fort Lee, NJ. Main span 1,067 m; the world\'s busiest motor-vehicle bridge.' },
+    build: (fp) => buildSuspensionBridge(fp, GWB),
+  },
 ];
 
 export async function loadLandmarks(manifest: Manifest, dataRoot: string, proj: Projection) {
@@ -208,6 +214,8 @@ interface BridgeSpec {
   cableS: number[]; cableMid: number; cableAnchor: number;
   stays: boolean;
   tower: 'gothic' | 'steel';
+  /** massive masonry anchorages at the ends of the side spans (GWB) */
+  anchorages?: boolean;
   colors: {
     stone: number;            // daytime tower colour
     towerGlow: number[];      // night tower wash, cycles slowly through these
@@ -306,6 +314,8 @@ function buildSuspensionBridge(fp: Footprint, b: BridgeSpec): THREE.Object3D {
     }
   }
 
+  if (b.anchorages) for (const tt of [-A, A]) box(tt + Math.sign(tt) * 25, 0, -3, b.deckAnchor + 6, 60, W * 2 + 14);
+
   // ---- cables, suspenders, stays (night-glowing colour lines) + necklace lights
   const cablePts: number[] = [], susp: number[] = [], stays: number[] = [], necklace: number[] = [], phase: number[] = [];
   for (const s of b.cableS) {
@@ -369,6 +379,11 @@ const MANHATTAN: BridgeSpec = {
   mainHalf: 224, side: 221, endM: -998, endB: 937, towerH: 102, deckMid: 46, deckTower: 42, deckAnchor: 30,
   deckHalfW: 18, deckThick: 8, cableS: [-17, -6, 6, 17], cableMid: 50, cableAnchor: 30, stays: false, tower: 'steel',
   colors: { stone: 0x6f8aa3, towerGlow: [0x2f7bff, 0x31d0ff, 0x7a5cff], necklace: 0x9fe0ff, lines: 0x3fa8ff },
+};
+const GWB: BridgeSpec = {
+  mainHalf: 533, side: 195, endM: -1500, endB: 1250, towerH: 184, deckMid: 66, deckTower: 62, deckAnchor: 58,
+  deckHalfW: 18, deckThick: 10, cableS: [-15, -12.5, 12.5, 15], cableMid: 72, cableAnchor: 60, stays: false, tower: 'steel', anchorages: true,
+  colors: { stone: 0x9aa3a8, towerGlow: [0xdfe8ff, 0xffffff, 0xcfe0ff], necklace: 0xfff1d6, lines: 0xcfe4ff },
 };
 const WILLIAMSBURG: BridgeSpec = {
   mainHalf: 244, side: 182, endM: -1229, endB: 983, towerH: 102, deckMid: 45, deckTower: 41, deckAnchor: 32,

@@ -4,7 +4,11 @@ A high-resolution, real-time 3D map of New York City that you can fly around in 
 
 **Current coverage:**
 - **Lower Manhattan:** everything south of Houston Street, including Battery Park City, the Financial District, Tribeca, SoHo, Chinatown and the Lower East Side, plus Governors, Liberty and Ellis Islands. Built from NYC Open Data.
-- **Manhattan from Houston St to Central Park:** the Villages, Chelsea, Flatiron, Gramercy, Midtown, Hell's Kitchen, Hudson Yards, Billionaires' Row and all of Central Park (to 110th St). Built from NYC Open Data, with towers refined by OpenStreetMap 3D parts.
+- **Manhattan from Houston St to 59th St:** the Villages, Chelsea, Flatiron, Gramercy, Midtown, Hell's Kitchen, Hudson Yards and Billionaires' Row.
+- **Upper Manhattan:** everything north of 59th St around the park. That covers the Upper West and East Sides, Roosevelt Island, Harlem and East Harlem, Morningside and Washington Heights, Inwood, Randall's Island and Marble Hill.
+- **Central Park**, modelled as a dedicated terrain patch (see below).
+
+The Manhattan regions are built from NYC Open Data, with towers refined by OpenStreetMap 3D parts.
 - **Jersey City:** the whole municipality, from Exchange Place and Newport to Journal Square, Liberty State Park and the Heights. Built from OpenStreetMap.
 
 The other boroughs and the rest of New Jersey are drawn as context land, with a procedural street grid by day and glowing streets by night.
@@ -21,6 +25,12 @@ The other boroughs and the rest of New Jersey are drawn as context land, with a 
 - Harbour water with real-time planar reflections, waves and sun glint.
 - Cascaded-style shadow map that follows the camera, ACES tone mapping and bloom.
 - **Setback towers:** NYC footprints carry a single roof height, so where OpenStreetMap has `building:part` volumes covering a footprint (Empire State, Chrysler, Woolworth and thousands more), the footprint is replaced by those stepped parts. Set `NO_OSM_PARTS=1` to disable this.
+- **Central Park terrain patch:** rather than flat polygons, the park is one draped terrain mesh.
+  - Relief comes from about 24,000 NYC Planimetric spot elevations, made relative to the park edge so the park meets the avenues at street level. Its hills, Vista Rock, lake basins and sunken transverse roads all come through.
+  - The surface is a 1 m-per-pixel class raster rasterised from OpenStreetMap: lawns, woods, schist outcrops, ballfields with clay infields, gardens, playgrounds, footpaths, the bridle path, drives, steps, plazas, levelled lakes with rippling reflective water, bridges and the floodlit rinks.
+  - It also has about 12,000 trees (OSM-mapped trees plus woodland fill), about 2,350 path lamps and the perimeter wall. Park buildings (the Met, Belvedere Castle, the Boathouse…) stand on the terrain.
+  - The patch definition lives under `patches` in `config/regions.json`, and the builder is `pipeline/patches.ts` (`npm run data -- --patches`).
+- **Four illuminated bridges:** besides the three East River bridges, the George Washington Bridge has lattice steel towers, a double-deck truss and white necklace lights.
 - **Signature lighting:** the Empire State crown cycles through colours, the Chrysler crown glows white, and Times Square is wrapped in animated billboards.
 - A hand-modelled **One World Trade Center** (tapered octagonal shaft and spire), aligned to its real footprint.
 - **Building info** on click: height, year built and source, with links to the OSM object for Jersey City buildings.

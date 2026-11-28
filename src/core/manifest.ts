@@ -32,8 +32,12 @@ export interface ManifestContext {
   bytes: number;
 }
 
+export interface ManifestPatch { id: string; name: string; url: string }
+
 export interface Manifest {
   version: 1;
+  /** high-fidelity terrain patches (e.g. Central Park), see pipeline/patches.ts */
+  patches?: ManifestPatch[];
   origin: { lon: number; lat: number };
   tileSize: number;
   regions: ManifestRegion[];

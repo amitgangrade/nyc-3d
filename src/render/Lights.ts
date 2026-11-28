@@ -5,7 +5,8 @@ const LOGDEPTH_V = '#include <common>\n#include <logdepthbuf_pars_vertex>\n';
 const LOGDEPTH_F = '#include <common>\n#include <logdepthbuf_pars_fragment>\n';
 
 /** Ground glow pools + lamp heads for street lights (visible from dusk). */
-export function createStreetLights(points: Float32Array, origin: [number, number]): THREE.Group {
+/** points: x,z pairs (tile-local); ys: optional ground height per lamp; headH: lamp-head height above ground */
+export function createStreetLights(points: Float32Array, origin: [number, number], ys?: Float32Array, headH = 7.5): THREE.Group {
   const n = points.length / 2;
   const group = new THREE.Group();
   group.position.set(origin[0], 0, origin[1]);
@@ -19,7 +20,7 @@ export function createStreetLights(points: Float32Array, origin: [number, number
     const x = points[i * 2], z = points[i * 2 + 1], s = Math.random();
     const c = [[-1, -1], [1, -1], [1, 1], [-1, 1]];
     for (let k = 0; k < 4; k++) {
-      pos.set([x + c[k][0] * R, 1.3, z + c[k][1] * R], (i * 4 + k) * 3);
+      pos.set([x + c[k][0] * R, (ys ? ys[i] : 1.0) + 0.3, z + c[k][1] * R], (i * 4 + k) * 3);
       uv.set(c[k], (i * 4 + k) * 2);
       seed[i * 4 + k] = s;
     }
@@ -36,7 +37,7 @@ export function createStreetLights(points: Float32Array, origin: [number, number
 
   // ---- lamp heads
   const hp = new Float32Array(n * 3), hs = new Float32Array(n);
-  for (let i = 0; i < n; i++) { hp.set([points[i * 2], 8.5, points[i * 2 + 1]], i * 3); hs[i] = seed[i * 4]; }
+  for (let i = 0; i < n; i++) { hp.set([points[i * 2], (ys ? ys[i] : 1.0) + headH, points[i * 2 + 1]], i * 3); hs[i] = seed[i * 4]; }
   const hg = new THREE.BufferGeometry();
   hg.setAttribute('position', new THREE.BufferAttribute(hp, 3));
   hg.setAttribute('seed', new THREE.BufferAttribute(hs, 1));

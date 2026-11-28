@@ -17,6 +17,7 @@ import { shared } from './render/uniforms';
 import { PRESETS } from './render/TimeOfDay';
 import { CameraController } from './controls/CameraController';
 import { UI } from './ui/UI';
+import { loadPatch, type LoadedPatch } from './render/Patch';
 import { DETAIL_LAYER, setTreeShadows } from './render/Trees';
 
 // absolute URL: workers resolve relative URLs against their own script location
@@ -67,8 +68,24 @@ async function main() {
   const landmarks = await loadLandmarks(manifest, DATA, proj);
   scene.add(landmarks.group);
 
+  // high-fidelity terrain patches (Central Park) — loaded before tiles so park buildings sit on the terrain
+  const patches: LoadedPatch[] = [];
+  for (const pm of manifest.patches ?? []) {
+    ui.setLoading(0.1, `Shaping ${pm.name}…`);
+    try {
+      const lp = await loadPatch(DATA, pm.url);
+      lp.ground.geometry.computeBoundsTree();
+      scene.add(lp.group);
+      patches.push(lp);
+    } catch (e) { console.warn('patch', pm.id, e); }
+  }
+
   const tiles = new TileManager(manifest, DATA);
   tiles.exclude = landmarks.exclude;
+  tiles.terrains = patches.map((p) => {
+    const xs = p.meta.outline.map((q) => q[0]), zs = p.meta.outline.map((q) => q[1]);
+    return { grid: p.terrain, bbox: [Math.min(...xs), Math.min(...zs), Math.max(...xs), Math.max(...zs)] as [number, number, number, number] };
+  });
   // signature night lighting (codes interpreted in the facade shader)
   const special = (lon: number, lat: number, r: number, code: number) => { const [x, z] = proj.forward(lon, lat); return { x, z, r, code }; };
   tiles.specials = [
@@ -131,7 +148,7 @@ async function main() {
   ctrl.surfaceAt = (x, z, fromY) => {
     raycaster.set(new THREE.Vector3(x, fromY, z), down);
     raycaster.far = fromY + 10;
-    const hits = raycaster.intersectObjects([...tiles.pickables(), landmarks.group], true);
+    const hits = raycaster.intersectObjects([...tiles.pickables(), landmarks.group, ...patches.map((p) => p.ground)], true);
     return hits.length ? hits[0].point.y : 1;
   };
   ctrl.onModeChange = (m) => ui.setMode(m);
@@ -193,7 +210,7 @@ async function main() {
   });
   canvas.addEventListener('dblclick', (e) => {
     if (ctrl.mode !== 'map') return;
-    const hit = pick(e, [...tiles.solids(), landmarks.group, ...contextMeshes]);
+    const hit = pick(e, [...tiles.solids(), landmarks.group, ...contextMeshes, ...patches.map((p) => p.ground)]);
     const p = hit?.point ?? raycaster.ray.intersectPlane(new THREE.Plane(new THREE.Vector3(0, 1, 0), 0), new THREE.Vector3());
     if (!p) return;
     const v = ctrl.getView();
@@ -249,6 +266,12 @@ async function main() {
     env.updateShadow(focus, dist);
     env.updateFog(camera.position.y);
     setTreeShadows(dist < 1600);
+    for (const p of patches) {
+      // park trees only when reasonably close (thousands of instances); lamps stay on
+      const c = p.ground.geometry.boundingSphere!.center;
+      const near = Math.hypot(camera.position.x - c.x, camera.position.z - c.z) < 6500;
+      for (const ch of p.group.children) if (ch.userData.kind === 'trees') ch.visible = near;
+    }
     sky.follow(camera);
 
     water.render(renderer, scene, camera, sky.mesh);

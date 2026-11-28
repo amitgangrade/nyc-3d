@@ -125,7 +125,7 @@ export function createTrees(data: Float32Array, origin: [number, number], park =
   for (let i = 0; i < n; i++) {
     const o = i * TREE_STRIDE;
     const x = data[o], z = data[o + 1], r = data[o + 2], h = data[o + 3], cls = data[o + 4], seed = data[o + 5];
-    const base = Y.sidewalks;
+    const base = data[o + 6] || Y.sidewalks;
     q.setFromAxisAngle(new THREE.Vector3(0, 1, 0), seed * 6.28);
     const pal = PALETTE[cls] ?? PALETTE[0];
     col.setHex(pal[Math.floor(seed * 4) % 4]).multiplyScalar(0.85 + ((seed * 97) % 1) * 0.3);

@@ -4,6 +4,7 @@
  *   npm run data -- lower-manhattan          build one region
  *   npm run data -- --all                    build every region in config/regions.json
  *   npm run data -- --context                build shared context land (all boroughs + nearby NJ/NY counties)
+ *   npm run data -- --patches                build terrain patches (Central Park) — run before the regions they cut into
  *   add --refresh to re-download instead of using data-cache/
  */
 import { mkdirSync, readFileSync, writeFileSync, existsSync, rmSync, readdirSync } from 'node:fs';
@@ -19,6 +20,8 @@ import { nycProvider, geomToPolys } from './providers/nyc';
 import { osmProvider } from './providers/osm';
 import * as shapefile from 'shapefile';
 import polygonClipping from 'polygon-clipping';
+import { buildPatch, patchOutline, type PatchDef } from './patches';
+import { Y } from '../src/core/constants';
 
 const ROOT = new URL('..', import.meta.url).pathname;
 const OUT = join(ROOT, 'public/data');
@@ -125,6 +128,15 @@ async function buildRegion(def: RegionDef) {
     boundary: boundary.map(([x, z]) => [Math.round(x * 10) / 10, Math.round(z * 10) / 10] as [number, number]),
   };
 
+  // terrain patches replace some of this region's layers inside their outline
+  const patchCuts: { outline: [number, number][]; layers: string[] }[] = [];
+  for (const pd of (regionsCfg.patches ?? []) as PatchDef[]) for (const rep of pd.replaces) {
+    if (rep.region !== def.id) continue;
+    const ol = patchOutline(OUT, pd.id);
+    if (ol) patchCuts.push({ outline: ol, layers: rep.layers });
+    else console.warn(`  ! patch ${pd.id} not built yet — run with --patches first`);
+  }
+
   for (const [layer, spec] of Object.entries(provider.layers)) {
     console.log(`  • ${layer}`);
     const feats = await provider.fetchLayer(layer, bbox, proj, refresh, join(CACHE, def.id));
@@ -135,6 +147,7 @@ async function buildRegion(def: RegionDef) {
       if (!pointInRing(c, boundary)) continue;
       if (def.borough && nearestBorough(c) !== def.borough) continue;
       if (def.excludeNYC && distToPolys(c, allBoroPolys) === 0) continue;
+      if (patchCuts.some((pc) => pc.layers.includes(layer) && pointInRing(c, pc.outline))) continue;
       if (spec.flagOverWater && boros) {
         f.props.overWater = Object.values(boros).some((ps) => distToPolys(c, ps) === 0) ? 0 : 1;
       }
@@ -234,8 +247,17 @@ async function buildContext() {
   const all: RegionDef[] = regionsCfg.regions;
   const ids = args.filter((a) => !a.startsWith('--'));
   if (args.includes('--context')) await buildContext();
+  if (args.includes('--patches')) {
+    const m = readManifest();
+    m.patches = [];
+    for (const pd of (regionsCfg.patches ?? []) as PatchDef[]) {
+      const meta = await buildPatch(pd, proj, join(CACHE, 'patch-' + pd.id), OUT, refresh, Y.sidewalks);
+      m.patches.push({ id: meta.id, name: meta.name, url: `patches/${meta.id}.json` });
+    }
+    writeManifest(m);
+  }
   const todo = args.includes('--all') ? all : all.filter((r) => ids.includes(r.id));
   for (const id of ids) if (!all.find((r) => r.id === id)) throw new Error(`No region "${id}" in config/regions.json`);
   for (const r of todo) await buildRegion(r);
-  if (!todo.length && !args.includes('--context')) console.log('Nothing to do. Usage: npm run data -- <region-id> | --all | --context [--refresh]');
+  if (!todo.length && !args.includes('--context') && !args.includes('--patches')) console.log('Nothing to do. Usage: npm run data -- <region-id> | --all | --context [--refresh]');
 })().catch((e) => { console.error(e); process.exit(1); });

@@ -75,6 +75,32 @@
       }
     },
     {
+      "id": "upper-manhattan",
+      "name": "Upper Manhattan",
+      "description": "Upper West Side, Upper East Side, Roosevelt Island, Harlem, East Harlem, Morningside Heights, Washington Heights, Inwood, Randall's Island and Marble Hill (59th St northward, around Central Park)",
+      "provider": "nyc",
+      "borough": "Manhattan",
+      "boundary": [
+        [-74.003, 40.7767],
+        [-74.032, 40.78],
+        [-74.032, 40.895],
+        [-73.895, 40.895],
+        [-73.895, 40.7555],
+        [-73.952, 40.7555],
+        [-73.973, 40.7644],
+        [-73.9496, 40.7968],
+        [-73.9583, 40.8005],
+        [-73.98194, 40.76806]
+      ],
+      "camera": {
+        "lon": -73.95,
+        "lat": 40.81,
+        "distance": 5000,
+        "heading": 20,
+        "pitch": 35
+      }
+    },
+    {
       "id": "jersey-city",
       "name": "Jersey City",
       "description": "Jersey City, NJ (municipal boundary from US Census TIGER/Line places), buildings and streets from OpenStreetMap",
@@ -166,6 +192,47 @@
         "heading": 75,
         "pitch": 30
       }
+    }
+  ],
+  "patches": [
+    {
+      "id": "central-park",
+      "name": "Central Park",
+      "osmName": "Central Park",
+      "bbox": [
+        -73.9835,
+        40.7635,
+        -73.9475,
+        40.8015
+      ],
+      "resolution": 1,
+      "gridCell": 4,
+      "replaces": [
+        {
+          "region": "midtown-manhattan",
+          "layers": [
+            "roads",
+            "sidewalks",
+            "parks",
+            "plazas",
+            "water",
+            "trees",
+            "piers"
+          ]
+        },
+        {
+          "region": "upper-manhattan",
+          "layers": [
+            "roads",
+            "sidewalks",
+            "parks",
+            "plazas",
+            "water",
+            "trees",
+            "piers"
+          ]
+        }
+      ]
     }
   ]
 }

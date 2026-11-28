@@ -16,6 +16,8 @@ export interface BuildRequest {
   skirt?: number;
   /** scene-space points; buildings whose footprint contains one are skipped (replaced by a custom landmark model) */
   exclude?: [number, number][];
+  /** terrain patch relief grid: buildings standing inside it are lifted onto the terrain */
+  terrain?: TerrainGrid;
   /** buildings whose centroid lies within r of (x,z) get a special lighting code (see materials.ts) */
   specials?: { x: number; z: number; r: number; code: number }[];
   /** emit streetlight positions along polygon outlines (roads) */
@@ -24,8 +26,23 @@ export interface BuildRequest {
   scatterTrees?: number;
 }
 
-/** Tree instances, 6 floats each: x, z, crownRadius, height, class, seed (tile-local x,z). */
-export const TREE_STRIDE = 6;
+/** Tree instances, 7 floats each: x, z, crownRadius, height, class, seed, groundY (tile-local x,z). */
+export const TREE_STRIDE = 7;
+
+export interface TerrainGrid {
+  origin: [number, number]; axisU: [number, number]; axisV: [number, number];
+  cell: number; nu: number; nv: number; scale: number; heights: Int16Array;
+}
+
+/** Bilinear relief (metres) at a scene point; 0 outside the grid. */
+export function sampleTerrain(t: TerrainGrid, x: number, z: number): number {
+  const dx = x - t.origin[0], dz = z - t.origin[1];
+  const u = (dx * t.axisU[0] + dz * t.axisU[1]) / t.cell, v = (dx * t.axisV[0] + dz * t.axisV[1]) / t.cell;
+  if (u < 0 || v < 0 || u >= t.nu - 1 || v >= t.nv - 1) return 0;
+  const i = Math.floor(u), j = Math.floor(v), fu = u - i, fv = v - j, H = t.heights, n = t.nu;
+  const a = H[j * n + i], b = H[j * n + i + 1], c = H[(j + 1) * n + i], d = H[(j + 1) * n + i + 1];
+  return ((a * (1 - fu) + b * fu) * (1 - fv) + (c * (1 - fu) + d * fu) * fv) * t.scale;
+}
 
 export interface GeometryArrays {
   position: Float32Array;
@@ -207,7 +224,13 @@ function buildBuildings(t: DecodedTile, req: BuildRequest): BuildResult {
     // info: (height, seed, style, featureIndex)
     const info = [h, seed, style, f];
     const minH = MINH ? Math.min(MINH[f], h - 0.5) : 0;
-    const y0 = Y.buildingBase + minH, y1 = Y.buildingBase + h;
+    let lift = 0;
+    if (req.terrain) {
+      // stand at the terrain height under the footprint centre, sunk 1 m so slopes don't leave gaps
+      lift = sampleTerrain(req.terrain, cx + ox, cz + oz);
+      if (lift !== 0) lift += Y.sidewalks - Y.buildingBase - 1.0;
+    }
+    const y0 = Y.buildingBase + lift + minH, y1 = Y.buildingBase + lift + h;
     walls(b, rings, y0, y1, info, minH);
     cap(b, rings, y1, info);
     if (minH > 0.5) capDown(b, rings, y0, info);
@@ -324,7 +347,7 @@ function scatter(rings: Float32Array[], spacing: number, origin: [number, number
       for (let r = 1; r < rings.length && !inHole; r++) inHole = pointInRing(x, z, rings[r]);
       if (inHole || distToRing(x, z, outer) < 3) continue;
       const dbh = 8 + h1 * h2 * 30;
-      out.push(x, z, crownRadius(dbh), treeHeight(dbh), h3 < 0.1 ? 2 : 0, h2);
+      out.push(x, z, crownRadius(dbh), treeHeight(dbh), h3 < 0.1 ? 2 : 0, h2, Y.sidewalks);
     }
   }
 }
@@ -350,7 +373,7 @@ function buildTrees(t: DecodedTile, req: BuildRequest): BuildResult {
   const out = new Float32Array(n * TREE_STRIDE);
   for (let i = 0; i < n; i++) {
     const d = dbh[i] || 8;
-    out.set([c[i * 2], c[i * 2 + 1], crownRadius(d), treeHeight(d), cls[i], hash(i * 2654435761 + (t.header.origin[0] | 0))], i * TREE_STRIDE);
+    out.set([c[i * 2], c[i * 2 + 1], crownRadius(d), treeHeight(d), cls[i], hash(i * 2654435761 + (t.header.origin[0] | 0)), Y.sidewalks], i * TREE_STRIDE);
   }
   return { id: req.id, geometry: null, trees: out, origin: t.header.origin };
 }
