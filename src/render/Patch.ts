@@ -202,9 +202,10 @@ Surf surf(int c, vec2 p){
   } else if (c == 4) { // Manhattan schist outcrops
     float streak = vnoise(vec2(dot(p, vec2(0.87, 0.48)) * 1.6, dot(p, vec2(-0.48, 0.87)) * 0.25));
     s.albedo = vec3(0.29, 0.29, 0.28) * (0.6 + 0.45 * n1 + 0.3 * streak) + vec3(0.02, 0.015, 0.0) * n3;
-    s.rough = 0.75;
+    s.rough = 0.75; s.glow = vec3(0.02, 0.022, 0.026);
   } else if (c == 5) { // clay infields / sand
     s.albedo = vec3(0.55, 0.33, 0.20) * (0.92 + 0.12 * n2);
+    s.glow = vec3(0.06, 0.035, 0.02);
   } else if (c == 6) { // ballfields
     float stripe = step(0.5, fract(dot(p, vec2(0.48, 0.88)) / 6.0));
     s.albedo = mix(vec3(0.18, 0.37, 0.08), vec3(0.23, 0.44, 0.11), stripe) * (0.96 + 0.08 * n2);
